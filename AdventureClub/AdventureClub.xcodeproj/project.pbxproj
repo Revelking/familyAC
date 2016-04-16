@@ -16,6 +16,17 @@
 		2108543D1CC20F5C0091D649 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2108543B1CC20F5C0091D649 /* LaunchScreen.storyboard */; };
 		210854481CC20F5C0091D649 /* AdventureClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210854471CC20F5C0091D649 /* AdventureClubTests.m */; };
 		210854531CC20F5C0091D649 /* AdventureClubUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 210854521CC20F5C0091D649 /* AdventureClubUITests.m */; };
+		2108546B1CC21C460091D649 /* StorageMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = 210854681CC21C460091D649 /* StorageMgr.m */; };
+		2108546C1CC21C460091D649 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108546A1CC21C460091D649 /* Utilities.m */; };
+		210854711CC21DE00091D649 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108546F1CC21DE00091D649 /* Bolts.framework */; };
+		210854721CC21DE00091D649 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210854701CC21DE00091D649 /* Parse.framework */; };
+		210854741CC21DF10091D649 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210854731CC21DF10091D649 /* SystemConfiguration.framework */; };
+		210854761CC21E010091D649 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210854751CC21E010091D649 /* AudioToolbox.framework */; };
+		210854781CC21E1F0091D649 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 210854771CC21E1F0091D649 /* libsqlite3.tbd */; };
+		2108547A1CC21F4E0091D649 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 210854791CC21F4E0091D649 /* StoreKit.framework */; };
+		2108547C1CC21F5D0091D649 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547B1CC21F5D0091D649 /* CoreLocation.framework */; };
+		2108547E1CC21F6A0091D649 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547D1CC21F6A0091D649 /* Accounts.framework */; };
+		210854801CC21F790091D649 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547F1CC21F790091D649 /* Social.framework */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +65,21 @@
 		2108544E1CC20F5C0091D649 /* AdventureClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdventureClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		210854521CC20F5C0091D649 /* AdventureClubUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdventureClubUITests.m; sourceTree = "<group>"; };
 		210854541CC20F5C0091D649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		210854671CC21C460091D649 /* StorageMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageMgr.h; sourceTree = "<group>"; };
+		210854681CC21C460091D649 /* StorageMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageMgr.m; sourceTree = "<group>"; };
+		210854691CC21C460091D649 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		2108546A1CC21C460091D649 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		2108546D1CC21C550091D649 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		2108546E1CC21C850091D649 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		2108546F1CC21DE00091D649 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = AdventureClub/Bolts.framework; sourceTree = "<group>"; };
+		210854701CC21DE00091D649 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = AdventureClub/Parse.framework; sourceTree = "<group>"; };
+		210854731CC21DF10091D649 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		210854751CC21E010091D649 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		210854771CC21E1F0091D649 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		210854791CC21F4E0091D649 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		2108547B1CC21F5D0091D649 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2108547D1CC21F6A0091D649 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		2108547F1CC21F790091D649 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,6 +90,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				210854801CC21F790091D649 /* Social.framework in Frameworks */,
+				2108547E1CC21F6A0091D649 /* Accounts.framework in Frameworks */,
+				2108547C1CC21F5D0091D649 /* CoreLocation.framework in Frameworks */,
+				2108547A1CC21F4E0091D649 /* StoreKit.framework in Frameworks */,
+				210854781CC21E1F0091D649 /* libsqlite3.tbd in Frameworks */,
+				210854761CC21E010091D649 /* AudioToolbox.framework in Frameworks */,
+				210854741CC21DF10091D649 /* SystemConfiguration.framework in Frameworks */,
+				210854711CC21DE00091D649 /* Bolts.framework in Frameworks */,
+				210854721CC21DE00091D649 /* Parse.framework in Frameworks */,
 				29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,15 +145,12 @@
 		210854291CC20F5C0091D649 /* AdventureClub */ = {
 			isa = PBXGroup;
 			children = (
-				2108542D1CC20F5C0091D649 /* AppDelegate.h */,
-				2108542E1CC20F5C0091D649 /* AppDelegate.m */,
-				210854301CC20F5C0091D649 /* ViewController.h */,
-				210854311CC20F5C0091D649 /* ViewController.m */,
-				210854331CC20F5C0091D649 /* Main.storyboard */,
-				210854391CC20F5C0091D649 /* Assets.xcassets */,
-				2108543B1CC20F5C0091D649 /* LaunchScreen.storyboard */,
-				2108543E1CC20F5C0091D649 /* Info.plist */,
-				210854361CC20F5C0091D649 /* AdventureClub.xcdatamodeld */,
+				210854651CC21A340091D649 /* View */,
+				210854641CC21A260091D649 /* Model */,
+				210854631CC21A130091D649 /* Controller */,
+				210854621CC219CF0091D649 /* Utility */,
+				210854611CC219BF0091D649 /* 3rd */,
+				210854601CC219A50091D649 /* Constant */,
 				2108542A1CC20F5C0091D649 /* Supporting Files */,
 			);
 			path = AdventureClub;
@@ -127,7 +159,11 @@
 		2108542A1CC20F5C0091D649 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2108542D1CC20F5C0091D649 /* AppDelegate.h */,
+				2108542E1CC20F5C0091D649 /* AppDelegate.m */,
+				2108543E1CC20F5C0091D649 /* Info.plist */,
 				2108542B1CC20F5C0091D649 /* main.m */,
+				2108546E1CC21C850091D649 /* PrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -150,9 +186,79 @@
 			path = AdventureClubUITests;
 			sourceTree = "<group>";
 		};
+		210854601CC219A50091D649 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				2108546D1CC21C550091D649 /* Constants.h */,
+			);
+			name = Constant;
+			sourceTree = "<group>";
+		};
+		210854611CC219BF0091D649 /* 3rd */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = 3rd;
+			sourceTree = "<group>";
+		};
+		210854621CC219CF0091D649 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				210854671CC21C460091D649 /* StorageMgr.h */,
+				210854681CC21C460091D649 /* StorageMgr.m */,
+				210854691CC21C460091D649 /* Utilities.h */,
+				2108546A1CC21C460091D649 /* Utilities.m */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
+		210854631CC21A130091D649 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				210854661CC21A9A0091D649 /* ViewController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		210854641CC21A260091D649 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				210854361CC20F5C0091D649 /* AdventureClub.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		210854651CC21A340091D649 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				210854331CC20F5C0091D649 /* Main.storyboard */,
+				210854391CC20F5C0091D649 /* Assets.xcassets */,
+				2108543B1CC20F5C0091D649 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		210854661CC21A9A0091D649 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				210854301CC20F5C0091D649 /* ViewController.h */,
+				210854311CC20F5C0091D649 /* ViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		5BB45CA222473CCAD285C432 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2108547F1CC21F790091D649 /* Social.framework */,
+				2108547D1CC21F6A0091D649 /* Accounts.framework */,
+				2108547B1CC21F5D0091D649 /* CoreLocation.framework */,
+				210854791CC21F4E0091D649 /* StoreKit.framework */,
+				210854771CC21E1F0091D649 /* libsqlite3.tbd */,
+				210854751CC21E010091D649 /* AudioToolbox.framework */,
+				210854731CC21DF10091D649 /* SystemConfiguration.framework */,
+				2108546F1CC21DE00091D649 /* Bolts.framework */,
+				210854701CC21DE00091D649 /* Parse.framework */,
 				DDF3F6FD02F57CD7698AB8F0 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -348,10 +454,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2108546C1CC21C460091D649 /* Utilities.m in Sources */,
 				210854321CC20F5C0091D649 /* ViewController.m in Sources */,
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
 				210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */,
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
+				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +599,12 @@
 			baseConfigurationReference = 73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdventureClub",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AdventureClub/PrefixHeader.pch;
 				INFOPLIST_FILE = AdventureClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fy.AdventureClub;
@@ -503,6 +617,12 @@
 			baseConfigurationReference = 7216376B8709F76044ABE6FA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AdventureClub",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = AdventureClub/PrefixHeader.pch;
 				INFOPLIST_FILE = AdventureClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fy.AdventureClub;
