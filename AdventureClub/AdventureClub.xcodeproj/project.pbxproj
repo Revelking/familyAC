@@ -27,9 +27,6 @@
 		2108547C1CC21F5D0091D649 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547B1CC21F5D0091D649 /* CoreLocation.framework */; };
 		2108547E1CC21F6A0091D649 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547D1CC21F6A0091D649 /* Accounts.framework */; };
 		210854801CC21F790091D649 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547F1CC21F790091D649 /* Social.framework */; };
-		210854821CC2211D0091D649 /* zhang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210854811CC2211D0091D649 /* zhang.storyboard */; };
-		210854841CC221400091D649 /* zeng.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210854831CC221400091D649 /* zeng.storyboard */; };
-		210854861CC221540091D649 /* wang.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210854851CC221540091D649 /* wang.storyboard */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -83,9 +80,6 @@
 		2108547B1CC21F5D0091D649 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		2108547D1CC21F6A0091D649 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		2108547F1CC21F790091D649 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		210854811CC2211D0091D649 /* zhang.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = zhang.storyboard; sourceTree = "<group>"; };
-		210854831CC221400091D649 /* zeng.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = zeng.storyboard; sourceTree = "<group>"; };
-		210854851CC221540091D649 /* wang.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = wang.storyboard; sourceTree = "<group>"; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,9 +234,6 @@
 				210854331CC20F5C0091D649 /* Main.storyboard */,
 				210854391CC20F5C0091D649 /* Assets.xcassets */,
 				2108543B1CC20F5C0091D649 /* LaunchScreen.storyboard */,
-				210854811CC2211D0091D649 /* zhang.storyboard */,
-				210854831CC221400091D649 /* zeng.storyboard */,
-				210854851CC221540091D649 /* wang.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -388,11 +379,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				210854841CC221400091D649 /* zeng.storyboard in Resources */,
 				2108543D1CC20F5C0091D649 /* LaunchScreen.storyboard in Resources */,
-				210854821CC2211D0091D649 /* zhang.storyboard in Resources */,
 				2108543A1CC20F5C0091D649 /* Assets.xcassets in Resources */,
-				210854861CC221540091D649 /* wang.storyboard in Resources */,
 				210854351CC20F5C0091D649 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
