@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2108542C1CC20F5C0091D649 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108542B1CC20F5C0091D649 /* main.m */; };
 		2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108542E1CC20F5C0091D649 /* AppDelegate.m */; };
-		210854321CC20F5C0091D649 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 210854311CC20F5C0091D649 /* ViewController.m */; };
 		210854351CC20F5C0091D649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210854331CC20F5C0091D649 /* Main.storyboard */; };
 		210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 210854361CC20F5C0091D649 /* AdventureClub.xcdatamodeld */; };
 		2108543A1CC20F5C0091D649 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 210854391CC20F5C0091D649 /* Assets.xcassets */; };
@@ -28,6 +27,12 @@
 		2108547E1CC21F6A0091D649 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547D1CC21F6A0091D649 /* Accounts.framework */; };
 		210854801CC21F790091D649 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2108547F1CC21F790091D649 /* Social.framework */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
+		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
+		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
+		7C1E08651CC23CAD0067ED20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08641CC23CAD0067ED20 /* HomeViewController.m */; };
+		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
+		7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086A1CC247F40067ED20 /* SignInViewController.m */; };
+		7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086D1CC248200067ED20 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +57,6 @@
 		2108542B1CC20F5C0091D649 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2108542D1CC20F5C0091D649 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2108542E1CC20F5C0091D649 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		210854301CC20F5C0091D649 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		210854311CC20F5C0091D649 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		210854341CC20F5C0091D649 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		210854371CC20F5C0091D649 /* AdventureClub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AdventureClub.xcdatamodel; sourceTree = "<group>"; };
 		210854391CC20F5C0091D649 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -82,6 +85,18 @@
 		2108547F1CC21F790091D649 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		7C1E085E1CC233EA0067ED20 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		7C1E08631CC23CAD0067ED20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		7C1E08641CC23CAD0067ED20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		7C1E08661CC23D0B0067ED20 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		7C1E08671CC23D0B0067ED20 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		7C1E08691CC247F40067ED20 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
+		7C1E086A1CC247F40067ED20 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
+		7C1E086C1CC248200067ED20 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		7C1E086D1CC248200067ED20 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -241,8 +256,18 @@
 		210854661CC21A9A0091D649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				210854301CC20F5C0091D649 /* ViewController.h */,
-				210854311CC20F5C0091D649 /* ViewController.m */,
+				7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */,
+				7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */,
+				7C1E08631CC23CAD0067ED20 /* HomeViewController.h */,
+				7C1E08641CC23CAD0067ED20 /* HomeViewController.m */,
+				7C1E08661CC23D0B0067ED20 /* MessageViewController.h */,
+				7C1E08671CC23D0B0067ED20 /* MessageViewController.m */,
+				7C1E085D1CC233EA0067ED20 /* MineViewController.h */,
+				7C1E085E1CC233EA0067ED20 /* MineViewController.m */,
+				7C1E08691CC247F40067ED20 /* SignInViewController.h */,
+				7C1E086A1CC247F40067ED20 /* SignInViewController.m */,
+				7C1E086C1CC248200067ED20 /* SignUpViewController.h */,
+				7C1E086D1CC248200067ED20 /* SignUpViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -454,12 +479,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */,
 				2108546C1CC21C460091D649 /* Utilities.m in Sources */,
-				210854321CC20F5C0091D649 /* ViewController.m in Sources */,
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
+				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */,
+				7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */,
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
+				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
+				7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */,
+				7C1E08651CC23CAD0067ED20 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,6 +636,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AdventureClub/PrefixHeader.pch;
 				INFOPLIST_FILE = AdventureClub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fy.AdventureClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -624,6 +655,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = AdventureClub/PrefixHeader.pch;
 				INFOPLIST_FILE = AdventureClub/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Fy.AdventureClub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
