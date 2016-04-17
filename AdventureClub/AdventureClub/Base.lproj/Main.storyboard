@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="100" width="375" height="518"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="130" id="tpn-nV-0ac">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="130" id="tpn-nV-0ac" customClass="HomeTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tpn-nV-0ac" id="gaq-2r-pYl">
@@ -102,6 +102,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="8gC-Jk-Uq2" secondAttribute="trailing" constant="15" id="xt4-vd-PnT"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="activityNameLbl" destination="8gC-Jk-Uq2" id="8L5-BW-4Mw"/>
+                                            <outlet property="imageIV" destination="7f8-ZY-ReL" id="7wp-HP-5ee"/>
+                                            <outlet property="textViewTV" destination="oFF-8A-fSu" id="rJn-fw-GdI"/>
+                                            <outlet property="timeLbl" destination="28g-kc-5aI" id="oOb-Zn-1Yj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -122,10 +128,21 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="hRe-Km-zoV">
-                        <barButtonItem key="leftBarButtonItem" title="设置" id="41j-1L-VLU"/>
-                        <barButtonItem key="rightBarButtonItem" title="发布" id="Cxl-ih-PgU"/>
+                        <barButtonItem key="leftBarButtonItem" title="设置" id="41j-1L-VLU">
+                            <connections>
+                                <action selector="setUpAction:" destination="2sc-Hh-m6T" id="JT9-eY-5zf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="发布" id="Cxl-ih-PgU">
+                            <connections>
+                                <action selector="releaseAction:" destination="2sc-Hh-m6T" id="WUW-eQ-2zq"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="sortingControl" destination="IeH-Jw-gQw" id="lMX-0W-bD5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAn-wq-gah" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

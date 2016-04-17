@@ -99,4 +99,11 @@
 }
 */
 
+//点击设置会侧滑时调用
+- (IBAction)setUpAction:(UIBarButtonItem *)sender {
+}
+
+//发布活动按钮
+- (IBAction)releaseAction:(UIBarButtonItem *)sender {
+}
 @end
