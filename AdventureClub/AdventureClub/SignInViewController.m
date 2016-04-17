@@ -34,18 +34,15 @@
 }
 */
 
-- (IBAction)usernameTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)passwordTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
+//当用户点击登录按钮后调用
 - (IBAction)signInAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
+//当用户点击注册按钮后调用
 - (IBAction)registeredAction:(UIBarButtonItem *)sender {
 }
 
+//当用户点击忘记密码后调用
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 

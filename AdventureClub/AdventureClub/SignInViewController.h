@@ -11,11 +11,10 @@
 @interface SignInViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *photoIV;
-
 //用户名(textfield)
-- (IBAction)usernameTF:(UITextField *)sender forEvent:(UIEvent *)event;
+@property (weak, nonatomic) IBOutlet UITextField *usernameTF;
 //密码(textfield)
-- (IBAction)passwordTF:(UITextField *)sender forEvent:(UIEvent *)event;
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
 //确认按钮(Button按钮)
 - (IBAction)signInAction:(UIButton *)sender forEvent:(UIEvent *)event;
 //注册按钮(BarButtonItem)

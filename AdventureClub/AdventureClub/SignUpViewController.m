@@ -34,30 +34,7 @@
 }
 */
 
-- (IBAction)usernameTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)ageTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)genderTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)telTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)birthdayTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)nameTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)passwordTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
-- (IBAction)confirmPasswordTF:(UITextField *)sender forEvent:(UIEvent *)event {
-}
-
+//当用户点击确认注册按钮后调用
 - (IBAction)signUpAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 
