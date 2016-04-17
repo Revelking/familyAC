@@ -34,14 +34,9 @@
 		210A0F461CC37D6100FCE248 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */; };
 		210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
-		30F94B2D1CC3888800CB1666 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30F94B281CC3888800CB1666 /* 1.jpg */; };
-		30F94B2E1CC3888800CB1666 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30F94B291CC3888800CB1666 /* 2.jpg */; };
-		30F94B2F1CC3888800CB1666 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30F94B2A1CC3888800CB1666 /* 3.jpg */; };
-		30F94B301CC3888800CB1666 /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30F94B2B1CC3888800CB1666 /* 4.jpg */; };
-		30F94B311CC3888800CB1666 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30F94B2C1CC3888800CB1666 /* 5.jpg */; };
+		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
-		7C1E08651CC23CAD0067ED20 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08641CC23CAD0067ED20 /* HomeViewController.m */; };
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
 		7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086A1CC247F40067ED20 /* SignInViewController.m */; };
 		7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086D1CC248200067ED20 /* SignUpViewController.m */; };
@@ -110,11 +105,7 @@
 		210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDCycleScrollView.m; path = Lib/SDCycleScrollView/SDCycleScrollView.m; sourceTree = "<group>"; };
 		210A0F431CC37D6100FCE248 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SDExtension.h"; path = "Lib/SDCycleScrollView/UIView+SDExtension.h"; sourceTree = "<group>"; };
 		210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDExtension.m"; path = "Lib/SDCycleScrollView/UIView+SDExtension.m"; sourceTree = "<group>"; };
-		30F94B281CC3888800CB1666 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
-		30F94B291CC3888800CB1666 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
-		30F94B2A1CC3888800CB1666 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
-		30F94B2B1CC3888800CB1666 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
-		30F94B2C1CC3888800CB1666 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		30F94B321CC3937200CB1666 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -122,7 +113,6 @@
 		7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		7C1E08631CC23CAD0067ED20 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
-		7C1E08641CC23CAD0067ED20 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7C1E08661CC23D0B0067ED20 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		7C1E08671CC23D0B0067ED20 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
 		7C1E08691CC247F40067ED20 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -208,11 +198,6 @@
 		2108542A1CC20F5C0091D649 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				30F94B281CC3888800CB1666 /* 1.jpg */,
-				30F94B291CC3888800CB1666 /* 2.jpg */,
-				30F94B2A1CC3888800CB1666 /* 3.jpg */,
-				30F94B2B1CC3888800CB1666 /* 4.jpg */,
-				30F94B2C1CC3888800CB1666 /* 5.jpg */,
 				2108542D1CC20F5C0091D649 /* AppDelegate.h */,
 				2108542E1CC20F5C0091D649 /* AppDelegate.m */,
 				2108543E1CC20F5C0091D649 /* Info.plist */,
@@ -299,7 +284,7 @@
 				7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */,
 				7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */,
 				7C1E08631CC23CAD0067ED20 /* HomeViewController.h */,
-				7C1E08641CC23CAD0067ED20 /* HomeViewController.m */,
+				30F94B321CC3937200CB1666 /* HomeViewController.m */,
 				7CC038031CC37F36006FFA2B /* HomeTableViewCell.h */,
 				7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */,
 				7C1E08661CC23D0B0067ED20 /* MessageViewController.h */,
@@ -483,14 +468,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30F94B2E1CC3888800CB1666 /* 2.jpg in Resources */,
 				2108543D1CC20F5C0091D649 /* LaunchScreen.storyboard in Resources */,
-				30F94B301CC3888800CB1666 /* 4.jpg in Resources */,
-				30F94B2D1CC3888800CB1666 /* 1.jpg in Resources */,
-				30F94B311CC3888800CB1666 /* 5.jpg in Resources */,
 				2108543A1CC20F5C0091D649 /* Assets.xcassets in Resources */,
 				210854351CC20F5C0091D649 /* Main.storyboard in Resources */,
-				30F94B2F1CC3888800CB1666 /* 3.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,8 +559,8 @@
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
 				210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */,
 				7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */,
-				7C1E08651CC23CAD0067ED20 /* HomeViewController.m in Sources */,
 				210A0F451CC37D6100FCE248 /* SDCollectionViewCell.m in Sources */,
+				30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */,
 				210A0F461CC37D6100FCE248 /* SDCycleScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
