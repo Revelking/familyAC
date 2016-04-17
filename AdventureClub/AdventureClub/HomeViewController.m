@@ -7,8 +7,8 @@
 //
 
 #import "HomeViewController.h"
-
-@interface HomeViewController ()
+#import "SDCycleScrollView.h"
+@interface HomeViewController ()<SDCycleScrollViewDelegate>
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
 @end
 
@@ -17,6 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadingdata];
+    NSArray *imageNames = @[@"1.jpg",
+                            @"2.jpg",
+                            @"3.jpg",
+                            @"4.jpg",
+                            @"5.jpg"];
+    SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 180) shouldInfiniteLoop:YES imageNamesGroup:imageNames];
+    cycleScrollView.delegate = self;
+    cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
+    [self.tableView.tableHeaderView addSubview:cycleScrollView];
+    //self.tableView.tableHeaderView
     // Do any additional setup after loading the view.
 }
 //请求数据
@@ -106,4 +116,13 @@
 //发布活动按钮
 - (IBAction)releaseAction:(UIBarButtonItem *)sender {
 }
+#pragma mark - SDCycleScrollViewDelegate
+
+- (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
+{
+    NSLog(@"---点击了第%ld张图片", (long)index);
+    
+    [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
+}
+
 @end
