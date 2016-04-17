@@ -42,7 +42,7 @@
         [avi stopAnimating];
         //判断登录是否成功
         if (user) {
-            
+            NSLog(@"登录成功");
             //记忆用户名
             [Utilities setUserDefaults:@"Username" content:username];
             //将密码文本输入框中的内容清除
