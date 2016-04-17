@@ -9,21 +9,86 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
-
+@property(strong,nonatomic)NSMutableArray *objectsForShow;
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self loadingdata];
     // Do any additional setup after loading the view.
 }
+//请求数据
+-(void)loadingdata{
+    PFQuery *query=[PFQuery queryWithClassName:@"Activity"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+            NSLog(@"%@",objects);
+        }else{
+        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        
+        }
+    }];
+}
+//按点击量排序
+-(void)reorder{
+    PFQuery *query=[PFQuery queryWithClassName:@"Activity"];
+[query orderByAscending:@"click"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+        }else{
+        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        }
+    }];
 
+}
+//按最新的活动时间排序
+-(void)latesttime{
+    PFQuery *query=[PFQuery queryWithClassName:@"Activity"];
+    [query orderByAscending:@"updatedAt"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+        }else{
+        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        
+        }
+    }];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return _objectsForShow.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    PFObject *obj=_objectsForShow[indexPath.row];
+    
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    PFObject *card=_objectsForShow[indexPath.row];
+    NSNumber *click=card[@"click"];
+    
+   card[@"click"]=@([click integerValue]+1);
+  [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+      if (succeeded) {
+          NSLog(@"增加点击量");
+          
+      }
+  }];
+
+}
 /*
 #pragma mark - Navigation
 
