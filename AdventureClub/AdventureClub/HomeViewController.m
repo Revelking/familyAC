@@ -17,6 +17,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self loadingdata];
+    self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
+    UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"005.jpg"]];
+    backgroundView.frame = self.view.bounds;
+    [_View1 addSubview:backgroundView];
+    
+    UIScrollView *demoContainerView = [[UIScrollView alloc] initWithFrame:self.view.frame];
+    demoContainerView.contentSize = CGSizeMake(self.view.frame.size.width, 1200);
+    [_View1 addSubview:demoContainerView];
+    
+    
+    
     NSArray *imageNames = @[@"1.jpg",
                             @"2.jpg",
                             @"3.jpg",
@@ -25,7 +36,7 @@
     SDCycleScrollView *cycleScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 64, self.view.frame.size.width, 180) shouldInfiniteLoop:YES imageNamesGroup:imageNames];
     cycleScrollView.delegate = self;
     cycleScrollView.pageControlStyle = SDCycleScrollViewPageContolStyleAnimated;
-    [self.tableView.tableHeaderView addSubview:cycleScrollView];
+    [demoContainerView addSubview:cycleScrollView];
     //self.tableView.tableHeaderView
     // Do any additional setup after loading the view.
 }
