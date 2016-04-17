@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //连接prasee数据库（）根据parse数据库中的APPID和clientKey
+    [Parse setApplicationId:@"LNbES2AKeedIVjDao4XCcnBH0hQat15ABBElSM9a" clientKey:@"G94RxyWOdnDiHbH1XnxLGRqQbGoJwLRBt0u31Uu3"];
+    //激活parse数据库的大数据分析整合功能
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     return YES;
 }
 
