@@ -46,6 +46,7 @@
 		7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086A1CC247F40067ED20 /* SignInViewController.m */; };
 		7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086D1CC248200067ED20 /* SignUpViewController.m */; };
 		7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC6371CC490A400E74472 /* FaBuViewController.m */; };
+		7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */; };
 		7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */; };
 /* End PBXBuildFile section */
 
@@ -133,6 +134,8 @@
 		7C1E086D1CC248200067ED20 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		7CABC6361CC490A400E74472 /* FaBuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaBuViewController.h; sourceTree = "<group>"; };
 		7CABC6371CC490A400E74472 /* FaBuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaBuViewController.m; sourceTree = "<group>"; };
+		7CABC6391CC4CEEA00E74472 /* SheZhiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheZhiViewController.h; sourceTree = "<group>"; };
+		7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SheZhiViewController.m; sourceTree = "<group>"; };
 		7CC038031CC37F36006FFA2B /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +319,8 @@
 				7C1E086D1CC248200067ED20 /* SignUpViewController.m */,
 				7CABC6361CC490A400E74472 /* FaBuViewController.h */,
 				7CABC6371CC490A400E74472 /* FaBuViewController.m */,
+				7CABC6391CC4CEEA00E74472 /* SheZhiViewController.h */,
+				7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -592,6 +597,7 @@
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
+				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
 				210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */,
 				7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */,

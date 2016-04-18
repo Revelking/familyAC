@@ -19,7 +19,7 @@
 //活动名称
 @property (weak, nonatomic) IBOutlet UILabel *activityNameLbl;
 //活动内容简介
-@property (weak, nonatomic) IBOutlet UITextView *textViewTV;
+@property (weak, nonatomic) IBOutlet UILabel *textViewTV;
 //活动开始时间
 @property (weak, nonatomic) IBOutlet UILabel *timeLbl;
 

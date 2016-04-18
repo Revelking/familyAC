@@ -195,17 +195,16 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动活动" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oFF-8A-fSu">
-                                                    <rect key="frame" x="120" y="37" width="240" height="61"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-kc-5aI">
                                                     <rect key="frame" x="120" y="99" width="240" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-8D-VBh">
+                                                    <rect key="frame" x="120" y="41" width="240" height="54"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -214,12 +213,11 @@
                                                 <constraint firstItem="28g-kc-5aI" firstAttribute="leading" secondItem="7f8-ZY-ReL" secondAttribute="trailing" constant="5" id="2Qb-vQ-nAC"/>
                                                 <constraint firstItem="7f8-ZY-ReL" firstAttribute="top" secondItem="gaq-2r-pYl" secondAttribute="top" constant="15" id="A2L-KM-YJI"/>
                                                 <constraint firstItem="28g-kc-5aI" firstAttribute="bottom" secondItem="7f8-ZY-ReL" secondAttribute="bottom" id="Eh6-PG-CLF"/>
-                                                <constraint firstItem="oFF-8A-fSu" firstAttribute="leading" secondItem="7f8-ZY-ReL" secondAttribute="trailing" constant="5" id="QzA-Jw-kDh"/>
-                                                <constraint firstItem="28g-kc-5aI" firstAttribute="top" secondItem="oFF-8A-fSu" secondAttribute="bottom" constant="1" id="Tjd-sL-KGD"/>
+                                                <constraint firstItem="Alp-8D-VBh" firstAttribute="leading" secondItem="7f8-ZY-ReL" secondAttribute="trailing" constant="5" id="Mln-sW-W7E"/>
                                                 <constraint firstAttribute="trailing" secondItem="28g-kc-5aI" secondAttribute="trailing" constant="15" id="VYT-ZQ-lww"/>
                                                 <constraint firstItem="8gC-Jk-Uq2" firstAttribute="top" secondItem="gaq-2r-pYl" secondAttribute="top" constant="15" id="cT1-pU-1P7"/>
-                                                <constraint firstItem="oFF-8A-fSu" firstAttribute="top" secondItem="8gC-Jk-Uq2" secondAttribute="bottom" constant="1" id="cVK-1z-Zgx"/>
-                                                <constraint firstAttribute="trailing" secondItem="oFF-8A-fSu" secondAttribute="trailing" constant="15" id="d3H-Rg-r4d"/>
+                                                <constraint firstAttribute="trailing" secondItem="Alp-8D-VBh" secondAttribute="trailing" constant="15" id="gfu-6I-Vgy"/>
+                                                <constraint firstItem="Alp-8D-VBh" firstAttribute="top" secondItem="8gC-Jk-Uq2" secondAttribute="bottom" constant="5" id="hHE-bg-bJW"/>
                                                 <constraint firstItem="7f8-ZY-ReL" firstAttribute="leading" secondItem="gaq-2r-pYl" secondAttribute="leading" constant="15" id="pVC-c2-ahg"/>
                                                 <constraint firstAttribute="trailing" secondItem="8gC-Jk-Uq2" secondAttribute="trailing" constant="15" id="xt4-vd-PnT"/>
                                             </constraints>
@@ -227,7 +225,7 @@
                                         <connections>
                                             <outlet property="activityNameLbl" destination="8gC-Jk-Uq2" id="8L5-BW-4Mw"/>
                                             <outlet property="imageIV" destination="7f8-ZY-ReL" id="7wp-HP-5ee"/>
-                                            <outlet property="textViewTV" destination="oFF-8A-fSu" id="rJn-fw-GdI"/>
+                                            <outlet property="textViewTV" destination="Alp-8D-VBh" id="AWf-8f-Mby"/>
                                             <outlet property="timeLbl" destination="28g-kc-5aI" id="oOb-Zn-1Yj"/>
                                         </connections>
                                     </tableViewCell>
