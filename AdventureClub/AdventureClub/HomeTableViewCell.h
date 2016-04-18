@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol ActivityTableViewCellDelegate <NSObject>
+@required
+- (void)photoTapAtIndexPath:(NSIndexPath *)indexPath;
+@end
 @interface HomeTableViewCell : UITableViewCell
-
+@property (weak, nonatomic) id<ActivityTableViewCellDelegate>delegate;
+@property (strong,nonatomic) NSIndexPath *indexPath;
 //图片视图
 @property (weak, nonatomic) IBOutlet UIImageView *imageIV;
 //活动名称
