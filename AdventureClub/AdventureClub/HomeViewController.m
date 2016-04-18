@@ -13,6 +13,8 @@
 #import "KSGuideManager.h"
 @interface HomeViewController ()<SDCycleScrollViewDelegate,ActivityTableViewCellDelegate>
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
+@property(strong,nonatomic)NSMutableArray *acg;
+
 @end
 
 @implementation HomeViewController
@@ -21,6 +23,7 @@
     [super viewDidLoad];
     [self app];
     _objectsForShow=[NSMutableArray new];
+    _acg=[NSMutableArray new];
     self.tableView.tableFooterView=[UIView new];
     ;
    
@@ -29,6 +32,7 @@
     [self demoContainerView];
     
 }
+//app的引导页
 -(void)app{
     
     NSMutableArray *paths = [NSMutableArray new];
@@ -45,11 +49,16 @@
     if (self.sortingControl.selectedSegmentIndex==1){
         
         [self latesttime];
+    }else if (self.sortingControl.selectedSegmentIndex==3)
+    {
+        [self reorder];
+    
     }
 
 
 
 }
+//轮播
 -(void)demoContainerView{
     self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
     UIImageView *backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"005.jpg"]];
@@ -81,6 +90,7 @@
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
+        _acg=[NSMutableArray arrayWithArray:objects];
         if (!error) {
             for(PFObject *bji in objects) {
                 NSLog(@"jjj");
@@ -99,17 +109,25 @@
 //按点击量排序
 -(void)reorder{
     [_objectsForShow removeAllObjects];
+    [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
-[query orderByAscending:@"click"];
+[query orderByDescending:@"click"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [aiv stopAnimating];
+        _acg=[NSMutableArray arrayWithArray:objects];
         if (!error) {
-            NSLog(@"点击量");
-            [aiv stopAnimating];
-            _objectsForShow=[NSMutableArray arrayWithArray:objects];
-            [self.tableView reloadData];
+            for(PFObject *bji in objects) {
+                NSLog(@"jjj");
+                NSString *objectId=bji.objectId;
+                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
+                [_objectsForShow addObject:dict];
+                [self.tableView reloadData];
+                
+            }
         }else{
-        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+            
         }
     }];
 
@@ -117,20 +135,25 @@
 //按最新的活动时间排序
 -(void)latesttime{
     [_objectsForShow removeAllObjects];
+    [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
-    [query orderByAscending:@"updatedAt"];
+    [query orderByDescending:@"starttime"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
+        _acg=[NSMutableArray arrayWithArray:objects];
         if (!error) {
-            
-            NSLog(@"sdsds");
-            _objectsForShow=[NSMutableArray arrayWithArray:objects];
-            [self.tableView reloadData];
-            
+            for(PFObject *bji in objects) {
+                NSLog(@"jjj");
+                NSString *objectId=bji.objectId;
+                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
+                [_objectsForShow addObject:dict];
+                [self.tableView reloadData];
+                
+            }
         }else{
-        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
-        
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+            
         }
     }];
 
@@ -152,18 +175,44 @@
     
     cell.indexPath=indexPath;
     PFObject *obj=_objectsForShow[indexPath.row];
-    PFFile  *obj1=obj[@"acimage"];
-    NSString *photoURLStr=obj1.url;
+    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
+    image.objectId =obj[@"objectId"] ;
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",image];
+    PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSLog(@"%@",objects);
+        if (!error) {
+            for (PFObject *obj in objects) {
+                NSLog(@"dasdasdsadasasdas");
+                PFFile  *jb=obj[@"image"];
+                NSString *photoURLStr=jb.url;
+                NSLog(@"%@",photoURLStr);
+                //获取parse数据库中某个文件的网络路径
+                NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+                ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+                [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
+                
+            }
+        }else {
+        
+            NSLog(@"asdasdsa");
+        
+        }
+    }];
     
-    //获取parse数据库中某个文件的网络路径
-    NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-    ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-    [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
-    NSString *content = obj[@"maintitle"];
+    
+//    PFFile  *obj1=obj[@"acimage"];
+//    NSString *photoURLStr=obj1.url;
+//    
+//    //获取parse数据库中某个文件的网络路径
+//    NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+//    ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+//    [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+    NSString *content = obj[@"name"];
     NSLog(@"content = %@",content);
-    cell.activityNameLbl.text=obj[@"maintitle"];
+    cell.activityNameLbl.text=obj[@"name"];
     cell.textViewTV.text=obj[@"contenttext"];
-    NSDate  *time=obj[@"starttime"];
+    NSDate  *time=obj[@"time"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"wuhan"];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -175,10 +224,15 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    PFObject *card=_objectsForShow[indexPath.row];
+    PFObject *card=_acg[indexPath.row];
     NSNumber *click=card[@"click"];
     
    card[@"click"]=@([click integerValue]+1);
+    
+//    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
+//    image.objectId =card[@"objectId"];
+//    NSInteger *click=image[@"click"];
+//    image[@"click"]=@([click integerValue]+1);
   [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
       if (succeeded) {
           NSLog(@"增加点击量");
@@ -213,12 +267,54 @@
     [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
 }
 - (void)photoTapAtIndexPath:(NSIndexPath *)indexPath{
-    
     //UIScreen mainScreen是获取屏幕的实例（全屏显示）
     _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     //激活用户交互功能
     _zoomIV.userInteractionEnabled = YES;
     _zoomIV.backgroundColor = [UIColor blackColor];
+    
+    
+    PFObject *obj=_objectsForShow[indexPath.row];
+    
+    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
+    image.objectId =obj[@"objectId"] ;
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",image];
+    PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSLog(@"%@",objects);
+        if (!error) {
+            for (PFObject *obj in objects) {
+                NSLog(@"dasdasdsadasasdas");
+                PFFile  *jb=obj[@"image"];
+                NSString *photoURLStr=jb.url;
+                NSLog(@"%@",photoURLStr);
+                //获取parse数据库中某个文件的网络路径
+                NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+                ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+                [_zoomIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
+            }
+        }else {
+            
+            NSLog(@"asdasdsa");
+            
+        }
+    }];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//    //UIScreen mainScreen是获取屏幕的实例（全屏显示）
+//    _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    //激活用户交互功能
+//    _zoomIV.userInteractionEnabled = YES;
+//    _zoomIV.backgroundColor = [UIColor blackColor];
+    
+/*
     PFObject *obj=_objectsForShow[indexPath.row];
     
     PFFile  *obj1=obj[@"acimage"];
@@ -228,6 +324,8 @@
     NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
     ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
     [_zoomIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+    */
+    
     ////使用SD所写的这一行代码，看似比我们上面注释掉的那一行代码复杂，但是我们上面自己写的那一行代码执行的是同步加载，而SD执行的是异步加载，同步加载在加载过程中会锁死页面而异步不会
     //    [_zoomIV sd_setImageWithURL:[NSURL URLWithString:activity.imgUrl] placeholderImage:[UIImage imageNamed:@"Image"]];
     // _zoomIV.image = [self imageUrl:activity.imgUrl];
