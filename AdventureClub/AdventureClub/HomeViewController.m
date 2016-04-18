@@ -82,8 +82,14 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
         if (!error) {
-            _objectsForShow = [NSMutableArray arrayWithArray:objects];
-            [self.tableView reloadData];
+            for(PFObject *bji in objects) {
+                NSLog(@"jjj");
+                NSString *objectId=bji.objectId;
+                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
+                [_objectsForShow addObject:dict];
+                [self.tableView reloadData];
+            
+            }
         }else{
         [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
         
