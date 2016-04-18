@@ -10,7 +10,8 @@
 #import "SDCycleScrollView.h"
 #import "HomeTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-@interface HomeViewController ()<SDCycleScrollViewDelegate>
+#import "KSGuideManager.h"
+@interface HomeViewController ()<SDCycleScrollViewDelegate,ActivityTableViewCellDelegate>
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
 @end
 
@@ -18,13 +19,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self app];
     _objectsForShow=[NSMutableArray new];
     self.tableView.tableFooterView=[UIView new];
-    
+    ;
    
   [self.sortingControl addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self loadingdata];
     [self demoContainerView];
+    
+}
+-(void)app{
+    
+    NSMutableArray *paths = [NSMutableArray new];
+    
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"1" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"2" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"3" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"4" ofType:@"jpg"]];
+    
+    [[KSGuideManager shared] showGuideViewWithImages:paths];
     
 }
 -(void)segmentAction{
@@ -128,6 +142,9 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     HomeTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    cell.delegate=self;
+    
+    cell.indexPath=indexPath;
     PFObject *obj=_objectsForShow[indexPath.row];
     PFFile  *obj1=obj[@"acimage"];
     NSString *photoURLStr=obj1.url;
@@ -189,5 +206,39 @@
     
     [self.navigationController pushViewController:[NSClassFromString(@"DemoVCWithXib") new] animated:YES];
 }
-
+- (void)photoTapAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //UIScreen mainScreen是获取屏幕的实例（全屏显示）
+    _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //激活用户交互功能
+    _zoomIV.userInteractionEnabled = YES;
+    _zoomIV.backgroundColor = [UIColor blackColor];
+    PFObject *obj=_objectsForShow[indexPath.row];
+    
+    PFFile  *obj1=obj[@"acimage"];
+    NSString *photoURLStr=obj1.url;
+    
+    //获取parse数据库中某个文件的网络路径
+    NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+    ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+    [_zoomIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+    ////使用SD所写的这一行代码，看似比我们上面注释掉的那一行代码复杂，但是我们上面自己写的那一行代码执行的是同步加载，而SD执行的是异步加载，同步加载在加载过程中会锁死页面而异步不会
+    //    [_zoomIV sd_setImageWithURL:[NSURL URLWithString:activity.imgUrl] placeholderImage:[UIImage imageNamed:@"Image"]];
+    // _zoomIV.image = [self imageUrl:activity.imgUrl];
+    //短边撑满，等比缩放
+    _zoomIV.contentMode = UIViewContentModeScaleAspectFit;
+    //[UIApplication sharedApplication]获得当前App的实例，keyWindow方法可以拿到App实例的主窗口
+    [[UIApplication sharedApplication].keyWindow addSubview:_zoomIV];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zoomTap:)];
+    [_zoomIV addGestureRecognizer:tap];
+}
+- (void)zoomTap:(UITapGestureRecognizer *)sender{
+    NSLog(@"要缩小");
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        [_zoomIV removeFromSuperview];
+        [_zoomIV removeGestureRecognizer:sender];
+        _zoomIV = nil;
+    }
+    
+}
 @end

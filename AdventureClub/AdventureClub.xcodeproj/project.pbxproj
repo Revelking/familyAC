@@ -34,6 +34,11 @@
 		210A0F461CC37D6100FCE248 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */; };
 		210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
+		307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 307A475E1CC4C90E008AE94D /* KSGuideManager.m */; };
+		307A47641CC4CAAE008AE94D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47601CC4CAAE008AE94D /* 1.jpg */; };
+		307A47651CC4CAAE008AE94D /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47611CC4CAAE008AE94D /* 2.jpg */; };
+		307A47661CC4CAAE008AE94D /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47621CC4CAAE008AE94D /* 3.jpg */; };
+		307A47671CC4CAAE008AE94D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47631CC4CAAE008AE94D /* 4.jpg */; };
 		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
@@ -106,6 +111,12 @@
 		210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDCycleScrollView.m; path = Lib/SDCycleScrollView/SDCycleScrollView.m; sourceTree = "<group>"; };
 		210A0F431CC37D6100FCE248 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SDExtension.h"; path = "Lib/SDCycleScrollView/UIView+SDExtension.h"; sourceTree = "<group>"; };
 		210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDExtension.m"; path = "Lib/SDCycleScrollView/UIView+SDExtension.m"; sourceTree = "<group>"; };
+		307A475D1CC4C90E008AE94D /* KSGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSGuideManager.h; path = src/KSGuideManager.h; sourceTree = "<group>"; };
+		307A475E1CC4C90E008AE94D /* KSGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSGuideManager.m; path = src/KSGuideManager.m; sourceTree = "<group>"; };
+		307A47601CC4CAAE008AE94D /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		307A47611CC4CAAE008AE94D /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		307A47621CC4CAAE008AE94D /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		307A47631CC4CAAE008AE94D /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		30F94B321CC3937200CB1666 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +212,10 @@
 		2108542A1CC20F5C0091D649 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				307A47601CC4CAAE008AE94D /* 1.jpg */,
+				307A47611CC4CAAE008AE94D /* 2.jpg */,
+				307A47621CC4CAAE008AE94D /* 3.jpg */,
+				307A47631CC4CAAE008AE94D /* 4.jpg */,
 				2108542D1CC20F5C0091D649 /* AppDelegate.h */,
 				2108542E1CC20F5C0091D649 /* AppDelegate.m */,
 				2108543E1CC20F5C0091D649 /* Info.plist */,
@@ -239,6 +254,7 @@
 		210854611CC219BF0091D649 /* 3rd */ = {
 			isa = PBXGroup;
 			children = (
+				307A47591CC4C7AC008AE94D /* src */,
 				210A0F301CC37D0300FCE248 /* Lib */,
 			);
 			name = 3rd;
@@ -339,6 +355,15 @@
 				210A0F3A1CC37D5200FCE248 /* TAPageControl.m */,
 			);
 			name = PageControl;
+			sourceTree = "<group>";
+		};
+		307A47591CC4C7AC008AE94D /* src */ = {
+			isa = PBXGroup;
+			children = (
+				307A475D1CC4C90E008AE94D /* KSGuideManager.h */,
+				307A475E1CC4C90E008AE94D /* KSGuideManager.m */,
+			);
+			name = src;
 			sourceTree = "<group>";
 		};
 		5BB45CA222473CCAD285C432 /* Frameworks */ = {
@@ -474,6 +499,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2108543D1CC20F5C0091D649 /* LaunchScreen.storyboard in Resources */,
+				307A47671CC4CAAE008AE94D /* 4.jpg in Resources */,
+				307A47641CC4CAAE008AE94D /* 1.jpg in Resources */,
+				307A47651CC4CAAE008AE94D /* 2.jpg in Resources */,
+				307A47661CC4CAAE008AE94D /* 3.jpg in Resources */,
 				2108543A1CC20F5C0091D649 /* Assets.xcassets in Resources */,
 				210854351CC20F5C0091D649 /* Main.storyboard in Resources */,
 			);
@@ -557,6 +586,7 @@
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
 				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,
+				307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */,
 				210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */,
 				7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */,
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
