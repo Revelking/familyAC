@@ -4,9 +4,10 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--消息-->
+        <!--互动-->
         <scene sceneID="s7U-3w-oaV">
             <objects>
                 <viewController id="jQy-lI-cmd" customClass="MessageViewController" sceneMemberID="viewController">
@@ -19,12 +20,56 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="消息" id="xMF-4t-kZO"/>
+                    <navigationItem key="navigationItem" title="互动" id="xMF-4t-kZO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83W-2g-5lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.5" y="460.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TKG-v9-PWE">
+            <objects>
+                <viewController id="R51-eD-Ift" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kRl-Mk-Ayy"/>
+                        <viewControllerLayoutGuide type="bottom" id="BzA-jb-lxd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9Us-Qt-UIT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFa-mt-FSZ">
+                                <rect key="frame" x="281" y="0.0" width="94" height="667"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLR-MW-g4a">
+                                <rect key="frame" x="0.0" y="0.0" width="281" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-aM-9Tg">
+                                        <rect key="frame" x="23" y="25" width="98" height="92"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="XFa-mt-FSZ" secondAttribute="trailing" id="8Eb-H1-GfV"/>
+                            <constraint firstItem="XFa-mt-FSZ" firstAttribute="leading" secondItem="xLR-MW-g4a" secondAttribute="trailing" id="BDT-Sk-bNk"/>
+                            <constraint firstItem="xLR-MW-g4a" firstAttribute="leading" secondItem="9Us-Qt-UIT" secondAttribute="leading" id="CfU-5A-HEi"/>
+                            <constraint firstItem="BzA-jb-lxd" firstAttribute="top" secondItem="XFa-mt-FSZ" secondAttribute="bottom" id="Pxr-ai-rah"/>
+                            <constraint firstItem="XFa-mt-FSZ" firstAttribute="width" secondItem="xLR-MW-g4a" secondAttribute="width" multiplier="1:3" id="fwA-ml-XyB"/>
+                            <constraint firstItem="BzA-jb-lxd" firstAttribute="top" secondItem="xLR-MW-g4a" secondAttribute="bottom" id="rCS-FI-6fi"/>
+                            <constraint firstItem="XFa-mt-FSZ" firstAttribute="top" secondItem="9Us-Qt-UIT" secondAttribute="top" id="rLC-az-WI7"/>
+                            <constraint firstItem="xLR-MW-g4a" firstAttribute="top" secondItem="9Us-Qt-UIT" secondAttribute="top" id="xkz-of-OOX"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mAj-37-qLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792.5" y="-1078.5"/>
         </scene>
         <!--首页-->
         <scene sceneID="nFS-L6-IgF">
