@@ -7,7 +7,7 @@
 //
 
 #import "SignInViewController.h"
-
+#import "resetpasswordViewController.h"
 @interface SignInViewController ()
 
 @end
@@ -99,7 +99,11 @@
 
 //当用户点击忘记密码后调用
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    [Utilities getStoryboardInstanceInstance:@"Storyboard1" byIdentity:@"resetpassword"];
+    UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    //更具名称"Second"，在故事版“Storyboard‘中找到对应的页面
+    resetpasswordViewController *cd = [stryboard instantiateViewControllerWithIdentifier:@"Second"];
+    [self.navigationController presentViewController:cd animated:YES completion:nil];
+    NSLog(@"哈哈哈");
     
     
     
