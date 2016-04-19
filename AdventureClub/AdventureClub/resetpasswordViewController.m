@@ -38,17 +38,33 @@
     NSString *email=_email.text;
     NSString *an=_account.text;
     if (email.length==0||an.length==0) {
-        [Utilities popUpAlertViewWithMsg:@"提示" andTitle:@"您填写的信息为空" onView:self];
+        [Utilities popUpAlertViewWithMsg:@"您填写的信息为空" andTitle:@"提示"  onView:self];
         return;
         
     }
     [PFUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            [Utilities popUpAlertViewWithMsg:@"提示" andTitle:@"重置密码的方式，我们已经通过邮箱的方法发送给您，请关注你的邮箱" onView:self];
+            
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"重置密码的方式，我们已经通过邮箱的方法发送给您，请关注你的邮箱" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ac=[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self .navigationController popViewControllerAnimated:YES];
+            } ];
+            
+            [alertView addAction:ac];
+            
+            [self  presentViewController:alertView animated:YES completion:nil];
         }else {
         
         
-            [Utilities popUpAlertViewWithMsg:@"提示" andTitle:@"网络繁忙，请稍后重视" onView:self];
+            
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"网络繁忙，请稍后重视" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ac=[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                [self .navigationController popViewControllerAnimated:YES];
+            } ];
+            
+            [alertView addAction:ac];
+            
+            [self  presentViewController:alertView animated:YES completion:nil];
         }
         
         
