@@ -99,6 +99,11 @@
 
 //当用户点击忘记密码后调用
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    [Utilities getStoryboardInstanceInstance:@"Storyboard1" byIdentity:@"resetpassword"];
+    
+    
+    
+    
 }
 
 //当键盘右下角的确认按钮被按时收键盘
