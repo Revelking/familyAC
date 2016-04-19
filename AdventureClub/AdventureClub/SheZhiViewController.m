@@ -7,7 +7,9 @@
 //
 
 #import "SheZhiViewController.h"
-
+#import "PersonalViewController.h"
+#import "TheMessageViewController.h"
+#import "resetpasswordViewController.h"
 @interface SheZhiViewController ()
 
 @end
@@ -33,5 +35,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
 @end

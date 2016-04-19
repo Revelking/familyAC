@@ -253,6 +253,7 @@
 
 //点击设置会侧滑时调用
 - (IBAction)setUpAction:(UIBarButtonItem *)sender {
+//    [[NSNotificationCenter defaultCenter]postNotificationName:@"MenuSwitch" object:nil];
 }
 
 //发布活动按钮
