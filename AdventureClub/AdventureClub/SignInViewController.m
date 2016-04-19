@@ -8,6 +8,7 @@
 
 #import "SignInViewController.h"
 #import "resetpasswordViewController.h"
+#import "TabBarViewController.h"
 @interface SignInViewController ()
 
 @end
@@ -47,6 +48,9 @@
             [Utilities setUserDefaults:@"Username" content:username];
             //将密码文本输入框中的内容清除
             _passwordTF.text = nil;
+            //根据故事版的名称，和故事版中页面的名称
+            TabBarViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"tab"];
+            [self presentViewController:vc animated:YES completion:nil];
             
         } else {
             switch (error.code) {
@@ -102,7 +106,7 @@
     UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil];
     //更具名称"Second"，在故事版“Storyboard‘中找到对应的页面
     resetpasswordViewController *cd = [stryboard instantiateViewControllerWithIdentifier:@"resetpassword"];
-    [self.navigationController presentViewController:cd animated:YES completion:nil];
+    [self.navigationController pushViewController:cd animated:YES];
     NSLog(@"哈哈哈");
     
     
