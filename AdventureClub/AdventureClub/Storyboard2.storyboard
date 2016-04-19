@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="wCT-OR-fh9">
+            <objects>
+                <viewController id="8ef-3n-0ix" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PiM-ZV-ceM"/>
+                        <viewControllerLayoutGuide type="bottom" id="gRR-EJ-frO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="101-mB-Y68">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bGD-Yv-hng">
+                                <rect key="frame" x="125" y="40" width="125" height="108"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="粉丝20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaL-gy-nev">
+                                <rect key="frame" x="20" y="178" width="58" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="关注10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ywb-RC-SBr">
+                                <rect key="frame" x="296" y="178" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS8-ay-nDi">
+                                <rect key="frame" x="51" y="248" width="46" height="30"/>
+                                <state key="normal" title="投稿"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7S-HA-2Bd">
+                                <rect key="frame" x="270" y="248" width="46" height="30"/>
+                                <state key="normal" title="评论"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2H-zg-SQi">
+                                <rect key="frame" x="164" y="248" width="46" height="30"/>
+                                <state key="normal" title="收藏"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bGD-Yv-hng" firstAttribute="top" secondItem="PiM-ZV-ceM" secondAttribute="bottom" constant="20" id="7UB-pQ-hxZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Ywb-RC-SBr" secondAttribute="trailing" constant="20" id="8Yr-6o-jqX"/>
+                            <constraint firstItem="gaL-gy-nev" firstAttribute="top" secondItem="bGD-Yv-hng" secondAttribute="bottom" constant="20" id="BET-Dm-BE0"/>
+                            <constraint firstItem="bGD-Yv-hng" firstAttribute="leading" secondItem="101-mB-Y68" secondAttribute="leading" constant="125" id="HsB-op-LzZ"/>
+                            <constraint firstItem="Ywb-RC-SBr" firstAttribute="top" secondItem="PiM-ZV-ceM" secondAttribute="bottom" constant="20" id="fh4-kK-E7T"/>
+                            <constraint firstItem="gaL-gy-nev" firstAttribute="leading" secondItem="101-mB-Y68" secondAttribute="leading" constant="20" id="okC-UU-dcJ"/>
+                            <constraint firstAttribute="trailing" secondItem="bGD-Yv-hng" secondAttribute="trailing" constant="125" id="tMb-UQ-PBO"/>
+                            <constraint firstItem="gRR-EJ-frO" firstAttribute="top" secondItem="bGD-Yv-hng" secondAttribute="bottom" constant="519" id="y6H-ye-6CR"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KA5-cw-64A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="641.5" y="315.5"/>
+        </scene>
+    </scenes>
 </document>
