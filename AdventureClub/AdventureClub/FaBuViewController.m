@@ -38,6 +38,14 @@
 - (IBAction)faBuAction:(UIBarButtonItem *)sender {
 }
 
+//开始时间按钮
+- (IBAction)kaiShiTimeAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+//结束时间按钮
+- (IBAction)jieShuTimeAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
 //当键盘右下角的确认按钮被按时收键盘
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
