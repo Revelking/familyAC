@@ -37,6 +37,7 @@
 		300CFC731CC5C1E300E3F040 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */; };
 		300CFC751CC5C1FC00E3F040 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */; };
 		300CFC771CC5C20F00E3F040 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */; };
+		300CFC7A1CC5C5CA00E3F040 /* resetpasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300CFC791CC5C5CA00E3F040 /* resetpasswordViewController.m */; };
 		307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 307A475E1CC4C90E008AE94D /* KSGuideManager.m */; };
 		307A47641CC4CAAE008AE94D /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47601CC4CAAE008AE94D /* 1.jpg */; };
 		307A47651CC4CAAE008AE94D /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47611CC4CAAE008AE94D /* 2.jpg */; };
@@ -118,6 +119,8 @@
 		300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
 		300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
 		300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
+		300CFC781CC5C5CA00E3F040 /* resetpasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = resetpasswordViewController.h; sourceTree = "<group>"; };
+		300CFC791CC5C5CA00E3F040 /* resetpasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = resetpasswordViewController.m; sourceTree = "<group>"; };
 		307A475D1CC4C90E008AE94D /* KSGuideManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSGuideManager.h; path = src/KSGuideManager.h; sourceTree = "<group>"; };
 		307A475E1CC4C90E008AE94D /* KSGuideManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSGuideManager.m; path = src/KSGuideManager.m; sourceTree = "<group>"; };
 		307A47601CC4CAAE008AE94D /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
@@ -330,6 +333,8 @@
 				7CABC6371CC490A400E74472 /* FaBuViewController.m */,
 				7CABC6391CC4CEEA00E74472 /* SheZhiViewController.h */,
 				7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */,
+				300CFC781CC5C5CA00E3F040 /* resetpasswordViewController.h */,
+				300CFC791CC5C5CA00E3F040 /* resetpasswordViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,
 				307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */,
 				210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */,
+				300CFC7A1CC5C5CA00E3F040 /* resetpasswordViewController.m in Sources */,
 				7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */,
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,

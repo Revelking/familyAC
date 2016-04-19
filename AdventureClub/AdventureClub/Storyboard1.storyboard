@@ -1,7 +1,82 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Resetpassword View Controller-->
+        <scene sceneID="NR3-gc-aBm">
+            <objects>
+                <viewController storyboardIdentifier="resetpassword" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8qC-Xa-qVU" customClass="resetpasswordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lMa-XY-ji6"/>
+                        <viewControllerLayoutGuide type="bottom" id="syy-I2-VbQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hqp-cL-GqU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64E-i8-3WD">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="jkJ-hk-RJX"/>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入您的账号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gGw-ei-rHc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="WCD-Qw-lpZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="ahS-et-Mth"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入你的邮箱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fND-CZ-BV8">
+                                <rect key="frame" x="0.0" y="105" width="375" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3yX-pr-vxS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B1K-z4-opH">
+                                <rect key="frame" x="60" y="155" width="255" height="50"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="yFp-hd-PYA"/>
+                                </constraints>
+                                <state key="normal" title="确认重置密码"/>
+                                <connections>
+                                    <action selector="emailAction:forEvent:" destination="8qC-Xa-qVU" eventType="touchUpInside" id="32F-na-fpe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B1K-z4-opH" firstAttribute="top" secondItem="fND-CZ-BV8" secondAttribute="bottom" constant="10" id="FJs-an-YTj"/>
+                            <constraint firstAttribute="trailing" secondItem="fND-CZ-BV8" secondAttribute="trailing" id="IHI-be-f9T"/>
+                            <constraint firstAttribute="trailing" secondItem="64E-i8-3WD" secondAttribute="trailing" id="Kra-8h-gDB"/>
+                            <constraint firstAttribute="trailing" secondItem="B1K-z4-opH" secondAttribute="trailing" constant="60" id="MjF-Zc-GqS"/>
+                            <constraint firstItem="fND-CZ-BV8" firstAttribute="leading" secondItem="hqp-cL-GqU" secondAttribute="leading" id="QEq-TO-dii"/>
+                            <constraint firstItem="64E-i8-3WD" firstAttribute="leading" secondItem="hqp-cL-GqU" secondAttribute="leading" id="QiO-z3-uJy"/>
+                            <constraint firstItem="gGw-ei-rHc" firstAttribute="leading" secondItem="hqp-cL-GqU" secondAttribute="leading" id="cmB-CB-uKd"/>
+                            <constraint firstItem="64E-i8-3WD" firstAttribute="top" secondItem="hqp-cL-GqU" secondAttribute="top" id="cvy-Vh-omD"/>
+                            <constraint firstItem="B1K-z4-opH" firstAttribute="leading" secondItem="hqp-cL-GqU" secondAttribute="leading" constant="60" id="dd8-ek-ywr"/>
+                            <constraint firstItem="gGw-ei-rHc" firstAttribute="top" secondItem="64E-i8-3WD" secondAttribute="bottom" constant="20" id="ixd-GZ-cwR"/>
+                            <constraint firstItem="fND-CZ-BV8" firstAttribute="top" secondItem="gGw-ei-rHc" secondAttribute="bottom" constant="1" id="r4h-0a-YQ3"/>
+                            <constraint firstAttribute="trailing" secondItem="gGw-ei-rHc" secondAttribute="trailing" id="rlZ-h4-hRd"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="account" destination="gGw-ei-rHc" id="7ba-00-0hP"/>
+                        <outlet property="email" destination="fND-CZ-BV8" id="Bm0-j6-nkT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54B-BM-vca" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="501" y="314"/>
+        </scene>
+    </scenes>
 </document>
