@@ -31,6 +31,9 @@
     [self loadingdata];
     [self demoContainerView];
     
+    
+    
+    
 }
 //app的引导页
 -(void)app{
