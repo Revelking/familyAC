@@ -253,7 +253,8 @@
 
 //点击设置会侧滑时调用
 - (IBAction)setUpAction:(UIBarButtonItem *)sender {
-//    [[NSNotificationCenter defaultCenter]postNotificationName:@"MenuSwitch" object:nil];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"MenuSwitch" object:nil];
+    
 }
 
 //发布活动按钮
@@ -346,4 +347,17 @@
     }
     
 }
+
+//每次页面数显后
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
+}
+
+//每次页面消失后
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
+}
+
 @end
