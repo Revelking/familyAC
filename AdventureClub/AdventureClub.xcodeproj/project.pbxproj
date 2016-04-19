@@ -53,6 +53,7 @@
 		7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */; };
 		7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */; };
 		E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F51CC5FBB20091C15F /* PersonalViewController.m */; };
+		E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F867F41CC5FBB20091C15F /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
 		E6F867F51CC5FBB20091C15F /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusOnTableViewController.h; sourceTree = "<group>"; };
+		E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusOnTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +321,8 @@
 		210854661CC21A9A0091D649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */,
+				E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */,
 				E6F867F41CC5FBB20091C15F /* PersonalViewController.h */,
 				E6F867F51CC5FBB20091C15F /* PersonalViewController.m */,
 				7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */,
@@ -622,6 +627,7 @@
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
+				E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
 				210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */,
 				7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */,
