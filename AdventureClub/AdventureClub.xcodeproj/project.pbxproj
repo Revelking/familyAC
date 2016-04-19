@@ -49,10 +49,13 @@
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
 		7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086A1CC247F40067ED20 /* SignInViewController.m */; };
 		7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E086D1CC248200067ED20 /* SignUpViewController.m */; };
+		7C8BE9A11CC62BC800188801 /* CeHuaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BE9A01CC62BC800188801 /* CeHuaViewController.m */; };
 		7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC6371CC490A400E74472 /* FaBuViewController.m */; };
 		7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */; };
 		7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */; };
 		E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F51CC5FBB20091C15F /* PersonalViewController.m */; };
+		E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */; };
+		E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867FB1CC613E90091C15F /* TheMessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -142,6 +145,8 @@
 		7C1E086A1CC247F40067ED20 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		7C1E086C1CC248200067ED20 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		7C1E086D1CC248200067ED20 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		7C8BE99F1CC62BC800188801 /* CeHuaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CeHuaViewController.h; sourceTree = "<group>"; };
+		7C8BE9A01CC62BC800188801 /* CeHuaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CeHuaViewController.m; sourceTree = "<group>"; };
 		7CABC6361CC490A400E74472 /* FaBuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaBuViewController.h; sourceTree = "<group>"; };
 		7CABC6371CC490A400E74472 /* FaBuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaBuViewController.m; sourceTree = "<group>"; };
 		7CABC6391CC4CEEA00E74472 /* SheZhiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SheZhiViewController.h; sourceTree = "<group>"; };
@@ -151,6 +156,10 @@
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6F867F41CC5FBB20091C15F /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
 		E6F867F51CC5FBB20091C15F /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
+		E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusOnTableViewController.h; sourceTree = "<group>"; };
+		E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusOnTableViewController.m; sourceTree = "<group>"; };
+		E6F867FA1CC613E90091C15F /* TheMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMessageViewController.h; sourceTree = "<group>"; };
+		E6F867FB1CC613E90091C15F /* TheMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMessageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +327,10 @@
 		210854661CC21A9A0091D649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E6F867FA1CC613E90091C15F /* TheMessageViewController.h */,
+				E6F867FB1CC613E90091C15F /* TheMessageViewController.m */,
+				E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */,
+				E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */,
 				E6F867F41CC5FBB20091C15F /* PersonalViewController.h */,
 				E6F867F51CC5FBB20091C15F /* PersonalViewController.m */,
 				7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */,
@@ -340,6 +353,8 @@
 				7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */,
 				300CFC781CC5C5CA00E3F040 /* resetpasswordViewController.h */,
 				300CFC791CC5C5CA00E3F040 /* resetpasswordViewController.m */,
+				7C8BE99F1CC62BC800188801 /* CeHuaViewController.h */,
+				7C8BE9A01CC62BC800188801 /* CeHuaViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -606,12 +621,14 @@
 			files = (
 				7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */,
 				7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */,
+				E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */,
 				210A0F3D1CC37D5200FCE248 /* TADotView.m in Sources */,
 				210A0F3E1CC37D5200FCE248 /* TAPageControl.m in Sources */,
 				210A0F3B1CC37D5200FCE248 /* TAAbstractDotView.m in Sources */,
 				2108546C1CC21C460091D649 /* Utilities.m in Sources */,
 				E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */,
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
+				7C8BE9A11CC62BC800188801 /* CeHuaViewController.m in Sources */,
 				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,
 				307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */,
@@ -622,6 +639,7 @@
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
+				E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
 				210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */,
 				7C1E086E1CC248200067ED20 /* SignUpViewController.m in Sources */,

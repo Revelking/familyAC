@@ -10,8 +10,9 @@
 
 @interface HomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-
+// 侧滑按钮
 - (IBAction)setUpAction:(UIBarButtonItem *)sender;
+//发布按钮
 - (IBAction)releaseAction:(UIBarButtonItem *)sender;
 //0代表推荐，1代表视频，2代表图片，3代表精品
 @property (weak, nonatomic) IBOutlet UISegmentedControl *sortingControl;
