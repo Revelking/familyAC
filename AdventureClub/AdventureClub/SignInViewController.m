@@ -99,9 +99,9 @@
 
 //当用户点击忘记密码后调用
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Storyboard" bundle:nil];
+    UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil];
     //更具名称"Second"，在故事版“Storyboard‘中找到对应的页面
-    resetpasswordViewController *cd = [stryboard instantiateViewControllerWithIdentifier:@"Second"];
+    resetpasswordViewController *cd = [stryboard instantiateViewControllerWithIdentifier:@"resetpassword"];
     [self.navigationController presentViewController:cd animated:YES completion:nil];
     NSLog(@"哈哈哈");
     
