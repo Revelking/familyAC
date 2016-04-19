@@ -52,6 +52,7 @@
 		7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC6371CC490A400E74472 /* FaBuViewController.m */; };
 		7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */; };
 		7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */; };
+		E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F51CC5FBB20091C15F /* PersonalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +149,8 @@
 		7CC038031CC37F36006FFA2B /* HomeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
 		DDF3F6FD02F57CD7698AB8F0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6F867F41CC5FBB20091C15F /* PersonalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalViewController.h; sourceTree = "<group>"; };
+		E6F867F51CC5FBB20091C15F /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,6 +318,8 @@
 		210854661CC21A9A0091D649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E6F867F41CC5FBB20091C15F /* PersonalViewController.h */,
+				E6F867F51CC5FBB20091C15F /* PersonalViewController.m */,
 				7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */,
 				7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */,
 				7C1E08631CC23CAD0067ED20 /* HomeViewController.h */,
@@ -605,6 +610,7 @@
 				210A0F3E1CC37D5200FCE248 /* TAPageControl.m in Sources */,
 				210A0F3B1CC37D5200FCE248 /* TAAbstractDotView.m in Sources */,
 				2108546C1CC21C460091D649 /* Utilities.m in Sources */,
+				E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */,
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
 				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,
