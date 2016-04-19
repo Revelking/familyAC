@@ -54,6 +54,7 @@
 		7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CC038041CC37F36006FFA2B /* HomeTableViewCell.m */; };
 		E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F51CC5FBB20091C15F /* PersonalViewController.m */; };
 		E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */; };
+		E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6F867FB1CC613E90091C15F /* TheMessageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,8 @@
 		E6F867F51CC5FBB20091C15F /* PersonalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalViewController.m; sourceTree = "<group>"; };
 		E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusOnTableViewController.h; sourceTree = "<group>"; };
 		E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusOnTableViewController.m; sourceTree = "<group>"; };
+		E6F867FA1CC613E90091C15F /* TheMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TheMessageViewController.h; sourceTree = "<group>"; };
+		E6F867FB1CC613E90091C15F /* TheMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TheMessageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +324,8 @@
 		210854661CC21A9A0091D649 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				E6F867FA1CC613E90091C15F /* TheMessageViewController.h */,
+				E6F867FB1CC613E90091C15F /* TheMessageViewController.m */,
 				E6F867F71CC608A50091C15F /* FocusOnTableViewController.h */,
 				E6F867F81CC608A50091C15F /* FocusOnTableViewController.m */,
 				E6F867F41CC5FBB20091C15F /* PersonalViewController.h */,
@@ -611,6 +616,7 @@
 			files = (
 				7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */,
 				7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */,
+				E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */,
 				210A0F3D1CC37D5200FCE248 /* TADotView.m in Sources */,
 				210A0F3E1CC37D5200FCE248 /* TAPageControl.m in Sources */,
 				210A0F3B1CC37D5200FCE248 /* TAAbstractDotView.m in Sources */,
