@@ -44,6 +44,7 @@
 		307A47661CC4CAAE008AE94D /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47621CC4CAAE008AE94D /* 3.jpg */; };
 		307A47671CC4CAAE008AE94D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47631CC4CAAE008AE94D /* 4.jpg */; };
 		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
+		30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA47371CC9B65F00FC5F2D /* stimeViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
@@ -132,6 +133,8 @@
 		307A47621CC4CAAE008AE94D /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
 		307A47631CC4CAAE008AE94D /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		30F94B321CC3937200CB1666 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		30FA47361CC9B65F00FC5F2D /* stimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stimeViewController.h; sourceTree = "<group>"; };
+		30FA47371CC9B65F00FC5F2D /* stimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stimeViewController.m; sourceTree = "<group>"; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -349,6 +352,8 @@
 				7C1E086D1CC248200067ED20 /* SignUpViewController.m */,
 				7CABC6361CC490A400E74472 /* FaBuViewController.h */,
 				7CABC6371CC490A400E74472 /* FaBuViewController.m */,
+				30FA47361CC9B65F00FC5F2D /* stimeViewController.h */,
+				30FA47371CC9B65F00FC5F2D /* stimeViewController.m */,
 				7CABC6391CC4CEEA00E74472 /* SheZhiViewController.h */,
 				7CABC63A1CC4CEEA00E74472 /* SheZhiViewController.m */,
 				300CFC781CC5C5CA00E3F040 /* resetpasswordViewController.h */,
@@ -636,6 +641,7 @@
 				300CFC7A1CC5C5CA00E3F040 /* resetpasswordViewController.m in Sources */,
 				7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */,
 				2108542C1CC20F5C0091D649 /* main.m in Sources */,
+				30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */,
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
