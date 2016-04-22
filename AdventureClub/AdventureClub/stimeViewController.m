@@ -36,8 +36,9 @@
 */
 
 - (IBAction)qAction:(id)sender forEvent:(UIEvent *)event {
-    [[StorageMgr singletonStorageMgr]addKey:@"SignUpSuccessfully" andValue:_dateone.date];
     
+    [[StorageMgr singletonStorageMgr]addKey:@"SignUpSuccessfully" andValue:_dateone.date];
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"time" object:nil];
     
     [self.navigationController popViewControllerAnimated:YES];
     
