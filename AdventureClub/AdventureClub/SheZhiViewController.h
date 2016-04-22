@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface SheZhiViewController : UIViewController
+//退出按钮
+- (IBAction)exitAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 
 @end

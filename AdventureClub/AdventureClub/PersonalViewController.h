@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *dateBirth;
 @property (weak, nonatomic) IBOutlet UITextField *signature;
 - (IBAction)baocun:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)returnAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
