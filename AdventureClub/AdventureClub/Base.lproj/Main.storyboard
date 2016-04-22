@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bY-Hh-t20">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bY-Hh-t20">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -176,6 +176,87 @@
             </objects>
             <point key="canvasLocation" x="792.5" y="-1073.5"/>
         </scene>
+        <!--活动名称-->
+        <scene sceneID="e6n-sV-42K">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="SfW-dc-S6E" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KdZ-I5-hse"/>
+                        <viewControllerLayoutGuide type="bottom" id="Blm-oM-UFJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jsV-na-nzj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动开始时间:2016年11月12号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-iV-BAy">
+                                <rect key="frame" x="10" y="74" width="151" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动结束时间:2016年11月23日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35r-15-siK">
+                                <rect key="frame" x="212" y="74" width="153" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6go-Dc-WLp">
+                                <rect key="frame" x="10" y="93" width="355" height="130"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="uwk-Sf-8ql"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nma-ID-zuC">
+                                <rect key="frame" x="5" y="223" width="365" height="144"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="144" id="3BY-Hc-tkL"/>
+                                </constraints>
+                                <string key="text">活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容活动具体内容</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动人数限制:123" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh1-pb-Vpi">
+                                <rect key="frame" x="10" y="372" width="89" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动联系电话:12345678911" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FF-qB-wmN">
+                                <rect key="frame" x="224" y="372" width="141" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="5FF-qB-wmN" secondAttribute="trailing" constant="10" id="50P-Y4-oBS"/>
+                            <constraint firstAttribute="trailing" secondItem="nma-ID-zuC" secondAttribute="trailing" constant="5" id="5Cw-Hf-5gJ"/>
+                            <constraint firstItem="6go-Dc-WLp" firstAttribute="leading" secondItem="jsV-na-nzj" secondAttribute="leading" constant="10" id="86I-Jj-F1r"/>
+                            <constraint firstItem="nma-ID-zuC" firstAttribute="leading" secondItem="jsV-na-nzj" secondAttribute="leading" constant="5" id="8Ls-5U-WJQ"/>
+                            <constraint firstItem="lEZ-iV-BAy" firstAttribute="leading" secondItem="jsV-na-nzj" secondAttribute="leading" constant="10" id="Bw4-fM-Oe3"/>
+                            <constraint firstItem="nma-ID-zuC" firstAttribute="top" secondItem="6go-Dc-WLp" secondAttribute="bottom" id="Ora-Zc-eOc"/>
+                            <constraint firstItem="6go-Dc-WLp" firstAttribute="top" secondItem="35r-15-siK" secondAttribute="bottom" constant="5" id="bSA-pE-jVL"/>
+                            <constraint firstItem="5FF-qB-wmN" firstAttribute="top" secondItem="nma-ID-zuC" secondAttribute="bottom" constant="5" id="eKl-9Y-316"/>
+                            <constraint firstAttribute="trailing" secondItem="6go-Dc-WLp" secondAttribute="trailing" constant="10" id="hqo-M4-lcY"/>
+                            <constraint firstItem="Lh1-pb-Vpi" firstAttribute="leading" secondItem="jsV-na-nzj" secondAttribute="leading" constant="10" id="miq-yh-diq"/>
+                            <constraint firstAttribute="trailing" secondItem="35r-15-siK" secondAttribute="trailing" constant="10" id="myN-51-mMK"/>
+                            <constraint firstItem="35r-15-siK" firstAttribute="top" secondItem="KdZ-I5-hse" secondAttribute="bottom" constant="10" id="vja-LQ-hZm"/>
+                            <constraint firstItem="lEZ-iV-BAy" firstAttribute="top" secondItem="KdZ-I5-hse" secondAttribute="bottom" constant="10" id="wjs-Nc-cGk"/>
+                            <constraint firstItem="Lh1-pb-Vpi" firstAttribute="top" secondItem="nma-ID-zuC" secondAttribute="bottom" constant="5" id="yYC-qE-uRy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="活动名称" id="X3p-vq-GRG">
+                        <barButtonItem key="rightBarButtonItem" title="报名" id="ADG-wz-1EL"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HYt-4Y-m1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1281.5" y="-1068.5"/>
+        </scene>
         <!--首页-->
         <scene sceneID="nFS-L6-IgF">
             <objects>
@@ -209,11 +290,11 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="130" id="tpn-nV-0ac" customClass="HomeTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="130" id="tpn-nV-0ac" customClass="HomeTableViewCell">
                                         <rect key="frame" x="0.0" y="199" width="375" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tpn-nV-0ac" id="gaq-2r-pYl">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="129"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7f8-ZY-ReL">
@@ -223,19 +304,19 @@
                                                         <constraint firstAttribute="width" secondItem="7f8-ZY-ReL" secondAttribute="height" multiplier="1:1" id="dcV-IA-tqS"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="具体活动名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gC-Jk-Uq2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="具体活动名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gC-Jk-Uq2">
                                                     <rect key="frame" x="120" y="15" width="240" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016-04-16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-kc-5aI">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2016-04-16" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28g-kc-5aI">
                                                     <rect key="frame" x="120" y="99" width="240" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-8D-VBh">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-8D-VBh">
                                                     <rect key="frame" x="120" y="41" width="240" height="54"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -261,6 +342,7 @@
                                             <outlet property="imageIV" destination="7f8-ZY-ReL" id="7wp-HP-5ee"/>
                                             <outlet property="textViewTV" destination="Alp-8D-VBh" id="AWf-8f-Mby"/>
                                             <outlet property="timeLbl" destination="28g-kc-5aI" id="oOb-Zn-1Yj"/>
+                                            <segue destination="SfW-dc-S6E" kind="show" id="O00-CO-kZ4"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -596,7 +678,7 @@
         <!--选择日期-->
         <scene sceneID="YZm-Cl-g9o">
             <objects>
-                <viewController storyboardIdentifier="selecttime" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rPK-sz-oxi" customClass="stimeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="selecttime" id="rPK-sz-oxi" customClass="stimeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v3N-Ri-h6P"/>
                         <viewControllerLayoutGuide type="bottom" id="AuP-EC-xgG"/>
@@ -1333,6 +1415,6 @@
         <image name="1.jpg" width="480" height="640"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="73I-61-ohg"/>
+        <segue reference="XNP-ii-87R"/>
     </inferredMetricsTieBreakers>
 </document>
