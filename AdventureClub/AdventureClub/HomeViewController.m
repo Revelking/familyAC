@@ -185,8 +185,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSLog(@"%@",objects);
         if (!error) {
-            for (PFObject *obj in objects) {
-                NSLog(@"dasdasdsadasasdas");
+            PFObject *obj=objects[0];
                 PFFile  *jb=obj[@"image"];
                 NSString *photoURLStr=jb.url;
                 NSLog(@"%@",photoURLStr);
@@ -195,7 +194,7 @@
                 ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
                 [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
                 
-            }
+            
         }else {
         
             NSLog(@"asdasdsa");
@@ -288,7 +287,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSLog(@"%@",objects);
         if (!error) {
-            for (PFObject *obj in objects) {
+            PFObject *obj=objects[0];
                 NSLog(@"dasdasdsadasasdas");
                 PFFile  *jb=obj[@"image"];
                 NSString *photoURLStr=jb.url;
@@ -297,7 +296,7 @@
                 NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
                 ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
                 [_zoomIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
-            }
+            
         }else {
             
             NSLog(@"asdasdsa");
