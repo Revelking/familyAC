@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *View1;
 @property (strong,nonatomic)UIImageView *zoomIV;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *dengru;
 
 @end

@@ -32,6 +32,16 @@
     [self demoContainerView];
     
     
+   
+    
+    
+    
+
+   
+    
+   
+    
+    
     
     
 }
@@ -165,6 +175,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 1;
@@ -353,6 +364,14 @@
 //每次页面数显后
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    PFUser *cur=[PFUser currentUser];
+    if (cur) {
+        _dengru.title=@"😊";
+    }else {
+        
+        _dengru.title=@"未登入";
+        
+    }
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
 }
 

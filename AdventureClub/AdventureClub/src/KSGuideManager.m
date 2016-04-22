@@ -192,6 +192,8 @@ static NSString *identifier = @"Cell";
 - (void)nextButtonHandler:(id)sender {
 
     [self.view removeFromSuperview];
+    self.images=nil;
+    _pageControl.hidden=YES;
     [self setWindow:nil];
     [self setView:nil];
 }

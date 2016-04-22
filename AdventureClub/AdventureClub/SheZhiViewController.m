@@ -36,7 +36,8 @@
 }
 */
 - (IBAction)exitAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
+      [PFUser logOut];
+     [[NSNotificationCenter defaultCenter]postNotificationName:@"MenuSwitch" object:nil];
     
 }
 @end
