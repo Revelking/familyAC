@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -35,5 +36,10 @@
 */
 
 - (IBAction)qAction:(id)sender forEvent:(UIEvent *)event {
+    [[StorageMgr singletonStorageMgr]addKey:@"SignUpSuccessfully" andValue:_dateone.date];
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];
+    
 }
 @end

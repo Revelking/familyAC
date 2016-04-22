@@ -40,5 +40,6 @@
 - (IBAction)kaiShiTimeAction:(UIButton *)sender forEvent:(UIEvent *)event;
 //活动结束时间按钮
 - (IBAction)jieShuTimeAction:(UIButton *)sender forEvent:(UIEvent *)event;
-
+@property(strong,nonatomic)NSDate   *time1;
+@property(strong,nonatomic)NSDate   *time2;
 @end

@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FaBuViewController.h"
 @interface stimeViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateone;
 - (IBAction)qAction:(id)sender forEvent:(UIEvent *)event;
-
+@property(strong,nonatomic)NSDate *time2;
 @end

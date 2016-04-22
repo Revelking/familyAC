@@ -7,8 +7,10 @@
 //
 
 #import "FaBuViewController.h"
+#import "stimeViewController.h"
 
 @interface FaBuViewController ()
+
 
 @end
 
@@ -16,9 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
-
+//每次页面出现时
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+   NSDate *useName=[[StorageMgr singletonStorageMgr]objectForKey:@"SignUpSuccessfully"];
+    NSLog(@"usenmame%@",useName);
+    NSDate  *time=useName;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"wuhan"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
+    
+    NSString *day = [dateFormatter stringFromDate:time];
+    _jieShuTimeLbl.text=day;
+    [[StorageMgr singletonStorageMgr]removeObjectForKey:@"SignUpSuccessfully"];
+    
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -36,10 +54,12 @@
 
 //发帖（发布活动）按钮
 - (IBAction)faBuAction:(UIBarButtonItem *)sender {
+    
 }
 
 //开始时间按钮
 - (IBAction)kaiShiTimeAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
 }
 
 //结束时间按钮
