@@ -9,6 +9,7 @@
 #import "SignInViewController.h"
 #import "resetpasswordViewController.h"
 #import "TabBarViewController.h"
+#import "CeHuaViewController.h"
 @interface SignInViewController ()
 
 @end
@@ -49,8 +50,8 @@
             //将密码文本输入框中的内容清除
             _passwordTF.text = nil;
             //根据故事版的名称，和故事版中页面的名称
-            TabBarViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"tab"];
-            [self presentViewController:vc animated:YES completion:nil];
+            CeHuaViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"cehua1"];
+            [self.navigationController presentViewController:vc animated:YES completion:nil];
             
         } else {
             switch (error.code) {
@@ -103,7 +104,7 @@
 
 //当用户点击忘记密码后调用
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil];
+    UIStoryboard *stryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     //更具名称"Second"，在故事版“Storyboard‘中找到对应的页面
     resetpasswordViewController *cd = [stryboard instantiateViewControllerWithIdentifier:@"resetpassword"];
     [self.navigationController pushViewController:cd animated:YES];

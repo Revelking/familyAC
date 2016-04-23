@@ -62,7 +62,9 @@
         if (currentUser) {
             NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
             PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+            UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
             [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+                [avi stopAnimating];
                 _objectForShow=[NSMutableArray arrayWithArray:objects];
                 NSLog(@"object=%@",objects);
                 NSDictionary *dic=objects[0];
@@ -124,14 +126,16 @@
     PFObject *card=_objectForShow[0];
     card[@"name"]=_name.text;
     card[@"dateBirth"]=_dateBirth.text;
-    card[@"age"]=_signature.text;
+    card[@"signature"]=_signature.text;
     NSData  *photoData=UIImagePNGRepresentation(image);
     //将上述数据流转化成PFFILE对象，这是个文件对象， 这里除了设置文件内容，还需要给文件取个文件名，这个文件名可以是任何名字
     PFFile  *photoFile=[PFFile fileWithName:@"photo.png" data:photoData];
     card[@"image"]=photoFile;
-    card[@"signature"]=_sex.text;
+    card[@"age"]=_sex.text;
+    UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
     [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
+            [avi stopAnimating];
             [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
             
         }

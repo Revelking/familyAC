@@ -12,6 +12,7 @@
 #import "resetpasswordViewController.h"
 #import "SDCycleScrollView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "SignInViewController.h"
 @interface SheZhiViewController ()
 
 @end
@@ -20,13 +21,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _imageV.userInteractionEnabled=YES;
     // Do any additional setup after loading the view.
+    UITapGestureRecognizer *singleRecognizer3;
+    singleRecognizer3=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(photo)];
+    singleRecognizer3.numberOfTapsRequired=1;
+    [_imageV  addGestureRecognizer:singleRecognizer3];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 //每次页面数显后
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -81,4 +88,43 @@
     }
     
 }
+- (void)photo{
+    PFUser  *cuerr=[PFUser currentUser];
+    if (cuerr) {
+        //UIScreen mainScreen是获取屏幕的实例（全屏显示）
+        _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        //激活用户交互功能
+        _zoomIV.userInteractionEnabled = YES;
+        _zoomIV.backgroundColor = [UIColor blackColor];
+        
+        _zoomIV.image=_imageV.image;
+        
+        _zoomIV.contentMode = UIViewContentModeScaleAspectFit;
+        //[UIApplication sharedApplication]获得当前App的实例，keyWindow方法可以拿到App实例的主窗口
+        [[UIApplication sharedApplication].keyWindow addSubview:_zoomIV];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zoomTap:)];
+        [_zoomIV addGestureRecognizer:tap];
+    }else{
+        NSLog(@"游泳吗");
+        [self performSegueWithIdentifier:@"xian" sender:self];
+       // SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"deng"];
+        //[self.navigationController presentViewController:vc animated:YES completion:nil];
+    }
+    
+    
+    
+    
+   
+}
+- (void)zoomTap:(UITapGestureRecognizer *)sender{
+    NSLog(@"要缩小");
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        [_zoomIV removeFromSuperview];
+        [_zoomIV removeGestureRecognizer:sender];
+        _zoomIV = nil;
+    }
+    
+}
+
+
 @end
