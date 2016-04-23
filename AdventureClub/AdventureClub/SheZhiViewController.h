@@ -11,6 +11,9 @@
 @interface SheZhiViewController : UIViewController
 //退出按钮
 - (IBAction)exitAction:(UIButton *)sender forEvent:(UIEvent *)event;
+@property (weak, nonatomic) IBOutlet UIImageView *imageV;
 
+@property (weak, nonatomic) IBOutlet UILabel *nameLb;
+@property (weak, nonatomic) IBOutlet UILabel *gexing;
 
 @end

@@ -37,6 +37,13 @@
    
     UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
     _sortingControl.tintColor = myTint;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tishi) name:@"tis" object:nil];
+}
+-(void)tishi{
+    [Utilities popUpAlertViewWithMsg:@"已经退出当前用户" andTitle:nil onView:self];
+
+
+
 }
 //app的引导页
 -(void)app{

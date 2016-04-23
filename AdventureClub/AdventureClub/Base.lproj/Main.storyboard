@@ -148,7 +148,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLR-MW-g4a">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="568"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-aM-9Tg">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-aM-9Tg">
                                         <rect key="frame" x="20" y="30" width="80" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="SAn-aM-9Tg" secondAttribute="height" multiplier="1:1" id="NiT-CE-9eC"/>
@@ -256,6 +256,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ypi-A8-eNt"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="gexing" destination="Ubu-7y-E1R" id="oZ9-0I-f2G"/>
+                        <outlet property="imageV" destination="SAn-aM-9Tg" id="xk1-ZN-vIC"/>
+                        <outlet property="nameLb" destination="KxE-Yx-Fwr" id="EZM-KH-d9W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAj-37-qLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -500,7 +505,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="hRe-Km-zoV">
-                        <barButtonItem key="leftBarButtonItem" title="侧滑" id="4tW-yb-HJo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="4tW-yb-HJo">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="setUpAction:" destination="2sc-Hh-m6T" id="haP-pR-VzF"/>
