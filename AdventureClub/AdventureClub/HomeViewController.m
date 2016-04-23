@@ -33,17 +33,10 @@
     
     
    
-    
-    
-    
-
+    self.view.backgroundColor=[UIColor greenColor];
    
-    
-   
-    
-    
-    
-    
+    UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
+    _sortingControl.tintColor = myTint;
 }
 //app的引导页
 -(void)app{
@@ -71,6 +64,7 @@
 
 
 }
+
 //轮播
 -(void)demoContainerView{
     self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];

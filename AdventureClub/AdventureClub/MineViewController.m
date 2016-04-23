@@ -34,11 +34,5 @@
 }
 */
 
-- (IBAction)dengLu:(UIButton *)sender forEvent:(UIEvent *)event {
-}
-- (IBAction)fans:(UIButton *)sender forEvent:(UIEvent *)event {
-}
 
-- (IBAction)focus:(UIButton *)sender forEvent:(UIEvent *)event {
-}
 @end
