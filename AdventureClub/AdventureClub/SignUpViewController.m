@@ -89,7 +89,7 @@
         }
     }];
    PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
-    
+    acticity[@"user"]=user;
     [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         
     }];
