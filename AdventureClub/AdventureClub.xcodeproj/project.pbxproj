@@ -33,6 +33,7 @@
 		210A0F451CC37D6100FCE248 /* SDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F401CC37D6100FCE248 /* SDCollectionViewCell.m */; };
 		210A0F461CC37D6100FCE248 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */; };
 		210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */; };
+		2115D1801CCB4DAC00CD625C /* BaoMingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
 		300CFC731CC5C1E300E3F040 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */; };
 		300CFC751CC5C1FC00E3F040 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */; };
@@ -121,6 +122,8 @@
 		210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SDCycleScrollView.m; path = Lib/SDCycleScrollView/SDCycleScrollView.m; sourceTree = "<group>"; };
 		210A0F431CC37D6100FCE248 /* UIView+SDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+SDExtension.h"; path = "Lib/SDCycleScrollView/UIView+SDExtension.h"; sourceTree = "<group>"; };
 		210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDExtension.m"; path = "Lib/SDCycleScrollView/UIView+SDExtension.m"; sourceTree = "<group>"; };
+		2115D17E1CCB4DAC00CD625C /* BaoMingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoMingViewController.h; sourceTree = "<group>"; };
+		2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoMingViewController.m; sourceTree = "<group>"; };
 		300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
 		300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
 		300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
@@ -360,6 +363,8 @@
 				300CFC791CC5C5CA00E3F040 /* resetpasswordViewController.m */,
 				7C8BE99F1CC62BC800188801 /* CeHuaViewController.h */,
 				7C8BE9A01CC62BC800188801 /* CeHuaViewController.m */,
+				2115D17E1CCB4DAC00CD625C /* BaoMingViewController.h */,
+				2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -644,6 +649,7 @@
 				30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */,
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
+				2115D1801CCB4DAC00CD625C /* BaoMingViewController.m in Sources */,
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
 				E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
