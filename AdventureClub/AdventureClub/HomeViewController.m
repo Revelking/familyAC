@@ -11,6 +11,7 @@
 #import "HomeTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "KSGuideManager.h"
+#import "BaoMingViewController.h"
 @interface HomeViewController ()<SDCycleScrollViewDelegate,ActivityTableViewCellDelegate>
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
 @property(strong,nonatomic)NSMutableArray *acg;
@@ -102,6 +103,7 @@
 -(void)loadingdata{
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
+     [query includeKey:@"user"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
         _acg=[NSMutableArray arrayWithArray:objects];
@@ -125,6 +127,7 @@
     [_objectsForShow removeAllObjects];
     [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
+    [query includeKey:@"user"];
 [query orderByDescending:@"click"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -151,6 +154,7 @@
     [_objectsForShow removeAllObjects];
     [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
+    [query includeKey:@"user"];
     [query orderByDescending:@"starttime"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -255,15 +259,26 @@
   }];
 
 }
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"cell"]) {
+        //获得当前用户选中细胞的行数
+        NSIndexPath *indexPath=_tableView.indexPathForSelectedRow;
+        //根据上述行数获取该行所对应的数据
+        PFObject *card=_acg[indexPath.row];
+        //segue.destinationViewController 获取将要跳转的下一页的事例
+        BaoMingViewController *mcvc=segue.destinationViewController;
+        //将需要传递给下一页的数据放入下一页容器
+        mcvc.card=card;
+        
+    }
 }
-*/
+
 
 //点击设置会侧滑时调用
 - (IBAction)setUpAction:(UIBarButtonItem *)sender {

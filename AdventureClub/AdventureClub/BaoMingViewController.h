@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BaoMingViewController : UIViewController
+@property(strong,nonatomic)PFObject *card;
+@property (weak, nonatomic) IBOutlet UILabel *yibaoming;
 //头像
 @property (weak, nonatomic) IBOutlet UIImageView *touXiang;
 //用户名
