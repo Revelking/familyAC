@@ -69,9 +69,9 @@
                 NSLog(@"object=%@",objects);
                 NSDictionary *dic=objects[0];
                 _name.text=dic[@"name"];
-                _sex.text=dic[@"singnature"];
+                _sex.text=dic[@"sex"];
                 _dateBirth.text=dic[@"dateBirth"];
-                _signature.text=dic[@"age"];
+                _signature.text=dic[@"signature"];
                 PFFile *photoFile=dic[@"image"];
                 //获取parse数据库中某个文件的网络路径
                 NSString *photoURLStr=photoFile.url;
@@ -131,7 +131,7 @@
     //将上述数据流转化成PFFILE对象，这是个文件对象， 这里除了设置文件内容，还需要给文件取个文件名，这个文件名可以是任何名字
     PFFile  *photoFile=[PFFile fileWithName:@"photo.png" data:photoData];
     card[@"image"]=photoFile;
-    card[@"age"]=_sex.text;
+    card[@"sex"]=_sex.text;
     UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
     [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
