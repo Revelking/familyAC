@@ -9,6 +9,8 @@
 #import "BaoMingViewController.h"
 #import "SDCycleScrollView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <MessageUI/MessageUI.h>
 @interface BaoMingViewController ()
 
 @end
@@ -100,8 +102,69 @@
 */
 
 - (IBAction)phoneAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    //该地址字符串将实现先询问是否打电话在根据用户选择去拨打或取消拨打
+    NSString *dialStr=[NSString stringWithFormat:@"telprompt://%@",_phoneTF.text];
+    //将字符串转化成NSURL对象
+    NSURL *dialURL=[NSURL URLWithString:dialStr];
+    //用openURL方法执行这个链接的调用（这里是通话功能的调用）
+    [[UIApplication sharedApplication]openURL:dialURL];
 }
 
 - (IBAction)baoMingAction:(UIBarButtonItem *)sender {
+   PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+    activity.objectId =_card.objectId;
+    PFUser *owe=[PFUser currentUser];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user==%@ AND acticitie==%@",owe,activity];
+    PFQuery *query=[PFQuery queryWithClassName:@"Apply" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSInteger  i=objects.count;
+        if (0<i) {
+           [Utilities popUpAlertViewWithMsg:@"你已经报名过啦，烦请注意活动开始时间" andTitle:nil onView:self];
+        }else {
+        
+            [self hao];
+        }
+    }];
+    
+    
+    
+    
+    
+}
+-(void)hao{
+    NSNumber *sig=_card[@"sigunpPe"];
+    NSNumber *people=_card[@"people"];
+    if ([sig integerValue]<[people integerValue]) {
+        PFObject  *he=[PFObject objectWithClassName:@"Apply"];
+        PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+        activity.objectId =_card.objectId;
+        he[@"acticitie"]=activity;
+        PFUser *cus=[PFUser currentUser];
+        he[@"user"]=cus;
+        he[@"name"]=@"1";
+        [he saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [Utilities popUpAlertViewWithMsg:@"恭喜您报名成，烦请注意活动开始时间" andTitle:nil onView:self];
+                
+                NSNumber *click=_card[@"sigunpPe"];
+                
+                _card[@"sigunpPe"]=@([click integerValue]+1);
+               [_card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                   
+               }];
+               
+            }else {
+                NSLog(@"%@",error.userInfo);
+                [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+            }
+            
+        }];
+    }else{
+        
+        [Utilities popUpAlertViewWithMsg:@"您来慢了，人员已满，敬请关注下次活动" andTitle:nil onView:self];
+        
+    }
+
+
 }
 @end

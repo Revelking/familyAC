@@ -239,7 +239,7 @@
         [Utilities popUpAlertViewWithMsg:@"非常抱歉，内容为空，请填写" andTitle:nil onView:self];
         return;
     }
-    if (!(image==nil||image1==nil||image2==nil||image3==nil)) {
+    if (image==nil||image1==nil||image2==nil||image3==nil) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张图片" andTitle:nil onView:self];
         return;
     }
