@@ -115,7 +115,7 @@
    PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
     activity.objectId =_card.objectId;
     PFUser *owe=[PFUser currentUser];
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user==%@ AND acticitie==%@",owe,activity];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND acticitie=%@",owe,activity];
     PFQuery *query=[PFQuery queryWithClassName:@"Apply" predicate:predicate];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSInteger  i=objects.count;
