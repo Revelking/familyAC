@@ -34,6 +34,7 @@
 		210A0F461CC37D6100FCE248 /* SDCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F421CC37D6100FCE248 /* SDCycleScrollView.m */; };
 		210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */; };
 		2115D1801CCB4DAC00CD625C /* BaoMingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */; };
+		2115D1901CCB697F00CD625C /* ou.png in Resources */ = {isa = PBXBuildFile; fileRef = 2115D18F1CCB697F00CD625C /* ou.png */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
 		300CFC731CC5C1E300E3F040 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */; };
 		300CFC751CC5C1FC00E3F040 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */; };
@@ -124,6 +125,7 @@
 		210A0F441CC37D6100FCE248 /* UIView+SDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+SDExtension.m"; path = "Lib/SDCycleScrollView/UIView+SDExtension.m"; sourceTree = "<group>"; };
 		2115D17E1CCB4DAC00CD625C /* BaoMingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoMingViewController.h; sourceTree = "<group>"; };
 		2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoMingViewController.m; sourceTree = "<group>"; };
+		2115D18F1CCB697F00CD625C /* ou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ou.png; sourceTree = "<group>"; };
 		300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
 		300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
 		300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		2108542A1CC20F5C0091D649 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2115D18F1CCB697F00CD625C /* ou.png */,
 				307A47601CC4CAAE008AE94D /* 1.jpg */,
 				307A47611CC4CAAE008AE94D /* 2.jpg */,
 				307A47621CC4CAAE008AE94D /* 3.jpg */,
@@ -556,6 +559,7 @@
 				307A47661CC4CAAE008AE94D /* 3.jpg in Resources */,
 				2108543A1CC20F5C0091D649 /* Assets.xcassets in Resources */,
 				210854351CC20F5C0091D649 /* Main.storyboard in Resources */,
+				2115D1901CCB697F00CD625C /* ou.png in Resources */,
 				300CFC731CC5C1E300E3F040 /* Storyboard1.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
