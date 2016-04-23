@@ -88,8 +88,11 @@
         
         }
     }];
+   PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
     
-    
+    [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        
+    }];
 }
 
 //当键盘右下角的确认按钮被按时收键盘
