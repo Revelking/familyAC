@@ -36,7 +36,13 @@
 */
 
 - (IBAction)qAction:(id)sender forEvent:(UIEvent *)event {
-    
+    NSDate *  senddate=[NSDate date];
+    //timeIntervalSinceDate: 此方法表示_datePicker.date1与senddate 5时间date间隔 以_datePicker.date为为基准时间
+    if ([_dateone.date timeIntervalSinceDate:senddate]<0) {
+        [Utilities popUpAlertViewWithMsg:@"选择的日期小于当前日期" andTitle:nil onView:self];
+        return;
+        
+    }
     [[StorageMgr singletonStorageMgr]addKey:@"SignUpSuccessfully" andValue:_dateone.date];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"time" object:nil];
     

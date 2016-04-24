@@ -235,14 +235,53 @@
     UIImage *image1=_image2IV.image;
     UIImage *image2=_image3IV.image;
     UIImage *image3=_image4IV.image;
+    
     if (biaoti.length==0||textV.length==0||kaishi.length==0||jieshu.length==0||rensu.length==0||dianhua.length==0||didian.length==0||zhuyu.length==0) {
         [Utilities popUpAlertViewWithMsg:@"非常抱歉，内容为空，请填写" andTitle:nil onView:self];
         return;
     }
-    if (image==nil||image1==nil||image2==nil||image3==nil) {
+    if (image==nil&&image1==nil&&image2==nil&&image3==nil) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张图片" andTitle:nil onView:self];
         return;
     }
+    NSDate *  senddate=[NSDate date];
+    NSDate  *time=senddate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"wuhan"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    NSString *day = [dateFormatter stringFromDate:time];
+    if ([_kaiShiTimeLbl.text integerValue]-[day integerValue]<48) {
+        UIAlertController *alertview=[UIAlertController alertControllerWithTitle:@"友情提示" message:@"您当前的选择的日期活动开始时间小于两天，您确定要发布活动嘛？"  preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *confirmAction=[UIAlertAction actionWithTitle:@"是的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [self baoming];
+        }];
+        UIAlertAction  *cexiao=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            return ;
+        }];
+        [alertview addAction:confirmAction];
+        [alertview  addAction:cexiao];
+        [self presentViewController:alertview animated:YES completion:nil];
+    }
+    
+    
+    
+    
+    
+}
+-(void)baoming{
+    NSString *biaoti=_biaoTiTF.text;
+    NSString *textV=_textViewTV.text;
+    NSString *kaishi=_kaiShiTimeLbl.text;
+    NSString *jieshu=_jieShuTimeLbl.text;
+    NSString *rensu=_renShuTF.text;
+    NSString *didian=_diDianTF.text;
+    NSString *dianhua=_dianHuaTF.text;
+    NSString *zhuyu=_zhuYIShiXiangTF.text;
+    UIImage *image=_image1IV.image;
+    UIImage *image1=_image2IV.image;
+    UIImage *image2=_image3IV.image;
+    UIImage *image3=_image4IV.image;
     PFUser *currenUser=[PFUser currentUser];
     
     PFObject *acticity=[PFObject objectWithClassName:@"Acticitie"];
@@ -320,7 +359,7 @@
             NSLog(@"第三个");
         }];
     }
-   
+    
     if (image3!=nil) {
         PFObject *imagepf3=[PFObject objectWithClassName:@"Image"];
         NSData  *photoData3=UIImagePNGRepresentation(image3);
@@ -333,12 +372,10 @@
             NSLog(@"第四个");
         }];
     }
-    
-    
-    
-    
-}
 
+
+
+}
 //开始时间按钮
 - (IBAction)kaiShiTimeAction:(UIButton *)sender forEvent:(UIEvent *)event {
     _i=1;

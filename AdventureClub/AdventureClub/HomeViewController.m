@@ -104,6 +104,8 @@
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
      [query includeKey:@"user"];
+    NSDate * date=[NSDate date];
+    [query whereKey:@"starttime" greaterThanOrEqualTo:date];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
         _acg=[NSMutableArray arrayWithArray:objects];

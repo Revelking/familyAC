@@ -29,20 +29,23 @@
          PFObject *obj=objects[0];
         PFFile  *jb=obj[@"image"];
         NSString *photoURLStr=jb.url;
-        NSLog(@"%@",photoURLStr);
+        NSLog(@"用户有吗%@",photoURLStr);
         //获取parse数据库中某个文件的网络路径
         NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
         ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
         [_touXiang sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
         
     }];
-    NSPredicate *predicate1=[NSPredicate predicateWithFormat:@"acticitie=%@",_card.objectId];
+    PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+    activity.objectId =_card.objectId;
+    NSPredicate *predicate1=[NSPredicate predicateWithFormat:@"acticitie=%@",activity];
     PFQuery *query1=[PFQuery queryWithClassName:@"Image" predicate:predicate1];
     [query1 findObjectsInBackgroundWithBlock:^(NSArray * _Nullable object, NSError * _Nullable error) {
         PFObject *obj1=object[0];
         PFFile  *jb=obj1[@"image"];
+       
         NSString *photoURLStr=jb.url;
-        NSLog(@"%@",photoURLStr);
+        NSLog(@"有图片吗%@",photoURLStr);
         //获取parse数据库中某个文件的网络路径
         NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
         ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
@@ -64,7 +67,7 @@
     NSString *start=[NSString stringWithFormat:@"活动开始时间：%@",day];
     _startTF.text=start;
     
-    NSDate  *endtime=_card[@"starttime"];
+    NSDate  *endtime=_card[@"endtime"];
     NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
     dateFormatter1.timeZone = [NSTimeZone timeZoneWithName:@"wuhan"];
     [dateFormatter1 setDateFormat:@"yyyy-MM-dd HH:mm"];
@@ -120,6 +123,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSInteger  i=objects.count;
         if (0<i) {
+            NSLog(@"这个看看%@",objects);
            [Utilities popUpAlertViewWithMsg:@"你已经报名过啦，烦请注意活动开始时间" andTitle:nil onView:self];
         }else {
         
