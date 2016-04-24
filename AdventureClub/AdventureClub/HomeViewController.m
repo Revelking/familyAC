@@ -103,7 +103,7 @@
 -(void)loadingdata{
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
-     [query includeKey:@"user"];
+    [query includeKey:@"user"];
     NSDate * date=[NSDate date];
     [query whereKey:@"starttime" greaterThanOrEqualTo:date];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
@@ -130,7 +130,7 @@
     [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     [query includeKey:@"user"];
-[query orderByDescending:@"click"];
+      [query orderByDescending:@"click"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
