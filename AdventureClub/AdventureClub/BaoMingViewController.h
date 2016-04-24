@@ -10,9 +10,11 @@
 
 @interface BaoMingViewController : UIViewController
 @property(strong,nonatomic)PFObject *card;
+
 @property (weak, nonatomic) IBOutlet UILabel *yibaoming;
 //头像
 @property (weak, nonatomic) IBOutlet UIImageView *touXiang;
+
 //用户名
 @property (weak, nonatomic) IBOutlet UILabel *name;
 //活动图片
@@ -27,7 +29,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *startTF;
 //结束时间
 @property (weak, nonatomic) IBOutlet UILabel *timeTF;
-
 //活动地点
 @property (weak, nonatomic) IBOutlet UILabel *addressTF;
 //注意事项

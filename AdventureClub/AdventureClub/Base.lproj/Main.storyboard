@@ -391,50 +391,62 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="联系电话:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kth-xV-4DY">
-                                        <rect key="frame" x="10" y="497" width="69" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="注意事项" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZ5-cI-JdT">
+                                        <rect key="frame" x="10" y="495" width="349" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1312456789" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYs-oW-4ar">
-                                        <rect key="frame" x="79" y="497" width="91" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="电话号码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77F-ht-TzO">
+                                        <rect key="frame" x="8" y="524" width="75" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w7F-g6-ncd">
-                                        <rect key="frame" x="317" y="491" width="48" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="13112341234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6KU-ZN-aqq">
+                                        <rect key="frame" x="91" y="524" width="104" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBn-O5-Pxj">
+                                        <rect key="frame" x="298" y="520" width="61" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <state key="normal" title="打电话"/>
+                                        <connections>
+                                            <action selector="phoneAction:forEvent:" destination="SfW-dc-S6E" eventType="touchUpInside" id="7M0-Cw-9Cf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="kth-xV-4DY" secondAttribute="bottom" constant="5" id="4Su-7W-QwG"/>
+                                    <constraint firstItem="DBn-O5-Pxj" firstAttribute="centerY" secondItem="77F-ht-TzO" secondAttribute="centerY" id="0Tv-5G-D2y"/>
+                                    <constraint firstItem="6KU-ZN-aqq" firstAttribute="leading" secondItem="77F-ht-TzO" secondAttribute="trailing" id="2Dq-6D-kfK"/>
                                     <constraint firstItem="x79-pF-KBQ" firstAttribute="top" secondItem="s11-MO-C6P" secondAttribute="bottom" constant="10" id="6Bw-tl-PGT"/>
-                                    <constraint firstItem="w7F-g6-ncd" firstAttribute="centerY" secondItem="lYs-oW-4ar" secondAttribute="centerY" id="Eqa-Ga-J6k"/>
+                                    <constraint firstItem="ZZ5-cI-JdT" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="C7T-NV-zDt"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZZ5-cI-JdT" secondAttribute="trailing" constant="10" id="GPZ-fn-nAe"/>
                                     <constraint firstAttribute="trailing" secondItem="p1i-3h-iYz" secondAttribute="trailing" id="IAy-cm-o2N"/>
-                                    <constraint firstItem="kth-xV-4DY" firstAttribute="top" secondItem="jrA-Ba-fGT" secondAttribute="bottom" constant="10" id="Ksa-R0-8gl"/>
-                                    <constraint firstItem="lYs-oW-4ar" firstAttribute="leading" secondItem="kth-xV-4DY" secondAttribute="trailing" id="LOJ-3I-14i"/>
+                                    <constraint firstAttribute="trailing" secondItem="DBn-O5-Pxj" secondAttribute="trailing" constant="10" id="MYu-mZ-mid"/>
                                     <constraint firstItem="4PQ-9c-6pk" firstAttribute="top" secondItem="x79-pF-KBQ" secondAttribute="bottom" constant="10" id="NtX-Dc-edA"/>
                                     <constraint firstItem="p1i-3h-iYz" firstAttribute="top" secondItem="tiR-dh-siR" secondAttribute="top" id="NxU-n7-hEU"/>
                                     <constraint firstItem="s11-MO-C6P" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="OyP-Cg-SWX"/>
+                                    <constraint firstItem="77F-ht-TzO" firstAttribute="top" secondItem="ZZ5-cI-JdT" secondAttribute="bottom" constant="10" id="RuB-Nu-rrn"/>
                                     <constraint firstAttribute="trailing" secondItem="nfQ-Dd-tTE" secondAttribute="trailing" constant="10" id="S4Y-ii-ECb"/>
                                     <constraint firstItem="x79-pF-KBQ" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="S6N-OG-a9R"/>
                                     <constraint firstItem="jrA-Ba-fGT" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="SIJ-sr-vqJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="77F-ht-TzO" secondAttribute="bottom" constant="5" id="WPe-ow-0Kr"/>
                                     <constraint firstItem="TtI-gg-7Dg" firstAttribute="top" secondItem="nfQ-Dd-tTE" secondAttribute="bottom" constant="10" id="c1R-WC-QDK"/>
+                                    <constraint firstItem="6KU-ZN-aqq" firstAttribute="centerY" secondItem="77F-ht-TzO" secondAttribute="centerY" id="eOV-TB-yZz"/>
                                     <constraint firstAttribute="trailing" secondItem="jrA-Ba-fGT" secondAttribute="trailing" constant="10" id="fGl-CE-feN"/>
                                     <constraint firstItem="nfQ-Dd-tTE" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="gWq-Xh-c4S"/>
-                                    <constraint firstAttribute="trailing" secondItem="w7F-g6-ncd" secondAttribute="trailing" constant="10" id="kGb-sP-PIv"/>
+                                    <constraint firstItem="ZZ5-cI-JdT" firstAttribute="top" secondItem="jrA-Ba-fGT" secondAttribute="bottom" constant="10" id="mrn-y6-5tv"/>
                                     <constraint firstItem="nfQ-Dd-tTE" firstAttribute="top" secondItem="p1i-3h-iYz" secondAttribute="bottom" id="oC4-rg-IY3"/>
                                     <constraint firstItem="s11-MO-C6P" firstAttribute="top" secondItem="nfQ-Dd-tTE" secondAttribute="bottom" constant="10" id="qe7-WX-Wh3"/>
-                                    <constraint firstItem="kth-xV-4DY" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="rWh-lN-HFs"/>
                                     <constraint firstItem="p1i-3h-iYz" firstAttribute="centerX" secondItem="tiR-dh-siR" secondAttribute="centerX" id="s9C-We-uEh"/>
                                     <constraint firstAttribute="trailing" secondItem="TtI-gg-7Dg" secondAttribute="trailing" constant="10" id="tEv-Fr-NvG"/>
                                     <constraint firstItem="jrA-Ba-fGT" firstAttribute="top" secondItem="4PQ-9c-6pk" secondAttribute="bottom" constant="10" id="w73-GY-PJg"/>
-                                    <constraint firstItem="lYs-oW-4ar" firstAttribute="top" secondItem="jrA-Ba-fGT" secondAttribute="bottom" constant="10" id="xon-bS-IQs"/>
                                     <constraint firstItem="4PQ-9c-6pk" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="yak-ZN-oXt"/>
                                     <constraint firstItem="p1i-3h-iYz" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" id="zV9-5v-RRx"/>
+                                    <constraint firstItem="77F-ht-TzO" firstAttribute="leading" secondItem="tiR-dh-siR" secondAttribute="leading" constant="10" id="zV9-pO-mS5"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -455,6 +467,20 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="addressTF" destination="jrA-Ba-fGT" id="ebZ-ns-Liu"/>
+                        <outlet property="contentTF" destination="nfQ-Dd-tTE" id="Mdu-o8-Xzg"/>
+                        <outlet property="detailsTF" destination="s11-MO-C6P" id="lb3-fM-Pwc"/>
+                        <outlet property="imageTF" destination="eUC-v8-5ve" id="WVu-tG-9CN"/>
+                        <outlet property="mattersTF" destination="ZZ5-cI-JdT" id="yia-Rz-xl9"/>
+                        <outlet property="name" destination="r34-72-BZU" id="aiS-w1-cOe"/>
+                        <outlet property="nameTF" destination="OSg-RG-9jL" id="YpU-00-YAl"/>
+                        <outlet property="phoneTF" destination="6KU-ZN-aqq" id="24R-Hv-jMe"/>
+                        <outlet property="startTF" destination="x79-pF-KBQ" id="XXG-TQ-hyk"/>
+                        <outlet property="timeTF" destination="4PQ-9c-6pk" id="SD6-ht-Dfc"/>
+                        <outlet property="touXiang" destination="i59-nc-Zk6" id="hHH-RC-lcC"/>
+                        <outlet property="yibaoming" destination="TtI-gg-7Dg" id="ehX-Ih-5TW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYt-4Y-m1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
