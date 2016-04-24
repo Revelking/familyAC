@@ -9,6 +9,7 @@
         <!--活动详情-->
         <scene sceneID="cLK-Wj-bf9">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dYq-Ek-g2S" sceneMemberID="firstResponder"/>
                 <viewController id="C8j-tY-ta7" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hus-WD-dbI"/>
@@ -181,13 +182,13 @@
                     <navigationItem key="navigationItem" title="活动详情" id="UEl-nK-ze7"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dYq-Ek-g2S" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="841.5" y="439.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c4M-aj-fGB">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80B-cf-hFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ste-0f-fph" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -200,7 +201,6 @@
                         <segue destination="C8j-tY-ta7" kind="relationship" relationship="rootViewController" id="HA6-8R-MUs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="80B-cf-hFt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="393" y="440"/>
         </scene>
