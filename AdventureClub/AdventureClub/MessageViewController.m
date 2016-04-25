@@ -34,4 +34,7 @@
 }
 */
 
+- (IBAction)segmengtedAction:(UISegmentedControl *)sender forEvent:(UIEvent *)event {
+    
+}
 @end

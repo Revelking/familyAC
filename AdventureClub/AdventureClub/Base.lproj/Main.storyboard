@@ -32,6 +32,9 @@
                                                 <segment title="最新"/>
                                                 <segment title="精选"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="segmengtedAction:forEvent:" destination="jQy-lI-cmd" eventType="valueChanged" id="yVA-jS-CZ0"/>
+                                            </connections>
                                         </segmentedControl>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +45,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="g8A-0q-RuI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="144" id="g8A-0q-RuI" customClass="MessageTableViewCell">
                                         <rect key="frame" x="0.0" y="125" width="375" height="144"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g8A-0q-RuI" id="eII-Pr-OF8">
@@ -104,6 +107,14 @@
                                                 <constraint firstItem="rUX-5M-PrK" firstAttribute="leading" secondItem="eII-Pr-OF8" secondAttribute="leading" constant="5" id="mKh-gi-xlZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caiLb" destination="yCN-Yb-xen" id="Gct-O7-RZs"/>
+                                            <outlet property="mentLB" destination="rUX-5M-PrK" id="562-ZY-fdP"/>
+                                            <outlet property="renshuLb" destination="1R5-RY-39z" id="bZe-xz-mmM"/>
+                                            <outlet property="toux" destination="bFs-9c-D96" id="lc1-il-tQk"/>
+                                            <outlet property="yonghuLb" destination="V2c-L2-n5J" id="GO5-cQ-lt7"/>
+                                            <outlet property="zaiLb" destination="kbG-6c-j28" id="KMJ-6p-mac"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -128,6 +139,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="动态" id="xMF-4t-kZO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="segmeng" destination="p77-2a-xca" id="7Pd-aG-ZxA"/>
+                        <outlet property="tableView" destination="3h3-cI-Jmb" id="7zk-rW-iki"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="83W-2g-5lr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
