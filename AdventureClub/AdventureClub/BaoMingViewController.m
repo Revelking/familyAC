@@ -22,12 +22,13 @@
     self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ou.png"]];
     NSLog(@"card%@",_card);
     PFUser *ownerUser=_card[@"user"];
-    _name.text=ownerUser.username;
+//    _name.text=ownerUser.username;
     NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",ownerUser];
     PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
          PFObject *obj=objects[0];
         PFFile  *jb=obj[@"image"];
+        _name.text=obj[@"name"];
         NSString *photoURLStr=jb.url;
         NSLog(@"用户有吗%@",photoURLStr);
         //获取parse数据库中某个文件的网络路径

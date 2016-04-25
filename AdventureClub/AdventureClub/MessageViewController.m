@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _objectsForShow=[NSMutableArray new];
+    [self.segmeng addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [self reques];
     // Do any additional setup after loading the view.
 }
@@ -27,9 +28,31 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)segmentAction{
+    if (self.segmeng.selectedSegmentIndex==1){
+        
+    [_objectsForShow removeAllObjects];
+    PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
+    [query includeKey:@"user"];
+    [query orderByAscending:@"click"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            NSLog(@"活动的详情页%@",objects);
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+            [_tableView reloadData];
+        }else{
+            
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        }
+        
+    }];
+    }
+
+}
 -(void)reques{
     PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
     [query includeKey:@"user"];
+    [query orderByAscending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
             NSLog(@"活动的详情页%@",objects);
@@ -44,6 +67,7 @@
 
 
 }
+
 /*
 #pragma mark - Navigation
 
@@ -97,6 +121,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     PFObject *card=_objectsForShow[indexPath.row];
+    
     NSNumber *click=card[@"click"];
     
     card[@"click"]=@([click integerValue]+1);
@@ -111,6 +136,7 @@
     UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil];
     //更具名称找到名为detailView的页面
     DimessViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"dotai"];
+    detailView.dimess=card;
 [self.navigationController pushViewController:detailView animated:YES];
 }
 @end

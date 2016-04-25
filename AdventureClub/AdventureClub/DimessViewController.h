@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DimessViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageIV;
 @property (weak, nonatomic) IBOutlet UILabel *usernameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *biaotiLbl;
@@ -20,6 +21,10 @@
 - (IBAction)pinLunAction:(UIButton *)sender forEvent:(UIEvent *)event;
 @property (weak, nonatomic) IBOutlet UILabel *pinLunLbl;
 @property (weak, nonatomic) IBOutlet UITextView *huoDongNeiRongTV;
+//输入kuang
 @property (weak, nonatomic) IBOutlet UITextField *faBiaoPinLunTF;
+@property(strong,nonatomic)PFObject *dimess;
+- (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event;
+
 
 @end
