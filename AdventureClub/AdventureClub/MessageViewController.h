@@ -10,7 +10,7 @@
 
 @interface MessageViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-- (IBAction)segmengtedAction:(UISegmentedControl *)sender forEvent:(UIEvent *)event;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmeng;
+
 
 @end

@@ -175,7 +175,7 @@
         
     }else {
     
-        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"您尚未登入，无法使其功能，烦请登入" message:@"提示" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"您尚未登入，无法使其功能，烦请登入" preferredStyle:UIAlertControllerStyleAlert];
         //创建“确认”按钮，风格为UIAlertActionStyleDefault
         UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
             

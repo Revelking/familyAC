@@ -7,9 +7,9 @@
 //
 
 #import "MessageViewController.h"
-
+#import "MessageTableViewCell.h"
 @interface MessageViewController ()
-
+@property(strong,nonatomic)NSMutableArray *objectsForShow;
 @end
 
 @implementation MessageViewController
@@ -23,7 +23,22 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)reques{
+    PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
+    [query includeKey:@"user"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+            [_tableView reloadData];
+        }else{
+        
+         [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        }
+        
+    }];
 
+
+}
 /*
 #pragma mark - Navigation
 
@@ -33,8 +48,15 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)segmengtedAction:(UISegmentedControl *)sender forEvent:(UIEvent *)event {
-    
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MessageTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    
+    return cell;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];}
 @end

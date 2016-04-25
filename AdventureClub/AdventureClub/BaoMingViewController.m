@@ -106,6 +106,7 @@
 */
 
 - (IBAction)phoneAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    
     //该地址字符串将实现先询问是否打电话在根据用户选择去拨打或取消拨打
     NSString *dialStr=[NSString stringWithFormat:@"telprompt://%@",_phoneTF.text];
     //将字符串转化成NSURL对象
@@ -115,6 +116,15 @@
 }
 
 - (IBAction)baoMingAction:(UIBarButtonItem *)sender {
+    PFUser *user1=[PFUser currentUser];
+    if (user1) {
+        
+    }else {
+        [Utilities popUpAlertViewWithMsg:@"你尚未登入，烦请登入，感谢的你支持" andTitle:nil onView:self];
+        return;
+    
+    }
+    
    PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
     activity.objectId =_card.objectId;
     PFUser *owe=[PFUser currentUser];
