@@ -8,6 +8,7 @@
 
 #import "MessageViewController.h"
 #import "MessageTableViewCell.h"
+#import "DimessViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface MessageViewController ()
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
@@ -100,16 +101,16 @@
     
     card[@"click"]=@([click integerValue]+1);
     
-    //    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
-    //    image.objectId =card[@"objectId"];
-    //    NSInteger *click=image[@"click"];
-    //    image[@"click"]=@([click integerValue]+1);
+    
     [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"增加点击量");
             
         }
     }];
-
+    UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Storyboard1" bundle:nil];
+    //更具名称找到名为detailView的页面
+    DimessViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"dotai"];
+[self.navigationController pushViewController:detailView animated:YES];
 }
 @end

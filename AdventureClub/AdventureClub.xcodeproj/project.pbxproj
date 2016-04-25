@@ -47,6 +47,7 @@
 		307A47671CC4CAAE008AE94D /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 307A47631CC4CAAE008AE94D /* 4.jpg */; };
 		30F8CF8B1CCDA9F800CB4D57 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F8CF8A1CCDA9F800CB4D57 /* MessageTableViewCell.m */; };
 		30F8CF8E1CCDAF1400CB4D57 /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F8CF8D1CCDAF1400CB4D57 /* MineTableViewCell.m */; };
+		30F8CF911CCDF33700CB4D57 /* DimessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F8CF901CCDF33700CB4D57 /* DimessViewController.m */; };
 		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
 		30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA47371CC9B65F00FC5F2D /* stimeViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
@@ -143,6 +144,8 @@
 		30F8CF8A1CCDA9F800CB4D57 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
 		30F8CF8C1CCDAF1400CB4D57 /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
 		30F8CF8D1CCDAF1400CB4D57 /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
+		30F8CF8F1CCDF33700CB4D57 /* DimessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimessViewController.h; sourceTree = "<group>"; };
+		30F8CF901CCDF33700CB4D57 /* DimessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimessViewController.m; sourceTree = "<group>"; };
 		30F94B321CC3937200CB1666 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		30FA47361CC9B65F00FC5F2D /* stimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stimeViewController.h; sourceTree = "<group>"; };
 		30FA47371CC9B65F00FC5F2D /* stimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stimeViewController.m; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				7C1E08671CC23D0B0067ED20 /* MessageViewController.m */,
 				30F8CF891CCDA9F800CB4D57 /* MessageTableViewCell.h */,
 				30F8CF8A1CCDA9F800CB4D57 /* MessageTableViewCell.m */,
+				30F8CF8F1CCDF33700CB4D57 /* DimessViewController.h */,
+				30F8CF901CCDF33700CB4D57 /* DimessViewController.m */,
 				7C1E085D1CC233EA0067ED20 /* MineViewController.h */,
 				7C1E085E1CC233EA0067ED20 /* MineViewController.m */,
 				30F8CF8C1CCDAF1400CB4D57 /* MineTableViewCell.h */,
@@ -664,6 +669,7 @@
 				30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */,
 				7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */,
 				210A0F3C1CC37D5200FCE248 /* TAAnimatedDotView.m in Sources */,
+				30F8CF911CCDF33700CB4D57 /* DimessViewController.m in Sources */,
 				30F8CF8E1CCDAF1400CB4D57 /* MineTableViewCell.m in Sources */,
 				2115D1801CCB4DAC00CD625C /* BaoMingViewController.m in Sources */,
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
