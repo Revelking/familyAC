@@ -50,6 +50,7 @@
 		30F8CF911CCDF33700CB4D57 /* DimessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F8CF901CCDF33700CB4D57 /* DimessViewController.m */; };
 		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
 		30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA47371CC9B65F00FC5F2D /* stimeViewController.m */; };
+		7C140E221CCDF909002D353A /* DimessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C140E211CCDF909002D353A /* DimessTableViewCell.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
@@ -151,6 +152,8 @@
 		30FA47371CC9B65F00FC5F2D /* stimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stimeViewController.m; sourceTree = "<group>"; };
 		7216376B8709F76044ABE6FA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7C140E201CCDF909002D353A /* DimessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimessTableViewCell.h; sourceTree = "<group>"; };
+		7C140E211CCDF909002D353A /* DimessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimessTableViewCell.m; sourceTree = "<group>"; };
 		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		7C1E085E1CC233EA0067ED20 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				30F8CF8A1CCDA9F800CB4D57 /* MessageTableViewCell.m */,
 				30F8CF8F1CCDF33700CB4D57 /* DimessViewController.h */,
 				30F8CF901CCDF33700CB4D57 /* DimessViewController.m */,
+				7C140E201CCDF909002D353A /* DimessTableViewCell.h */,
+				7C140E211CCDF909002D353A /* DimessTableViewCell.m */,
 				7C1E085D1CC233EA0067ED20 /* MineViewController.h */,
 				7C1E085E1CC233EA0067ED20 /* MineViewController.m */,
 				30F8CF8C1CCDAF1400CB4D57 /* MineTableViewCell.h */,
@@ -649,6 +654,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CC038051CC37F36006FFA2B /* HomeTableViewCell.m in Sources */,
+				7C140E221CCDF909002D353A /* DimessTableViewCell.m in Sources */,
 				7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */,
 				E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */,
 				210A0F3D1CC37D5200FCE248 /* TADotView.m in Sources */,

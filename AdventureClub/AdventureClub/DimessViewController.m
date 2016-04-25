@@ -34,4 +34,22 @@
 }
 */
 
+- (IBAction)zanAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+- (IBAction)caiAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+- (IBAction)pinLunAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+//当键盘右下角的确认按钮被按时收键盘
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+//点击空白处收键盘
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
 @end
