@@ -147,16 +147,16 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 ////ableView:heightForRowAtIndexPath: 中调用这个方法，填入需要的参数计算cell 高度。
-//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    PFObject * obj = [_objectsForShow objectAtIndex:indexPath.row];
-//    NSString *str = obj[@"content"];
-//    DimessTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-//    CGSize maxSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 30, 1000);
-//    CGSize contentLabelSize = [str boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.pinLunDeNeiRongLbl.font} context:nil].size;
-//    return cell.pinLunDeNeiRongLbl.frame.origin.y + contentLabelSize.height;
-//}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    PFObject * obj = [_objectsForShow objectAtIndex:indexPath.row];
+    NSString *str = obj[@"content"];
+    DimessTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    CGSize maxSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 30, 1000);
+    CGSize contentLabelSize = [str boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.pinLunDeNeiRongLbl.font} context:nil].size;
+    return cell.pinLunDeNeiRongLbl.frame.origin.y + contentLabelSize.height+5;
+}
 - (IBAction)zanAction:(UIButton *)sender forEvent:(UIEvent *)event {
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
     activity.objectId =_dimess.objectId;
@@ -398,5 +398,14 @@
     if (sender.state == UIGestureRecognizerStateRecognized) {
         [self.view endEditing:YES];
     }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+
+    return 0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+
+    return 0;
+
 }
 @end
