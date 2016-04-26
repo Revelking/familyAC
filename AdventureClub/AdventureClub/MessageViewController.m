@@ -139,4 +139,16 @@
     detailView.dimess=card;
 [self.navigationController pushViewController:detailView animated:YES];
 }
+//每次页面数显后
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
+}
+
+//每次页面消失后
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
+}
 @end

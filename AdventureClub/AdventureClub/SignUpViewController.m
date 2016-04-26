@@ -57,7 +57,11 @@
     user[@"phone"]=phone;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
         if (!error) {
-           
+            PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
+            acticity[@"user"]=user;
+            [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                
+            }];
             UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *ac=[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 [self .navigationController popViewControllerAnimated:YES];
@@ -88,11 +92,7 @@
         
         }
     }];
-   PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
-    acticity[@"user"]=user;
-    [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        
-    }];
+   
 }
 
 //当键盘右下角的确认按钮被按时收键盘

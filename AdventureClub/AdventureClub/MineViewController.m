@@ -22,7 +22,7 @@
     PFUser *currentUser=[PFUser currentUser];
     
     if (currentUser) {
-         _anniu.title=@"切换";
+        [_anniu setTitle:@"切换" forState:UIControlStateNormal];
         NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
         PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
         UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
@@ -42,7 +42,7 @@
             }];
     
     }else {
-        _anniu.title=@"登入";
+       [_anniu setTitle:@"登入" forState:UIControlStateNormal];
         UIImage *myImage = [UIImage imageNamed:@"wei"];
         _yongimage.image=myImage;
         _nameLb.text=@"尚未登入";

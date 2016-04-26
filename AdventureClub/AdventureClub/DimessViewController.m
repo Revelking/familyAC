@@ -158,6 +158,13 @@
     return cell.pinLunDeNeiRongLbl.frame.origin.y + contentLabelSize.height+5;
 }
 - (IBAction)zanAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    PFUser *use=[PFUser currentUser];
+    if (use) {
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
+        return;
+    }
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
     activity.objectId =_dimess.objectId;
     
@@ -209,6 +216,13 @@
 
 }
 - (IBAction)caiAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    PFUser *use=[PFUser currentUser];
+    if (use) {
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
+        return;
+    }
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
     activity.objectId =_dimess.objectId;
     
@@ -277,6 +291,13 @@
 //}
 
 - (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event {
+    PFUser *use=[PFUser currentUser];
+    if (use) {
+        
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
+        return;
+    }
     
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
     activity.objectId =_dimess.objectId;
