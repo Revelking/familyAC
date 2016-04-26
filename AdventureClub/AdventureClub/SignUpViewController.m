@@ -58,9 +58,10 @@
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
         if (!error) {
             PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
-            acticity[@"user"]=user;
+            PFUser *us=user;
+            acticity[@"user"]=us;
             [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                
+                NSLog(@"创建成功了美，");
             }];
             UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *ac=[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
