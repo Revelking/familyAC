@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DimessTableViewCell : UITableViewCell
+
 @property (weak, nonatomic) IBOutlet UIImageView *pinLunTouXiangIV;
 @property (weak, nonatomic) IBOutlet UILabel *pinLunUsernameLbl;
 @property (weak, nonatomic) IBOutlet UILabel *pinLunDeNeiRongLbl;

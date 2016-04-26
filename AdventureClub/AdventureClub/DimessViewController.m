@@ -235,12 +235,7 @@
     }];
 
 }
-- (IBAction)pinLunAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    
-    
-    
-    
-}
+
 
 
 
@@ -299,6 +294,9 @@
     
    
     
+}
+
+- (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event {
 }
 -(void)foe{
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];

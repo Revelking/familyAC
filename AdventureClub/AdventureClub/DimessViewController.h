@@ -18,13 +18,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *zanLbl;
 - (IBAction)caiAction:(UIButton *)sender forEvent:(UIEvent *)event;
 @property (weak, nonatomic) IBOutlet UILabel *caiLbl;
-- (IBAction)pinLunAction:(UIButton *)sender forEvent:(UIEvent *)event;
 @property (weak, nonatomic) IBOutlet UILabel *pinLunLbl;
-@property (weak, nonatomic) IBOutlet UITextView *huoDongNeiRongTV;
+@property (weak, nonatomic) IBOutlet UILabel *huoDongNeiRongTV;
 //输入kuang
 @property (weak, nonatomic) IBOutlet UITextField *faBiaoPinLunTF;
 @property(strong,nonatomic)PFObject *dimess;
 - (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event;
+- (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 
 @end
