@@ -11,6 +11,7 @@
 #import "DimessTableViewCell.h"
 @interface DimessViewController ()
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
+@property (strong, nonatomic) UITapGestureRecognizer *tapTrick;
 @end
 
 @implementation DimessViewController
@@ -69,6 +70,13 @@
     }];
     _huoDongNeiRongTV.text=_dimess[@"contenttext"];
     [self reque];
+    _tapTrick = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgTap:)];
+    _tapTrick.enabled=NO;
+    [self.view addGestureRecognizer:_tapTrick];
+    //监听键盘打开这一操作，打开后执行keyboardWillShow:方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    //监听键盘收起这一操作，收起后执行keyboardWillHide:方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     // Do any additional setup after loading the view.
 }
 -(void)reque{
@@ -83,6 +91,7 @@
        [quer includeKey:@"user"];
         [quer findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             [aiv stopAnimating];
+            NSLog(@"ddsds%@",objects);
             if (!error) {
                 _objectsForShow=[NSMutableArray arrayWithArray:objects];
                 [_tableView reloadData];
@@ -131,8 +140,23 @@
         [cell.pinLunTouXiangIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
     }];
     cell.pinLunDeNeiRongLbl.text=ob[@"content"];
+    NSLog(@"dasddasd%@",ob[@"content"]);
     return cell;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+////ableView:heightForRowAtIndexPath: 中调用这个方法，填入需要的参数计算cell 高度。
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    
+//    PFObject * obj = [_objectsForShow objectAtIndex:indexPath.row];
+//    NSString *str = obj[@"content"];
+//    DimessTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+//    CGSize maxSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 30, 1000);
+//    CGSize contentLabelSize = [str boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.pinLunDeNeiRongLbl.font} context:nil].size;
+//    return cell.pinLunDeNeiRongLbl.frame.origin.y + contentLabelSize.height;
+//}
 - (IBAction)zanAction:(UIButton *)sender forEvent:(UIEvent *)event {
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
     activity.objectId =_dimess.objectId;
@@ -247,10 +271,10 @@
     return YES;
 }
 
-//点击空白处收键盘
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.view endEditing:YES];
-}
+////点击空白处收键盘
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self.view endEditing:YES];
+//}
 
 - (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event {
     
@@ -297,6 +321,13 @@
 }
 
 - (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    PFUser *use=[PFUser currentUser];
+    if (use) {
+        [self penlun];
+    }else{
+        [Utilities popUpAlertViewWithMsg:@"尚未登入无法发评论，烦请登入" andTitle:nil onView:self];
+        
+    }
 }
 -(void)foe{
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
@@ -314,13 +345,7 @@
     }];
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    PFUser *use=[PFUser currentUser];
-    if (use) {
-        [self penlun];
-    }else{
-        [Utilities popUpAlertViewWithMsg:@"尚未登入无法发评论，烦请登入" andTitle:nil onView:self];
     
-    }
     
     
 
@@ -345,6 +370,33 @@
                 NSLog(@"评论表成功");
             }
         }];
+    }
+}
+//键盘打开时的操作
+- (void)keyboardWillShow:(NSNotification *)notification {
+    NSLog(@"键盘打开了");
+   _tapTrick.enabled=YES;
+    //获得键盘的位置
+    CGRect keyboardRect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    NSLog(@"键盘的高度是:%f",keyboardRect.size.height);
+    //计算键盘出现后，为确保_scrollView的内容都能显示，它应该滚动到的y轴位置
+    CGFloat newOffset = (_tableView.contentSize.height - _tableView.frame.size.height) + keyboardRect.size.height;
+    //将_scrollView滚动到上述位置
+    [_tableView setContentOffset:CGPointMake(0, newOffset) animated:YES];
+}
+//键盘收起时的操作
+- (void)keyboardWillHide:(NSNotification *)notification {
+    NSLog(@"键盘收回了");
+  
+    _tapTrick.enabled=NO;
+    //计算键盘消失后，_scrollView应该滚动回到的y轴位置
+    CGFloat newOffset = (_tableView.contentSize.height - _tableView.frame.size.height) + 50;
+    //将_scrollView滚动到上述位置
+    [_tableView setContentOffset:CGPointMake(0, newOffset) animated:YES];
+}
+-(void)bgTap:(UITapGestureRecognizer *)sender {
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        [self.view endEditing:YES];
     }
 }
 @end

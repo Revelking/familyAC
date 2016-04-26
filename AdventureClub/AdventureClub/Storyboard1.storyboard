@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -158,6 +158,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="9Aq-fG-MsU" id="WYU-hZ-DRD"/>
+                                            </connections>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyo-S0-lGO">
                                             <rect key="frame" x="319" y="0.0" width="46" height="30"/>
@@ -224,13 +227,17 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="9Aq-fG-MsU" id="swB-ln-fWZ"/>
+                                    <outlet property="delegate" destination="9Aq-fG-MsU" id="02w-Td-8IR"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fiC-wP-9nr" secondAttribute="bottom" id="E4g-yf-jja"/>
                             <constraint firstItem="fiC-wP-9nr" firstAttribute="top" secondItem="JBv-f7-SKw" secondAttribute="top" id="KfA-92-LIR"/>
                             <constraint firstItem="fiC-wP-9nr" firstAttribute="leading" secondItem="JBv-f7-SKw" secondAttribute="leading" id="LHq-w4-Ymf"/>
-                            <constraint firstItem="jnW-Li-HXC" firstAttribute="top" secondItem="fiC-wP-9nr" secondAttribute="bottom" id="RPS-Te-xKp"/>
                             <constraint firstAttribute="trailing" secondItem="fiC-wP-9nr" secondAttribute="trailing" id="drB-mY-JsE"/>
                         </constraints>
                     </view>
