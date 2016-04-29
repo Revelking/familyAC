@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--活动详情-->
         <scene sceneID="GuD-hK-g95">
             <objects>
-                <viewController storyboardIdentifier="dotai" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Aq-fG-MsU" customClass="DimessViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dotai" hidesBottomBarWhenPushed="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Aq-fG-MsU" customClass="DimessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zRc-29-ZF1"/>
                         <viewControllerLayoutGuide type="bottom" id="jnW-Li-HXC"/>
@@ -252,6 +252,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="活动详情" id="fze-C3-bZl"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="biaotiLbl" destination="dKf-hj-7ih" id="i9u-Mg-2WO"/>
