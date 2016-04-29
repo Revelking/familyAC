@@ -409,11 +409,13 @@
 - (void)keyboardWillHide:(NSNotification *)notification {
     NSLog(@"键盘收回了");
   
-    _tapTrick.enabled=NO;
-    //计算键盘消失后，_scrollView应该滚动回到的y轴位置
-    CGFloat newOffset = (_tableView.contentSize.height - _tableView.frame.size.height) + 50;
-    //将_scrollView滚动到上述位置
-    [_tableView setContentOffset:CGPointMake(0, newOffset) animated:YES];
+    if (3<_objectsForShow.count) {
+        _tapTrick.enabled=NO;
+        //计算键盘消失后，_scrollView应该滚动回到的y轴位置
+        CGFloat newOffset = (_tableView.contentSize.height - _tableView.frame.size.height) + 50;
+        //将_scrollView滚动到上述位置
+        [_tableView setContentOffset:CGPointMake(0, newOffset) animated:YES];
+    }
 }
 -(void)bgTap:(UITapGestureRecognizer *)sender {
     if (sender.state == UIGestureRecognizerStateRecognized) {
