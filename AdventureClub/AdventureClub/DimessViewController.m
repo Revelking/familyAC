@@ -409,7 +409,7 @@
 - (void)keyboardWillHide:(NSNotification *)notification {
     NSLog(@"键盘收回了");
   
-    if (3<_objectsForShow.count) {
+    if (2<_objectsForShow.count) {
         _tapTrick.enabled=NO;
         //计算键盘消失后，_scrollView应该滚动回到的y轴位置
         CGFloat newOffset = (_tableView.contentSize.height - _tableView.frame.size.height) + 50;
