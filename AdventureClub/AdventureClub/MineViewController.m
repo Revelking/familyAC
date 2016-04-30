@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    _objectForShow=[NSMutableArray new];
     PFUser *currentUser=[PFUser currentUser];
     
     if (currentUser) {
@@ -61,7 +61,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+-(void)reques{
+    
+    
+    
+    PFUser *cus=[PFUser currentUser];
+    
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",cus];
+    PFQuery *query=[PFQuery queryWithClassName:@"Qcoment" predicate:predicate];
+      [query includeKey:@"dynamic"];
+    [query includeKey:@"dynamic.user"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (!error) {
+            _objectForShow=[NSMutableArray arrayWithArray:objects];
+            [_tableView reloadData];
+        }else{
+            
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        }
+        
+        
+    }];
+    
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -80,7 +103,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
+    PFObject *ob=_objectForShow[indexPath.row];
     
     return cell;
 }
@@ -93,8 +116,8 @@
 - (IBAction)guanAction:(id)sender forEvent:(UIEvent *)event {
 }
 - (IBAction)dengAction:(UIButton *)sender forEvent:(UIEvent *)event {
-     SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"dengru"];
-    [self.navigationController pushViewController:vc animated:YES];
+     SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"deng"];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
 @end

@@ -21,5 +21,6 @@
 - (IBAction)registeredAction:(UIBarButtonItem *)sender;
 //忘记密码按钮(Button按钮)
 - (IBAction)forgetPasswordAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)pullAction:(UIBarButtonItem *)sender;
 
 @end

@@ -50,8 +50,9 @@
             //将密码文本输入框中的内容清除
             _passwordTF.text = nil;
             //根据故事版的名称，和故事版中页面的名称
-            CeHuaViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"cehua1"];
-            [self.navigationController presentViewController:vc animated:YES completion:nil];
+//            CeHuaViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"cehua1"];
+//            [self.navigationController presentViewController:vc animated:YES completion:nil];
+             [self dismissViewControllerAnimated:YES completion:nil];
             
         } else {
             switch (error.code) {
@@ -113,6 +114,10 @@
     
     
     
+}
+
+- (IBAction)pullAction:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 //当键盘右下角的确认按钮被按时收键盘

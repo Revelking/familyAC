@@ -36,8 +36,8 @@
    
 //    self.view.backgroundColor=[UIColor greenColor];
    
-    UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
-    _sortingControl.tintColor = myTint;
+//    UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
+//    _sortingControl.tintColor = myTint;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tishi) name:@"tis" object:nil];
 }
 -(void)tishi{

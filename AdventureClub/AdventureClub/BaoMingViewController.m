@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ou.png"]];
+//    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ou.png"]];
     NSLog(@"card%@",_card);
     PFUser *ownerUser=_card[@"user"];
 //    _name.text=ownerUser.username;

@@ -344,11 +344,41 @@
 - (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event {
     PFUser *use=[PFUser currentUser];
     if (use) {
+        PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
+        activity.objectId =_dimess.objectId;
+        
+        PFUser *cus=[PFUser currentUser];
+        
+        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND dynamic=%@",cus,activity];
+        PFQuery *query=[PFQuery queryWithClassName:@"FocusOn" predicate:predicate];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            NSInteger  i=objects.count;
+            if (0<i) {
+            
+            }else {
+                [self cahx];
+            }
+        
+        
+        }];
         [self penlun];
     }else{
         [Utilities popUpAlertViewWithMsg:@"尚未登入无法发评论，烦请登入" andTitle:nil onView:self];
         
     }
+}
+-(void)cahx{
+    PFUser *use=[PFUser currentUser];
+            PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
+            activity.objectId =_dimess.objectId;
+            
+            PFObject *focus=[PFObject objectWithClassName:@"Qcoment"];
+            
+            focus[@"user"]=use;
+            focus[@"dynamic"]=activity;
+            [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                NSLog(@"方便查询到，查询的数据");
+            }];
 }
 -(void)foe{
     PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
@@ -367,9 +397,6 @@
 }
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     
-    
-    
-
 }
 -(void)penlun{
 
