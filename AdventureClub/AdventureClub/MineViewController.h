@@ -20,7 +20,8 @@
 //0 或1
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmengCt;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *anniu;
+@property (weak, nonatomic) IBOutlet UIButton *anniu;
+
 - (IBAction)dengAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
