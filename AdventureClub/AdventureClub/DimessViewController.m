@@ -350,7 +350,7 @@
         PFUser *cus=[PFUser currentUser];
         
         NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND dynamic=%@",cus,activity];
-        PFQuery *query=[PFQuery queryWithClassName:@"FocusOn" predicate:predicate];
+        PFQuery *query=[PFQuery queryWithClassName:@"Qcoment" predicate:predicate];
         [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             NSInteger  i=objects.count;
             if (0<i) {
