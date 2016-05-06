@@ -151,5 +151,16 @@
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    PFObject * obj = [_objectsForShow objectAtIndex:indexPath.row];
+    
+    NSString *str = obj[@"contenttext"];
+    
+    MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    CGSize maxSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 30, 1000);
+    CGSize contentLabelSize = [str boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.mentLB.font} context:nil].size;
+    return cell.mentLB.frame.origin.y+15 + contentLabelSize.height+25;
+}
 @end
