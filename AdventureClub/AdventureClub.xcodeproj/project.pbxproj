@@ -36,6 +36,8 @@
 		2115D1801CCB4DAC00CD625C /* BaoMingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */; };
 		2115D1901CCB697F00CD625C /* ou.png in Resources */ = {isa = PBXBuildFile; fileRef = 2115D18F1CCB697F00CD625C /* ou.png */; };
 		29A8BED2CAFE1D932310508B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3F6FD02F57CD7698AB8F0 /* libPods.a */; };
+		300798481CDC324900A86B91 /* attentionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 300798471CDC324900A86B91 /* attentionController.m */; };
+		3007984B1CDC339300A86B91 /* attentionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3007984A1CDC339300A86B91 /* attentionTableViewCell.m */; };
 		300CFC731CC5C1E300E3F040 /* Storyboard1.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */; };
 		300CFC751CC5C1FC00E3F040 /* Storyboard2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */; };
 		300CFC771CC5C20F00E3F040 /* Storyboard3.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */; };
@@ -130,6 +132,10 @@
 		2115D17E1CCB4DAC00CD625C /* BaoMingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoMingViewController.h; sourceTree = "<group>"; };
 		2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoMingViewController.m; sourceTree = "<group>"; };
 		2115D18F1CCB697F00CD625C /* ou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ou.png; sourceTree = "<group>"; };
+		300798461CDC324900A86B91 /* attentionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attentionController.h; sourceTree = "<group>"; };
+		300798471CDC324900A86B91 /* attentionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attentionController.m; sourceTree = "<group>"; };
+		300798491CDC339300A86B91 /* attentionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = attentionTableViewCell.h; sourceTree = "<group>"; };
+		3007984A1CDC339300A86B91 /* attentionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = attentionTableViewCell.m; sourceTree = "<group>"; };
 		300CFC721CC5C1E300E3F040 /* Storyboard1.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard1.storyboard; sourceTree = "<group>"; };
 		300CFC741CC5C1FC00E3F040 /* Storyboard2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard2.storyboard; sourceTree = "<group>"; };
 		300CFC761CC5C20F00E3F040 /* Storyboard3.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard3.storyboard; sourceTree = "<group>"; };
@@ -388,6 +394,10 @@
 				7C8BE9A01CC62BC800188801 /* CeHuaViewController.m */,
 				2115D17E1CCB4DAC00CD625C /* BaoMingViewController.h */,
 				2115D17F1CCB4DAC00CD625C /* BaoMingViewController.m */,
+				300798461CDC324900A86B91 /* attentionController.h */,
+				300798471CDC324900A86B91 /* attentionController.m */,
+				300798491CDC339300A86B91 /* attentionTableViewCell.h */,
+				3007984A1CDC339300A86B91 /* attentionTableViewCell.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -658,11 +668,13 @@
 				7C1E086B1CC247F40067ED20 /* SignInViewController.m in Sources */,
 				E6F867FC1CC613E90091C15F /* TheMessageViewController.m in Sources */,
 				210A0F3D1CC37D5200FCE248 /* TADotView.m in Sources */,
+				3007984B1CDC339300A86B91 /* attentionTableViewCell.m in Sources */,
 				210A0F3E1CC37D5200FCE248 /* TAPageControl.m in Sources */,
 				210A0F3B1CC37D5200FCE248 /* TAAbstractDotView.m in Sources */,
 				2108546C1CC21C460091D649 /* Utilities.m in Sources */,
 				E6F867F61CC5FBB20091C15F /* PersonalViewController.m in Sources */,
 				2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */,
+				300798481CDC324900A86B91 /* attentionController.m in Sources */,
 				7C8BE9A11CC62BC800188801 /* CeHuaViewController.m in Sources */,
 				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,

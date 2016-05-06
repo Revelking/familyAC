@@ -151,4 +151,5 @@
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
 }
+
 @end
