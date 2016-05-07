@@ -169,19 +169,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AXD-Uo-e4q">
-                                <rect key="frame" x="20" y="169" width="240" height="128"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daP-dq-Iop">
-                                <rect key="frame" x="184" y="571" width="46" height="30"/>
-                                <state key="normal" title="确定"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-7t-Rf3">
-                                <rect key="frame" x="20" y="320" width="240" height="128"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-nl-7xG">
                                 <rect key="frame" x="0.0" y="134" width="375" height="1"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -189,15 +176,61 @@
                                     <constraint firstAttribute="height" constant="1" id="nNe-rd-GaI"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lvu-Dh-RqP">
+                                <rect key="frame" x="0.0" y="135" width="375" height="431"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AXD-Uo-e4q">
+                                        <rect key="frame" x="15" y="0.0" width="360" height="351"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-7t-Rf3">
+                                        <rect key="frame" x="15" y="351" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="AAW-Kh-fkK"/>
+                                            <constraint firstAttribute="width" constant="70" id="kFE-jU-JS1"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ZOH-7t-Rf3" firstAttribute="top" secondItem="AXD-Uo-e4q" secondAttribute="bottom" id="Etf-Ji-SWv"/>
+                                    <constraint firstItem="ZOH-7t-Rf3" firstAttribute="leading" secondItem="Lvu-Dh-RqP" secondAttribute="leading" constant="15" id="TX1-Hn-k4g"/>
+                                    <constraint firstItem="AXD-Uo-e4q" firstAttribute="leading" secondItem="Lvu-Dh-RqP" secondAttribute="leading" constant="15" id="ULA-AQ-xy1"/>
+                                    <constraint firstItem="AXD-Uo-e4q" firstAttribute="top" secondItem="Lvu-Dh-RqP" secondAttribute="top" id="cHs-Xo-zyM"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZOH-7t-Rf3" secondAttribute="bottom" constant="10" id="eAI-zH-VEu"/>
+                                    <constraint firstAttribute="trailing" secondItem="AXD-Uo-e4q" secondAttribute="trailing" id="leH-n0-O99"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgO-PK-6Cy">
+                                <rect key="frame" x="15" y="566" width="360" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="o3i-nw-7oP"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daP-dq-Iop">
+                                <rect key="frame" x="15" y="587" width="345" height="30"/>
+                                <state key="normal" title="确定"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="AgO-PK-6Cy" firstAttribute="top" secondItem="Lvu-Dh-RqP" secondAttribute="bottom" id="2bo-3Y-na3"/>
+                            <constraint firstItem="daP-dq-Iop" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" constant="15" id="3y6-vN-SrL"/>
                             <constraint firstAttribute="trailing" secondItem="9pe-nl-7xG" secondAttribute="trailing" id="484-EE-SfJ"/>
+                            <constraint firstItem="AgO-PK-6Cy" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" constant="15" id="810-2t-FHQ"/>
+                            <constraint firstItem="Lvu-Dh-RqP" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" id="Mbi-u0-OA2"/>
                             <constraint firstItem="51G-Kq-HzJ" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" constant="15" id="QfC-eb-A61"/>
                             <constraint firstAttribute="trailing" secondItem="51G-Kq-HzJ" secondAttribute="trailing" constant="15" id="Zv4-DQ-FwS"/>
                             <constraint firstItem="9pe-nl-7xG" firstAttribute="top" secondItem="51G-Kq-HzJ" secondAttribute="bottom" constant="20" id="dDk-9H-dID"/>
+                            <constraint firstItem="daP-dq-Iop" firstAttribute="top" secondItem="AgO-PK-6Cy" secondAttribute="bottom" constant="20" id="iV6-c9-omb"/>
+                            <constraint firstAttribute="trailing" secondItem="Lvu-Dh-RqP" secondAttribute="trailing" id="jYx-Ag-rsH"/>
                             <constraint firstItem="51G-Kq-HzJ" firstAttribute="top" secondItem="egS-54-6Z5" secondAttribute="bottom" constant="20" id="m9g-sw-ZHO"/>
+                            <constraint firstItem="Lvu-Dh-RqP" firstAttribute="top" secondItem="9pe-nl-7xG" secondAttribute="bottom" id="qrB-pn-IYo"/>
+                            <constraint firstAttribute="trailing" secondItem="daP-dq-Iop" secondAttribute="trailing" constant="15" id="rMh-M0-7uS"/>
+                            <constraint firstAttribute="trailing" secondItem="AgO-PK-6Cy" secondAttribute="trailing" id="v1g-9u-wZn"/>
                             <constraint firstItem="9pe-nl-7xG" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" id="xuR-JH-IoW"/>
+                            <constraint firstItem="4yN-C2-qHM" firstAttribute="top" secondItem="daP-dq-Iop" secondAttribute="bottom" constant="50" id="xyh-v1-hF2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qR0-up-TLa"/>
@@ -2049,6 +2082,7 @@
     </scenes>
     <resources>
         <image name="1.jpg" width="480" height="640"/>
+        <image name="6" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XNP-ii-87R"/>
