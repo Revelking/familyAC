@@ -163,7 +163,42 @@
                     <view key="view" contentMode="scaleToFill" id="EFd-MC-t3S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="标题" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="51G-Kq-HzJ">
+                                <rect key="frame" x="15" y="84" width="345" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AXD-Uo-e4q">
+                                <rect key="frame" x="20" y="169" width="240" height="128"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daP-dq-Iop">
+                                <rect key="frame" x="184" y="571" width="46" height="30"/>
+                                <state key="normal" title="确定"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOH-7t-Rf3">
+                                <rect key="frame" x="20" y="320" width="240" height="128"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9pe-nl-7xG">
+                                <rect key="frame" x="0.0" y="134" width="375" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="nNe-rd-GaI"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="9pe-nl-7xG" secondAttribute="trailing" id="484-EE-SfJ"/>
+                            <constraint firstItem="51G-Kq-HzJ" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" constant="15" id="QfC-eb-A61"/>
+                            <constraint firstAttribute="trailing" secondItem="51G-Kq-HzJ" secondAttribute="trailing" constant="15" id="Zv4-DQ-FwS"/>
+                            <constraint firstItem="9pe-nl-7xG" firstAttribute="top" secondItem="51G-Kq-HzJ" secondAttribute="bottom" constant="20" id="dDk-9H-dID"/>
+                            <constraint firstItem="51G-Kq-HzJ" firstAttribute="top" secondItem="egS-54-6Z5" secondAttribute="bottom" constant="20" id="m9g-sw-ZHO"/>
+                            <constraint firstItem="9pe-nl-7xG" firstAttribute="leading" secondItem="EFd-MC-t3S" secondAttribute="leading" id="xuR-JH-IoW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qR0-up-TLa"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -1562,7 +1597,7 @@
         <!--关注-->
         <scene sceneID="r76-IQ-HqC">
             <objects>
-                <tableViewController id="a7i-QT-8vy" customClass="attentionController" sceneMemberID="viewController">
+                <tableViewController hidesBottomBarWhenPushed="YES" id="a7i-QT-8vy" customClass="attentionController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="143" sectionHeaderHeight="28" sectionFooterHeight="28" id="YYT-4U-Zeg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1651,6 +1686,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="关注" id="YBK-vU-iWQ"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTe-3h-Jqz" userLabel="First Responder" sceneMemberID="firstResponder"/>
