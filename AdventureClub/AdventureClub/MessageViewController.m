@@ -20,6 +20,7 @@
     [super viewDidLoad];
     _objectsForShow=[NSMutableArray new];
     [self.segmeng addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reques) name:@"namehome" object:nil];
     [self reques];
     // Do any additional setup after loading the view.
 }
