@@ -95,7 +95,28 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+//每次页面数显后
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
 
+    PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+    activity.objectId =_card.objectId;
+    PFUser *owe=[PFUser currentUser];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND acticitie=%@",owe,activity];
+    PFQuery *query=[PFQuery queryWithClassName:@"Apply" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSInteger  i=objects.count;
+        if (0<i) {
+              _anniu.title=@"取消";
+        }else {
+            
+            _anniu.title=@"报名";
+        }
+    }];
+
+
+
+}
 /*
 #pragma mark - Navigation
 
@@ -134,8 +155,26 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         NSInteger  i=objects.count;
         if (0<i) {
-            NSLog(@"这个看看%@",objects);
-           [Utilities popUpAlertViewWithMsg:@"你已经报名过啦，烦请注意活动开始时间" andTitle:nil onView:self];
+            
+           
+            UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"是否取消报名" preferredStyle: UIAlertControllerStyleAlert];
+             UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                 PFObject *obj=objects[0];
+                 PFObject *activity= [PFObject objectWithClassName:@"Apply"];
+                 activity.objectId =obj.objectId;
+                 UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
+                 [activity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                     [aiv stopAnimating];
+                     if (succeeded) {
+                         NSLog(@"取消关注成功");
+                     }
+                 }];
+             }];
+            UIAlertAction *cf=[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+            [alertView addAction:cancelAction];
+            [alertView addAction:cf];
+            [self presentViewController:alertView animated:YES completion:nil];
+            
         }else {
         
             [self hao];

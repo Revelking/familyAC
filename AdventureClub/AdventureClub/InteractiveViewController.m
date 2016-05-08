@@ -65,22 +65,37 @@
     UIActivityIndicatorView *aiv =[Utilities getCoverOnView:self.view];
     [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [aiv stopAnimating];
-        NSNotification *nota = [NSNotification notificationWithName:@"namehome" object:nil];
-        
-        //结合线程触发上述通知（让通知要完成的事先执行完以后再触发通知这一行代码后面的代码）
-        [[NSNotificationCenter defaultCenter]performSelectorOnMainThread:@selector(postNotification:) withObject: nota waitUntilDone:YES];
-        [self.navigationController popViewControllerAnimated:YES];
+//        NSNotification *nota = [NSNotification notificationWithName:@"namehome" object:nil];
+//        
+//        //结合线程触发上述通知（让通知要完成的事先执行完以后再触发通知这一行代码后面的代码）
+//        [[NSNotificationCenter defaultCenter]performSelectorOnMainThread:@selector(postNotification:) withObject: nota waitUntilDone:YES];
+//        [self.navigationController popViewControllerAnimated:YES];
     }];
     if (image1!=nil) {
+        NSLog(@"asdsafasfasdfasfasfsafasfassdasdasdasd");
         PFObject *imagepf=[PFObject objectWithClassName:@"Image"];
         NSData  *photoData=UIImagePNGRepresentation(image1);
         //将上述数据流转化成PFFILE对象，这是个文件对象， 这里除了设置文件内容，还需要给文件取个文件名，这个文件名可以是任何名字
-        PFFile  *photoFile=[PFFile fileWithName:@"photo.png" data:photoData];
+        PFFile  *photoFile=[PFFile fileWithName:@"phot.png" data:photoData];
         imagepf[@"image"]=photoFile;
         imagepf[@"nom"]=@"1";
+        
         imagepf[@"dynamic"]=acticity;
+        UIActivityIndicatorView *aiv =[Utilities getCoverOnView:self.view];
         [imagepf saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-            NSLog(@"第一个");
+            [aiv stopAnimating];
+            if (succeeded) {
+                 NSLog(@"第一个");
+                        NSNotification *nota = [NSNotification notificationWithName:@"namehome" object:nil];
+                
+                        //结合线程触发上述通知（让通知要完成的事先执行完以后再触发通知这一行代码后面的代码）
+                        [[NSNotificationCenter defaultCenter]performSelectorOnMainThread:@selector(postNotification:) withObject: nota waitUntilDone:YES];
+                        [self.navigationController popViewControllerAnimated:YES];
+            }else {
+            
+            NSLog(@"失败");
+            }
+          
         }];
     }
 

@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *yibaoming;
 //头像
 @property (weak, nonatomic) IBOutlet UIImageView *touXiang;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *anniu;
 
 //用户名
 @property (weak, nonatomic) IBOutlet UILabel *name;
