@@ -10,16 +10,20 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
-@interface PersonalViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface PersonalViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate> {
+    BOOL flag;
+}
 @property(strong,nonatomic)NSMutableArray *objectForShow;
 @property(strong,nonatomic)UIImagePickerController *imagePC;
 @property(nonatomic)NSInteger i;
+@property(strong,nonatomic)NSString *o;
 @end
 
 @implementation PersonalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    flag = NO;
     _i=2;
     _image.userInteractionEnabled=YES;
     UITapGestureRecognizer *singleRecognizer;
@@ -34,6 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)sing{
+    _o=@"1";
     //alertControllerWithTitle:标题  message:正文
     UIAlertController *actionSheet=[UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *takePhoto=[UIAlertAction actionWithTitle:@"拍照📷" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
@@ -118,7 +123,7 @@
         return;
     }
     UIImage *image=_image.image;
-    if (image==nil) {
+    if (!flag) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张图片" andTitle:nil onView:self];
         return;
     }
@@ -187,6 +192,6 @@
     
     _image.image=image;
     
-    
-    
-}@end
+    flag = YES;
+}
+@end

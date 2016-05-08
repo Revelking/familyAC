@@ -9,7 +9,13 @@
 #import "FaBuViewController.h"
 #import "stimeViewController.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-@interface FaBuViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface FaBuViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+    BOOL flag;
+    BOOL flag1;
+    BOOL flag2;
+    BOOL flag3;
+   
+}
 @property(nonatomic)NSInteger i;
 @property(nonatomic)NSInteger c;
 @property(strong,nonatomic)UIImagePickerController *imagePC;
@@ -19,6 +25,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    flag=NO;
+    flag1=NO;
+    flag2=NO;
+    flag3=NO;
+    
     _image1IV.userInteractionEnabled=YES;
     _image2IV.userInteractionEnabled=YES;
     _image3IV.userInteractionEnabled=YES;
@@ -231,16 +242,13 @@
     NSString *didian=_diDianTF.text;
     NSString *dianhua=_dianHuaTF.text;
     NSString *zhuyu=_zhuYIShiXiangTF.text;
-     UIImage *image=_image1IV.image;
-    UIImage *image1=_image2IV.image;
-    UIImage *image2=_image3IV.image;
-    UIImage *image3=_image4IV.image;
+    
     
     if (biaoti.length==0||textV.length==0||kaishi.length==0||jieshu.length==0||rensu.length==0||dianhua.length==0||didian.length==0||zhuyu.length==0) {
         [Utilities popUpAlertViewWithMsg:@"非常抱歉，内容为空，请填写" andTitle:nil onView:self];
         return;
     }
-    if (image==nil&&image1==nil&&image2==nil&&image3==nil) {
+    if (!flag||!flag1||!flag2||!flag3) {
         [Utilities popUpAlertViewWithMsg:@"请选择一张图片" andTitle:nil onView:self];
         return;
     }
@@ -435,15 +443,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     //将上面拿到的图片设置为
     if (_c==1) {
+        flag=YES;
         _image1IV.image=image;
     }else if (_c==2){
-    
+        flag1=YES;
         _image2IV.image=image;
     }else if (_c==3){
-    
+        flag2=YES;
         _image3IV.image=image;
     }else if (_c==4){
-    
+        flag3=YES;
         _image4IV.image=image;
     }
    
