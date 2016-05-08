@@ -271,8 +271,8 @@
                                 <rect key="frame" x="240" y="0.0" width="80" height="568"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLR-MW-g4a">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="568"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xLR-MW-g4a">
+                                <rect key="frame" x="20" y="0.0" width="240" height="568"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SAn-aM-9Tg">
                                         <rect key="frame" x="20" y="30" width="80" height="80"/>

@@ -9,7 +9,9 @@
 #import "InteractiveViewController.h"
 
 #import <MobileCoreServices/MobileCoreServices.h>
-@interface InteractiveViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface InteractiveViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>{
+    BOOL flag;
+}
 
 @property(strong,nonatomic)UIImagePickerController *imagePC;
 @end
@@ -18,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    flag =NO;
     // Do any additional setup after loading the view.
     _image.userInteractionEnabled=YES;
     UITapGestureRecognizer *singleRecognizer;
@@ -50,7 +53,7 @@
         [Utilities popUpAlertViewWithMsg:@"内容填写不完整，请填写完整" andTitle:nil onView:self];
         return;
     }
-    if (image1==nil) {
+    if (!flag) {
         [Utilities popUpAlertViewWithMsg:@"您尚未选择相片" andTitle:nil onView:self];
         return;
     }
@@ -183,6 +186,7 @@
 }
 //当选择完媒体文件后被调用
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
+    flag=YES;
     //根据UIImagePickerControllerEditedImage这个健去拿到我们选择的图片
     UIImage *image1=info[UIImagePickerControllerEditedImage];
     //用mode的方式返回上一页
