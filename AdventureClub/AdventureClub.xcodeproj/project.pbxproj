@@ -65,6 +65,7 @@
 		30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA47371CC9B65F00FC5F2D /* stimeViewController.m */; };
 		7C140E221CCDF909002D353A /* DimessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C140E211CCDF909002D353A /* DimessTableViewCell.m */; };
 		7C163BDB1CE1C490005F1CC2 /* GuanYuWoMenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */; };
+		7C163BDE1CE1C7F6005F1CC2 /* BangZhuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C163BDD1CE1C7F6005F1CC2 /* BangZhuViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
@@ -190,6 +191,8 @@
 		7C140E211CCDF909002D353A /* DimessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimessTableViewCell.m; sourceTree = "<group>"; };
 		7C163BD91CE1C490005F1CC2 /* GuanYuWoMenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuanYuWoMenViewController.h; sourceTree = "<group>"; };
 		7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuanYuWoMenViewController.m; sourceTree = "<group>"; };
+		7C163BDC1CE1C7F6005F1CC2 /* BangZhuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BangZhuViewController.h; sourceTree = "<group>"; };
+		7C163BDD1CE1C7F6005F1CC2 /* BangZhuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BangZhuViewController.m; sourceTree = "<group>"; };
 		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		7C1E085E1CC233EA0067ED20 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 				210854661CC21A9A0091D649 /* ViewController */,
 				7C163BD91CE1C490005F1CC2 /* GuanYuWoMenViewController.h */,
 				7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */,
+				7C163BDC1CE1C7F6005F1CC2 /* BangZhuViewController.h */,
+				7C163BDD1CE1C7F6005F1CC2 /* BangZhuViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -893,6 +898,7 @@
 				7C8BE9A11CC62BC800188801 /* CeHuaViewController.m in Sources */,
 				7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */,
 				214E9D841CDDCF4E0011EFC2 /* FansViewController.m in Sources */,
+				7C163BDE1CE1C7F6005F1CC2 /* BangZhuViewController.m in Sources */,
 				7CABC6381CC490A400E74472 /* FaBuViewController.m in Sources */,
 				307A475F1CC4C90E008AE94D /* KSGuideManager.m in Sources */,
 				210854381CC20F5C0091D649 /* AdventureClub.xcdatamodeld in Sources */,
