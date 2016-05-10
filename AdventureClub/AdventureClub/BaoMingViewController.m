@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ou.png"]];
+ //  self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Q.png"]];
     NSLog(@"card%@",_card);
     [self req];
     // Do any additional setup after loading the view.

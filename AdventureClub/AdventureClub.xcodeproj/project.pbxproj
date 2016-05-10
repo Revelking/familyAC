@@ -15,6 +15,7 @@
 		21018B481CE1849E00DC40C7 /* 2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 21018B471CE1849E00DC40C7 /* 2.mov */; };
 		21018B4C1CE184D200DC40C7 /* bi.png in Resources */ = {isa = PBXBuildFile; fileRef = 21018B4B1CE184D200DC40C7 /* bi.png */; };
 		21018B4E1CE1861400DC40C7 /* sha.png in Resources */ = {isa = PBXBuildFile; fileRef = 21018B4D1CE1861400DC40C7 /* sha.png */; };
+		21018B581CE1EE4700DC40C7 /* Q.png in Resources */ = {isa = PBXBuildFile; fileRef = 21018B571CE1EE4700DC40C7 /* Q.png */; };
 		2108542C1CC20F5C0091D649 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108542B1CC20F5C0091D649 /* main.m */; };
 		2108542F1CC20F5C0091D649 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2108542E1CC20F5C0091D649 /* AppDelegate.m */; };
 		210854351CC20F5C0091D649 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 210854331CC20F5C0091D649 /* Main.storyboard */; };
@@ -112,6 +113,7 @@
 		21018B471CE1849E00DC40C7 /* 2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = 2.mov; sourceTree = "<group>"; };
 		21018B4B1CE184D200DC40C7 /* bi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bi.png; sourceTree = "<group>"; };
 		21018B4D1CE1861400DC40C7 /* sha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sha.png; sourceTree = "<group>"; };
+		21018B571CE1EE4700DC40C7 /* Q.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Q.png; sourceTree = "<group>"; };
 		210854271CC20F5C0091D649 /* AdventureClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdventureClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2108542B1CC20F5C0091D649 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2108542D1CC20F5C0091D649 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 		2108542A1CC20F5C0091D649 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				21018B571CE1EE4700DC40C7 /* Q.png */,
 				21018B4D1CE1861400DC40C7 /* sha.png */,
 				21018B4B1CE184D200DC40C7 /* bi.png */,
 				21018B471CE1849E00DC40C7 /* 2.mov */,
@@ -812,6 +815,7 @@
 				30F9016E1CE1DA86002BD6D7 /* 9.jpg in Resources */,
 				300CFC771CC5C20F00E3F040 /* Storyboard3.storyboard in Resources */,
 				30F901701CE1E1FD002BD6D7 /* 8.jpg in Resources */,
+				21018B581CE1EE4700DC40C7 /* Q.png in Resources */,
 				30F9016A1CE1D988002BD6D7 /* 10.jpg in Resources */,
 				300CFC751CC5C1FC00E3F040 /* Storyboard2.storyboard in Resources */,
 				307A47671CC4CAAE008AE94D /* 4.jpg in Resources */,
