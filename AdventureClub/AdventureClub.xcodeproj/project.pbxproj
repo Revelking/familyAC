@@ -64,6 +64,7 @@
 		30F94B331CC3937200CB1666 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30F94B321CC3937200CB1666 /* HomeViewController.m */; };
 		30FA47381CC9B65F00FC5F2D /* stimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FA47371CC9B65F00FC5F2D /* stimeViewController.m */; };
 		7C140E221CCDF909002D353A /* DimessTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C140E211CCDF909002D353A /* DimessTableViewCell.m */; };
+		7C163BDB1CE1C490005F1CC2 /* GuanYuWoMenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */; };
 		7C1E085F1CC233EA0067ED20 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E085E1CC233EA0067ED20 /* MineViewController.m */; };
 		7C1E08621CC23C1C0067ED20 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08611CC23C1C0067ED20 /* TabBarViewController.m */; };
 		7C1E08681CC23D0B0067ED20 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1E08671CC23D0B0067ED20 /* MessageViewController.m */; };
@@ -187,6 +188,8 @@
 		73C3C83C3468A2E83001BD39 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7C140E201CCDF909002D353A /* DimessTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DimessTableViewCell.h; sourceTree = "<group>"; };
 		7C140E211CCDF909002D353A /* DimessTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DimessTableViewCell.m; sourceTree = "<group>"; };
+		7C163BD91CE1C490005F1CC2 /* GuanYuWoMenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuanYuWoMenViewController.h; sourceTree = "<group>"; };
+		7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuanYuWoMenViewController.m; sourceTree = "<group>"; };
 		7C1E085D1CC233EA0067ED20 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
 		7C1E085E1CC233EA0067ED20 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
 		7C1E08601CC23C1C0067ED20 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -544,6 +547,8 @@
 			isa = PBXGroup;
 			children = (
 				210854661CC21A9A0091D649 /* ViewController */,
+				7C163BD91CE1C490005F1CC2 /* GuanYuWoMenViewController.h */,
+				7C163BDA1CE1C490005F1CC2 /* GuanYuWoMenViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -904,6 +909,7 @@
 				7CABC63B1CC4CEEA00E74472 /* SheZhiViewController.m in Sources */,
 				E6F867F91CC608A50091C15F /* FocusOnTableViewController.m in Sources */,
 				2108546B1CC21C460091D649 /* StorageMgr.m in Sources */,
+				7C163BDB1CE1C490005F1CC2 /* GuanYuWoMenViewController.m in Sources */,
 				21018B2F1CE1800E00DC40C7 /* ShiPingViewController.m in Sources */,
 				210A0F471CC37D6100FCE248 /* UIView+SDExtension.m in Sources */,
 				214E9D8B1CDDD2CD0011EFC2 /* InteractiveViewController.m in Sources */,

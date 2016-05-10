@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bY-Hh-t20">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="8bY-Hh-t20">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -400,6 +400,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mAj-37-qLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2689" y="-1211"/>
+        </scene>
+        <!--关于我们-->
+        <scene sceneID="S8U-NX-bNl">
+            <objects>
+                <viewController id="0Jq-Ow-y40" customClass="GuanYuWoMenViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KXT-yu-vxK"/>
+                        <viewControllerLayoutGuide type="bottom" id="PBd-Oo-49y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SUI-9Z-zkK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HXg-8U-ha4">
+                                <rect key="frame" x="95" y="64" width="130" height="90"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="EMy-FO-Kdf"/>
+                                    <constraint firstAttribute="height" constant="90" id="K2v-fv-UMM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="探险俱乐部V1.1.3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-5D-Gbv">
+                                <rect key="frame" x="103" y="159" width="115" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLC-xD-GDK">
+                                <rect key="frame" x="0.0" y="207" width="320" height="33"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="欢迎页                                                        &gt;"/>
+                                <connections>
+                                    <action selector="huanYingYeAction:forEvent:" destination="0Jq-Ow-y40" eventType="touchUpInside" id="YvI-D0-WTL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="BDX-5D-Gbv" firstAttribute="centerX" secondItem="SUI-9Z-zkK" secondAttribute="centerX" id="H3r-f0-0Lt"/>
+                            <constraint firstAttribute="trailing" secondItem="XLC-xD-GDK" secondAttribute="trailing" id="McF-4k-iZE"/>
+                            <constraint firstItem="HXg-8U-ha4" firstAttribute="centerX" secondItem="SUI-9Z-zkK" secondAttribute="centerX" id="ihV-6V-mit"/>
+                            <constraint firstItem="XLC-xD-GDK" firstAttribute="top" secondItem="BDX-5D-Gbv" secondAttribute="bottom" constant="30" id="lCT-aw-lou"/>
+                            <constraint firstItem="HXg-8U-ha4" firstAttribute="top" secondItem="KXT-yu-vxK" secondAttribute="bottom" id="nGc-g3-GgI"/>
+                            <constraint firstItem="XLC-xD-GDK" firstAttribute="leading" secondItem="SUI-9Z-zkK" secondAttribute="leading" id="xlx-jH-yyC"/>
+                            <constraint firstItem="BDX-5D-Gbv" firstAttribute="top" secondItem="HXg-8U-ha4" secondAttribute="bottom" constant="5" id="y8b-wn-hKy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="关于我们" id="lBo-SM-V5M">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="E6e-qX-OwZ">
+                            <connections>
+                                <action selector="fanHuiAction:" destination="0Jq-Ow-y40" id="Y0P-Cg-pHc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageIV" destination="HXg-8U-ha4" id="zdj-4D-Izj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RpE-uD-qaW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3418" y="-540"/>
         </scene>
         <!--Ce Hua View Controller-->
         <scene sceneID="NJh-Uc-vVl">
@@ -2330,6 +2392,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipe-o7-goO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1081" y="-261"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dr7-iY-leJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BmN-GJ-pY2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B3N-fO-a2h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0Jq-Ow-y40" kind="relationship" relationship="rootViewController" id="IUT-jg-gmk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q03-N6-U8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3002" y="-540"/>
         </scene>
     </scenes>
     <resources>
