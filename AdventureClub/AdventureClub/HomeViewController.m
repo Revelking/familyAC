@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "KSGuideManager.h"
 #import "BaoMingViewController.h"
+#import "ShiPingViewController.h"
 @interface HomeViewController ()<SDCycleScrollViewDelegate,ActivityTableViewCellDelegate>
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
 @property(strong,nonatomic)NSMutableArray *acg;
@@ -61,8 +62,13 @@
 }
 -(void)segmentAction{
     if (self.sortingControl.selectedSegmentIndex==1){
+        //跳转到视频页面
+        UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        //更具名称找到名为detailView的页面
+        ShiPingViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"shi"];
         
-        [self latesttime];
+        [self.navigationController pushViewController:detailView animated:YES];
+        
     }else if (self.sortingControl.selectedSegmentIndex==3)
     {
         [self reorder];
