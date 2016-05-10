@@ -40,6 +40,21 @@
 //    UIColor *myTint = [[ UIColor alloc]initWithRed:0.66 green:1.0 blue:0.77 alpha:1.0];
 //    _sortingControl.tintColor = myTint;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tishi) name:@"tis" object:nil];
+    UIRefreshControl *rc=[[UIRefreshControl alloc]init];
+    
+    rc.tag=10001;
+    rc.tintColor=[UIColor darkGrayColor];
+    [rc addTarget:self action:@selector(loadingdata) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:rc];
+    
+//    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName,[UIFont systemFontOfSize:24],NSFontAttributeName,nil];
+//    
+//    [self.sortingControl setTitleTextAttributes:dic forState:UIControlStateNormal];
+    
+    
+    
+   
+    
 }
 -(void)tishi{
     [Utilities popUpAlertViewWithMsg:@"已经退出当前用户" andTitle:nil onView:self];
@@ -61,18 +76,24 @@
     
 }
 -(void)segmentAction{
-    if (self.sortingControl.selectedSegmentIndex==1){
+    if (self.sortingControl.selectedSegmentIndex==3){
         //跳转到视频页面
         UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         //更具名称找到名为detailView的页面
         ShiPingViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"shi"];
         
         [self.navigationController pushViewController:detailView animated:YES];
+         self.sortingControl.momentary = YES;
         
-    }else if (self.sortingControl.selectedSegmentIndex==3)
+    }else if (self.sortingControl.selectedSegmentIndex==1)
     {
         [self reorder];
+     self.sortingControl.momentary = YES;
+    }else if (self.sortingControl.selectedSegmentIndex==2){
     
+        [self latesttime];
+        //设置在点击后是否恢复原样
+         self.sortingControl.momentary = YES;
     }
 
 
@@ -107,6 +128,8 @@
 }
 //请求数据
 -(void)loadingdata{
+    [_objectsForShow removeAllObjects];
+    [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query includeKey:@"user"];
@@ -115,6 +138,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
         _acg=[NSMutableArray arrayWithArray:objects];
+        UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+        [rc endRefreshing];
         if (!error) {
             for(PFObject *bji in objects) {
                 NSLog(@"jjj");
@@ -136,7 +161,9 @@
     [_acg removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     [query includeKey:@"user"];
-      [query orderByDescending:@"click"];
+    [query orderByDescending:@"click"];
+    NSDate * date=[NSDate date];
+    [query whereKey:@"starttime" greaterThanOrEqualTo:date];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
@@ -164,12 +191,15 @@
     PFQuery *query=[PFQuery queryWithClassName:@"Acticitie"];
     [query includeKey:@"user"];
     [query orderByDescending:@"starttime"];
+    NSDate * date=[NSDate date];
+    [query whereKey:@"starttime" greaterThanOrEqualTo:date];
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
-        _acg=[NSMutableArray arrayWithArray:objects];
+       
         if (!error) {
             for(PFObject *bji in objects) {
+                 _acg=[NSMutableArray arrayWithArray:objects];
                 NSLog(@"jjj");
                 NSString *objectId=bji.objectId;
                 NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
@@ -189,10 +219,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectsForShow.count;
 }
@@ -396,6 +423,7 @@
         _dengru.title=@"未登入";
         
     }
+   
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
 }
 

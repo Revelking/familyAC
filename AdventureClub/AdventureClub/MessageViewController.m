@@ -22,6 +22,13 @@
     [self.segmeng addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reques) name:@"namehome" object:nil];
     [self reques];
+    
+    UIRefreshControl *rc=[[UIRefreshControl alloc]init];
+    
+    rc.tag=10001;
+    rc.tintColor=[UIColor darkGrayColor];
+    [rc addTarget:self action:@selector(reques) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:rc];
     // Do any additional setup after loading the view.
 }
 
@@ -51,10 +58,13 @@
 
 }
 -(void)reques{
+    [_objectsForShow removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
     [query includeKey:@"user"];
     [query orderByAscending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+        [rc endRefreshing];
         if (!error) {
             NSLog(@"活动的详情页%@",objects);
             _objectsForShow=[NSMutableArray arrayWithArray:objects];
