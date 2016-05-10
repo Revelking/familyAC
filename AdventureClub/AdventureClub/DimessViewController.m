@@ -18,6 +18,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self uddate];
+    [self reque];
+    _tapTrick = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgTap:)];
+    _tapTrick.enabled=NO;
+    [self.view addGestureRecognizer:_tapTrick];
+    //监听键盘打开这一操作，打开后执行keyboardWillShow:方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    //监听键盘收起这一操作，收起后执行keyboardWillHide:方法
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    UIRefreshControl *rc=[[UIRefreshControl alloc]init];
+    
+    rc.tag=10001;
+    rc.tintColor=[UIColor darkGrayColor];
+    [rc addTarget:self action:@selector(uddate) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:rc];
+    // Do any additional setup after loading the view.
+}
+-(void)uddate{
+
     PFUser *ownerUser=_dimess[@"user"];
     //    _name.text=ownerUser.username;
     NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",ownerUser];
@@ -32,10 +51,10 @@
         NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
         ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
         [_imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
-        }];
+    }];
     _biaotiLbl.text=_dimess[@"dyname"];
     NSString *cai=[NSString stringWithFormat:@"%@",_dimess[@"stepon"]];
-   _caiLbl.text=cai;
+    _caiLbl.text=cai;
     NSString *zan=[NSString stringWithFormat:@"%@",_dimess[@"praise"]];
     _zanLbl.text=zan;
     PFObject *activity = [PFObject objectWithClassName:@"Dynamic"];
@@ -43,6 +62,8 @@
     NSPredicate *predicat=[NSPredicate predicateWithFormat:@"dynamic=%@",activity];
     PFQuery *quer=[PFQuery queryWithClassName:@"Image" predicate:predicat];
     [quer findObjectsInBackgroundWithBlock:^(NSArray * _Nullable object, NSError * _Nullable error) {
+        UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+        [rc endRefreshing];
         PFObject  *obj1=object[0];
         PFFile  *jb=obj1[@"image"];
         
@@ -61,23 +82,17 @@
         NSInteger  i=object.count;
         if (i<0) {
             _pinLunLbl.text=@"0";
-//            cell.renshuLb.text=
+            //            cell.renshuLb.text=
         }else {
             _pinLunLbl.text=[NSString stringWithFormat:@"%ld",(long)i];
-//            cell.renshuLb.text=
+            //            cell.renshuLb.text=
             
         }
     }];
     _huoDongNeiRongTV.text=_dimess[@"contenttext"];
-    [self reque];
-    _tapTrick = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgTap:)];
-    _tapTrick.enabled=NO;
-    [self.view addGestureRecognizer:_tapTrick];
-    //监听键盘打开这一操作，打开后执行keyboardWillShow:方法
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    //监听键盘收起这一操作，收起后执行keyboardWillHide:方法
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    // Do any additional setup after loading the view.
+
+
+
 }
 -(void)reque{
     
