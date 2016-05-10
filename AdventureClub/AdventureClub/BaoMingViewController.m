@@ -21,12 +21,16 @@
     [super viewDidLoad];
 //    self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"ou.png"]];
     NSLog(@"card%@",_card);
+    [self req];
+    // Do any additional setup after loading the view.
+}
+-(void)req{
     PFUser *ownerUser=_card[@"user"];
-//    _name.text=ownerUser.username;
+    //    _name.text=ownerUser.username;
     NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",ownerUser];
     PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-         PFObject *obj=objects[0];
+        PFObject *obj=objects[0];
         PFFile  *jb=obj[@"image"];
         _name.text=obj[@"name"];
         NSString *photoURLStr=jb.url;
@@ -44,7 +48,7 @@
     [query1 findObjectsInBackgroundWithBlock:^(NSArray * _Nullable object, NSError * _Nullable error) {
         PFObject *obj1=object[0];
         PFFile  *jb=obj1[@"image"];
-       
+        
         NSString *photoURLStr=jb.url;
         NSLog(@"有图片吗%@",photoURLStr);
         //获取parse数据库中某个文件的网络路径
@@ -64,7 +68,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm"];
     
     NSString *day = [dateFormatter stringFromDate:time];
-   
+    
     NSString *start=[NSString stringWithFormat:@"活动开始时间：%@",day];
     _startTF.text=start;
     
@@ -83,14 +87,14 @@
     _addressTF.text=place;
     NSString *ren=[NSString stringWithFormat:@"活动注意事项：%@",_card[@"requirements"]];
     
-   
+    
     _mattersTF.text=ren;
     _phoneTF.text=_card[@"phone"];
     NSString *sigun=[NSString stringWithFormat:@"已报名：%@",_card[@"sigunpPe"]];
     _yibaoming.text=sigun;
-    // Do any additional setup after loading the view.
-}
 
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -167,6 +171,15 @@
                      [aiv stopAnimating];
                      if (succeeded) {
                          NSLog(@"取消关注成功");
+                         PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+                         activity.objectId =_card.objectId;
+                         NSNumber *click=_card[@"sigunpPe"];
+                         
+                         _card[@"sigunpPe"]=@([click integerValue]-1);
+                         [_card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                             NSLog(@"见了");
+                             [self req];
+                         }];
                      }
                  }];
              }];

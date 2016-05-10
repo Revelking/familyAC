@@ -25,37 +25,7 @@
     _sty=@"0";
     _objectForShow=[NSMutableArray new];
     _objectForShow1=[NSMutableArray new];
-    PFUser *currentUser=[PFUser currentUser];
     
-    if (currentUser) {
-        [_anniu setTitle:@"切换" forState:UIControlStateNormal];
-        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
-        PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
-        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [avi stopAnimating];
-            _objectForShow=[NSMutableArray arrayWithArray:objects];
-            NSLog(@"object=%@",objects);
-            NSDictionary *dic=objects[0];
-            _nameLb.text=dic[@"name"];
-            
-            PFFile *photoFile=dic[@"image"];
-            //获取parse数据库中某个文件的网络路径
-            NSString *photoURLStr=photoFile.url;
-            NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-            //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-            [_yongimage sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
-            }];
-    
-    }else {
-       [_anniu setTitle:@"登录" forState:UIControlStateNormal];
-        UIImage *myImage = [UIImage imageNamed:@"wei"];
-        _yongimage.image=myImage;
-        _nameLb.text=@"尚未登录";
-        
-    
-    }
-[self reques];
     [self.segmengCt addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
@@ -378,5 +348,47 @@
     [self.navigationController presentViewController:vc animated:YES completion:nil];
 //    [self.navigationController presentViewController:vc animated:YES completion:nil];
 }
+//每次页面数显后
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    PFUser *currentUser=[PFUser currentUser];
+    
+    if (currentUser) {
+        [_anniu setTitle:@"切换" forState:UIControlStateNormal];
+        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
+        PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [avi stopAnimating];
+            _objectForShow=[NSMutableArray arrayWithArray:objects];
+            NSLog(@"object=%@",objects);
+            NSDictionary *dic=objects[0];
+            _nameLb.text=dic[@"name"];
+            
+            PFFile *photoFile=dic[@"image"];
+            //获取parse数据库中某个文件的网络路径
+            NSString *photoURLStr=photoFile.url;
+            NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+            //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+            [_yongimage sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
+        }];
+        
+    }else {
+        [_anniu setTitle:@"登录" forState:UIControlStateNormal];
+        UIImage *myImage = [UIImage imageNamed:@"wei"];
+        _yongimage.image=myImage;
+        _nameLb.text=@"尚未登录";
+        
+        
+    }
+    [self reques];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
+}
 
+//每次页面消失后
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
+}
 @end

@@ -13,6 +13,7 @@
 #import "SDCycleScrollView.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "SignInViewController.h"
+#import "GuanYuWoMenViewController.h"
 @interface SheZhiViewController ()
 
 @end
@@ -127,4 +128,13 @@
 }
 
 
+- (IBAction)ganyu:(id)sender forEvent:(UIEvent *)event {
+    UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    NSLog(@"sadsad");
+    
+    //更具名称找到名为detailView的页面
+    GuanYuWoMenViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"uio"];
+    
+    [self.navigationController presentViewController:detailView animated:YES completion:nil];
+}
 @end

@@ -52,7 +52,10 @@
 //    [self.sortingControl setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     
+    self.sortingControl.momentary = YES;
     
+    [self.sortingControl setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.sortingControl setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
    
     
 }
@@ -67,10 +70,10 @@
     
     NSMutableArray *paths = [NSMutableArray new];
     
-    [paths addObject:[[NSBundle mainBundle] pathForResource:@"1" ofType:@"jpg"]];
-    [paths addObject:[[NSBundle mainBundle] pathForResource:@"2" ofType:@"jpg"]];
-    [paths addObject:[[NSBundle mainBundle] pathForResource:@"3" ofType:@"jpg"]];
-    [paths addObject:[[NSBundle mainBundle] pathForResource:@"4" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"8" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"9" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"10" ofType:@"jpg"]];
+    [paths addObject:[[NSBundle mainBundle] pathForResource:@"11" ofType:@"jpg"]];
     
     [[KSGuideManager shared] showGuideViewWithImages:paths];
     
@@ -417,10 +420,12 @@
     [super viewDidAppear:animated];
     PFUser *cur=[PFUser currentUser];
     if (cur) {
-        _dengru.title=@"😊";
+        _dengru.title=@"已登录";
+        
     }else {
         
-        _dengru.title=@"未登入";
+        _dengru.title=@"未登录";
+        
         
     }
    

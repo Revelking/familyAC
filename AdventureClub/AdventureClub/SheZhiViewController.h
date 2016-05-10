@@ -15,5 +15,6 @@
 @property (strong,nonatomic)UIImageView *zoomIV;
 @property (weak, nonatomic) IBOutlet UILabel *nameLb;
 @property (weak, nonatomic) IBOutlet UILabel *gexing;
+- (IBAction)ganyu:(id)sender forEvent:(UIEvent *)event;
 
 @end

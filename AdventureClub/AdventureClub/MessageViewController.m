@@ -174,4 +174,5 @@
     CGSize contentLabelSize = [str boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:cell.mentLB.font} context:nil].size;
     return cell.mentLB.frame.origin.y+15 + contentLabelSize.height+25;
 }
+
 @end

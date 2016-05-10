@@ -38,5 +38,6 @@
 }
 
 - (IBAction)fanHuiAction:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end
