@@ -210,7 +210,7 @@
     
     [_dimess saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            
+            [self uddate];
             NSLog(@"增加点击量");
         }
     }];
@@ -269,6 +269,7 @@
     
     [_dimess saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
+            [self uddate];
             NSLog(@"增加点击量");
         }
     }];
