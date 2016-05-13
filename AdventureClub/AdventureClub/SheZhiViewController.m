@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   // self.view.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"Q.png"]];
     _imageV.userInteractionEnabled=YES;
     // Do any additional setup after loading the view.
     UITapGestureRecognizer *singleRecognizer3;
@@ -38,6 +39,7 @@
 //每次页面数显后
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
     PFUser *currentUser=[PFUser currentUser];
     
     if (currentUser) {
