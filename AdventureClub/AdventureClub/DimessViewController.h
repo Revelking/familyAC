@@ -26,5 +26,6 @@
 - (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event;
 - (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
+@property (weak, nonatomic) IBOutlet UIButton *nanniu;
 
 @end

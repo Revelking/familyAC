@@ -43,7 +43,11 @@
         return;
         
     }
+    self.navigationController.view.userInteractionEnabled=NO;
+    UIActivityIndicatorView *aiv =[Utilities getCoverOnView:self.view];
     [PFUser requestPasswordResetForEmailInBackground:email block:^(BOOL succeeded, NSError * _Nullable error) {
+        [aiv stopAnimating];
+        self.navigationController.view.userInteractionEnabled=YES;
         if (succeeded) {
             
             UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"重置密码的方式，我们已经通过邮箱的方法发送给您，请关注你的邮箱" preferredStyle:UIAlertControllerStyleAlert];

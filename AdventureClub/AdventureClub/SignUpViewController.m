@@ -55,13 +55,17 @@
     user.email = email;
     user.password = password;
     user[@"phone"]=phone;
+    UIActivityIndicatorView *aiv = [Utilities getCoverOnView:self.view];
+    self.navigationController.view.userInteractionEnabled=NO;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error){
+        [aiv stopAnimating];
+        self.navigationController.view.userInteractionEnabled=YES;
         if (!error) {
             PFObject *acticity=[PFObject objectWithClassName:@"Personal"];
             PFUser *us=user;
             acticity[@"user"]=us;
             [acticity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                NSLog(@"创建成功了美，");
+                NSLog(@"创建成功了，");
             }];
             UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
             UIAlertAction *ac=[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

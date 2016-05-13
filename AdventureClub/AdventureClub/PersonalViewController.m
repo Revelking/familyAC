@@ -61,41 +61,117 @@
 //每次页面出现时
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    if (_i==2) {
-        PFUser *currentUser=[PFUser currentUser];
-        
-        if (currentUser) {
-            NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
-            PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
-            UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
-            [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-                [avi stopAnimating];
-                _objectForShow=[NSMutableArray arrayWithArray:objects];
-                NSLog(@"object=%@",objects);
-                NSDictionary *dic=objects[0];
-                _name.text=dic[@"name"];
-                _sex.text=dic[@"sex"];
-                _dateBirth.text=dic[@"dateBirth"];
-                _signature.text=dic[@"signature"];
-                PFFile *photoFile=dic[@"image"];
-                //获取parse数据库中某个文件的网络路径
-                NSString *photoURLStr=photoFile.url;
-                NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-                //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-                [_image sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+    
+    PFUser *currentUser=[PFUser currentUser];
+    
+    if (currentUser) {
+        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
+        PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [avi stopAnimating];
+            _objectForShow=[NSMutableArray arrayWithArray:objects];
+            NSLog(@"object=%@",objects);
+            PFObject *dic=objects[0];
+            NSString  *name=dic[@"name"];
+            NSString *sex=dic[@"sex"];
+            NSString *dateBirth=dic[@"dateBirth"];
+            NSString *signature=dic[@"signature"];
+            if (name.length==0) {
+                _name.text=@"未填写";
+            }else {
+                _name.text=name;
                 
-            }];
+            }
+            if (sex.length==0) {
+                _sex.text=@"未填写";
+            }else {
+                _sex.text=dic[@"sex"];
+            }
+            if (dateBirth.length==0) {
+                _dateBirth.text=@"未填写";
+            }else {
+                _dateBirth.text=dic[@"dateBirth"];
+            }
+            if (signature.length==0) {
+                _signature.text=@"未填写";
+            }else {
+                _signature.text=dic[@"signature"];
+            }
             
-        }else {
-            [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
-            [self.navigationController popViewControllerAnimated:YES];
-        }
+            
+            PFFile *photoFile=dic[@"image"];
+            //获取parse数据库中某个文件的网络路径
+            NSString *photoURLStr=photoFile.url;
+            NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+            //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+            [_image sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+            
+        }];
+        
     }else {
-        
-        
+        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
     
+    
+}
+-(void)quer{
+    PFUser *currentUser=[PFUser currentUser];
+    
+    if (currentUser) {
+        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
+        PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [avi stopAnimating];
+            _objectForShow=[NSMutableArray arrayWithArray:objects];
+            NSLog(@"object=%@",objects);
+            PFObject *dic=objects[0];
+            NSString  *name=dic[@"name"];
+            NSString *sex=dic[@"sex"];
+            NSString *dateBirth=dic[@"dateBirth"];
+            NSString *signature=dic[@"signature"];
+            if (name.length==0) {
+                _name.text=@"未填写";
+            }else {
+            _name.text=name;
+            
+            }
+            if (sex.length==0) {
+                _sex.text=@"未填写";
+            }else {
+             _sex.text=dic[@"sex"];
+            }
+            if (dateBirth.length==0) {
+                _dateBirth.text=@"未填写";
+            }else {
+            _dateBirth.text=dic[@"dateBirth"];
+            }
+            if (signature.length==0) {
+                _signature.text=@"未填写";
+            }else {
+                _signature.text=dic[@"signature"];
+            }
+            
+            
+            PFFile *photoFile=dic[@"image"];
+            //获取parse数据库中某个文件的网络路径
+            NSString *photoURLStr=photoFile.url;
+            NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+            //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+            [_image sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
+            
+        }];
+        
+    }else {
+        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+
+
+
 }
 /*
  #pragma mark - Navigation
@@ -118,33 +194,84 @@
     [self.view endEditing:YES];
 }
 - (IBAction)baocun:(UIButton *)sender forEvent:(UIEvent *)event {
-    if (_name.text.length==0||_dateBirth.text==0||_sex.text.length==0||_signature.text.length==0) {
-        [Utilities popUpAlertViewWithMsg:@"为空" andTitle:nil onView:self];
-        return;
-    }
+    PFObject *card=_objectForShow[0];
+//    if (_name.text.length==0||_dateBirth.text==0||_sex.text.length==0||_signature.text.length==0) {
+//        [Utilities popUpAlertViewWithMsg:@"为空" andTitle:nil onView:self];
+//        return;
+//    }
     UIImage *image=_image.image;
     if (!flag) {
-        [Utilities popUpAlertViewWithMsg:@"请选择一张图片" andTitle:nil onView:self];
-        return;
+        
+        
+    }else {
+    
+        NSData  *photoData=UIImagePNGRepresentation(image);
+        //将上述数据流转化成PFFILE对象，这是个文件对象， 这里除了设置文件内容，还需要给文件取个文件名，这个文件名可以是任何名字
+        PFFile  *photoFile=[PFFile fileWithName:@"photo.png" data:photoData];
+        card[@"image"]=photoFile;
+        
+        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
+        [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [avi stopAnimating];
+                [self quer];
+                [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
+                
+            }
+        }];
+    }
+    if (_name.text.length==0) {
+        
+    }else {
+    
+    card[@"name"]=_name.text;
+        [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [self quer];
+                [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
+                
+            }
+        }];
+    }
+    if (_dateBirth.text==0) {
+        
+    }else {
+    card[@"dateBirth"]=_dateBirth.text;
+        [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [self quer];
+                [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
+                
+            }
+        }];
+    }
+    if (_sex.text.length==0) {
+        
+    }else {
+    
+        card[@"sex"]=_sex.text;
+        [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [self quer];
+                [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
+                
+            }
+        }];
+    }
+    if (_signature.text.length==0) {
+        
+    }else {
+    card[@"signature"]=_signature.text;
+        [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded) {
+                [self quer];
+                [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
+                
+            }
+        }];
     }
     
-    PFObject *card=_objectForShow[0];
-    card[@"name"]=_name.text;
-    card[@"dateBirth"]=_dateBirth.text;
-    card[@"signature"]=_signature.text;
-    NSData  *photoData=UIImagePNGRepresentation(image);
-    //将上述数据流转化成PFFILE对象，这是个文件对象， 这里除了设置文件内容，还需要给文件取个文件名，这个文件名可以是任何名字
-    PFFile  *photoFile=[PFFile fileWithName:@"photo.png" data:photoData];
-    card[@"image"]=photoFile;
-    card[@"sex"]=_sex.text;
-    UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
-    [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            [avi stopAnimating];
-            [Utilities popUpAlertViewWithMsg:@"您已经修改完成了!" andTitle:nil onView:self];
-            
-        }
-    }];
+    
 }
 
 - (IBAction)returnAction:(UIButton *)sender forEvent:(UIEvent *)event {

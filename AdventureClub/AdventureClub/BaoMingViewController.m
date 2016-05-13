@@ -121,6 +121,24 @@
 
 
 }
+-(void)quer{
+
+    PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
+    activity.objectId =_card.objectId;
+    PFUser *owe=[PFUser currentUser];
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND acticitie=%@",owe,activity];
+    PFQuery *query=[PFQuery queryWithClassName:@"Apply" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSInteger  i=objects.count;
+        if (0<i) {
+            _anniu.title=@"取消";
+        }else {
+            
+            _anniu.title=@"报名";
+        }
+    }];
+
+}
 /*
 #pragma mark - Navigation
 
@@ -170,14 +188,16 @@
                  [activity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                      [aiv stopAnimating];
                      if (succeeded) {
-                         NSLog(@"取消关注成功");
+                       
                          PFObject *activity = [PFObject objectWithClassName:@"Acticitie"];
                          activity.objectId =_card.objectId;
                          NSNumber *click=_card[@"sigunpPe"];
                          
                          _card[@"sigunpPe"]=@([click integerValue]-1);
                          [_card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                             
                              NSLog(@"见了");
+                             [self quer];
                              [self req];
                          }];
                      }
@@ -218,6 +238,8 @@
                 
                 _card[@"sigunpPe"]=@([click integerValue]+1);
                [_card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                   [self quer];
+                   [self req];
                    
                }];
                

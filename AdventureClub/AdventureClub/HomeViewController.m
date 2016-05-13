@@ -61,7 +61,16 @@
 }
 -(void)tishi{
     [Utilities popUpAlertViewWithMsg:@"已经退出当前用户" andTitle:nil onView:self];
-
+    PFUser *cur=[PFUser currentUser];
+    if (cur) {
+        _dengru.title=@"已登录";
+        
+    }else {
+        
+        _dengru.title=@"未登录";
+        
+        
+    }
 
 
 }
@@ -86,17 +95,17 @@
         ShiPingViewController *detailView =[storybord instantiateViewControllerWithIdentifier:@"shi"];
         
         [self.navigationController pushViewController:detailView animated:YES];
-         self.sortingControl.momentary = YES;
+        
         
     }else if (self.sortingControl.selectedSegmentIndex==1)
     {
         [self reorder];
-     self.sortingControl.momentary = YES;
+     
     }else if (self.sortingControl.selectedSegmentIndex==2){
     
         [self latesttime];
         //设置在点击后是否恢复原样
-         self.sortingControl.momentary = YES;
+        
     }
 
 

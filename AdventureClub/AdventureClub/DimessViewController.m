@@ -118,6 +118,54 @@
 
 
 }
+-(void)qingq{
+    PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
+    activity.objectId =_dimess.objectId;
+    
+    PFUser *cus=[PFUser currentUser];
+    
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND dynamic=%@",cus,activity];
+    PFQuery *query=[PFQuery queryWithClassName:@"FocusOn" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSInteger  i=objects.count;
+        if (0<i) {
+        
+            [_nanniu setTitle:@"已关注" forState:UIControlStateNormal];
+        }else {
+        
+        [_nanniu setTitle:@"加关注" forState:UIControlStateNormal];
+        }
+    
+    
+    
+    }];
+
+}
+//每次页面数显后
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    PFObject *activity= [PFObject objectWithClassName:@"Dynamic"];
+    activity.objectId =_dimess.objectId;
+    
+    PFUser *cus=[PFUser currentUser];
+    
+    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@ AND dynamic=%@",cus,activity];
+    PFQuery *query=[PFQuery queryWithClassName:@"FocusOn" predicate:predicate];
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        NSInteger  i=objects.count;
+        if (0<i) {
+            
+            [_nanniu setTitle:@"已关注" forState:UIControlStateNormal];
+        }else {
+            
+            [_nanniu setTitle:@"加关注" forState:UIControlStateNormal];
+        }
+        
+        
+        
+    }];
+
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -336,6 +384,7 @@
                  [activity deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                      [aiv stopAnimating];
                      if (succeeded) {
+                         [self qingq];
                          NSLog(@"取消关注成功");
                      }
                  }];
@@ -408,6 +457,7 @@
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [focus saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [aiv stopAnimating];
+        [self qingq];
         NSLog(@"已经关注啦");
     }];
 }

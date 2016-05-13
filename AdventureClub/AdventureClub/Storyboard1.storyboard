@@ -261,6 +261,7 @@
                         <outlet property="huoDongImageIV" destination="MEb-H2-LEu" id="Zx2-Kx-god"/>
                         <outlet property="huoDongNeiRongTV" destination="v5r-K8-DYy" id="4P0-sd-jG1"/>
                         <outlet property="imageIV" destination="g5g-fm-d17" id="Fdp-ul-a9i"/>
+                        <outlet property="nanniu" destination="Chx-IH-H3G" id="erm-J3-lNA"/>
                         <outlet property="pinLunLbl" destination="XOc-X4-TCJ" id="rIw-ul-LOg"/>
                         <outlet property="tableView" destination="fiC-wP-9nr" id="D4X-c1-tlP"/>
                         <outlet property="usernameLbl" destination="gZ6-qD-Fz3" id="KsO-ay-q3p"/>
