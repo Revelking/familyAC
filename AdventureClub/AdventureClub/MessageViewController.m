@@ -12,6 +12,7 @@
 #import <SDWebImage/UIImageView+WebCache.h>
 @interface MessageViewController ()
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
+@property(strong,nonatomic)NSMutableArray *objectsForShow1;
 @end
 
 @implementation MessageViewController
@@ -59,19 +60,43 @@
 }
 -(void)reques{
     [_objectsForShow removeAllObjects];
+    [_objectsForShow1 removeAllObjects];
     PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
     [query includeKey:@"user"];
     [query orderByAscending:@"updatedAt"];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
-        [rc endRefreshing];
-        if (!error) {
-            NSLog(@"活动的详情页%@",objects);
-            _objectsForShow=[NSMutableArray arrayWithArray:objects];
-            [_tableView reloadData];
-        }else{
         
-         [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+        if (!error) {
+            
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+            for (PFObject *obj in objects ){
+                ;
+                
+                PFUser *user=obj[@"user"];
+                NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",user];
+                PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+                NSArray *object = [query findObjects];
+                NSLog(@"这个方法执行了吗%@",object);
+                PFObject *use=object[0];
+                
+                NSString *imageURLStr = @"";
+                PFFile *image=use[@"image"];
+                if (![image.url isKindOfClass:[NSNull class]] && image.url != nil) {
+                    imageURLStr = image.url;
+                }
+                NSLog(@"imageURLStr = %@", imageURLStr);
+                NSDictionary *dic=@{@"name":use[@"name"],@"image":imageURLStr,@"contenttext":obj[@"contenttext"],@"stepon":obj[@"stepon"],@"praise":obj[@"praise"],@"id":obj.objectId};
+                [_objectsForShow1 addObject:dic];
+                
+            }
+            NSLog(@"_objectsForShow1 = %@", _objectsForShow1);
+            UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+            [rc endRefreshing];
+            [self.tableView reloadData];
+        }else{
+            UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+            [rc endRefreshing];
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
         }
         
     }];
@@ -93,38 +118,31 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MessageTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    PFObject *ob=_objectsForShow[indexPath.row];
-    PFUser *user=ob[@"user"];
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",user];
-    PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        PFObject *obj=objects[0];
-        PFFile  *jb=obj[@"image"];
-        NSString *photoURLStr=jb.url;
-        NSLog(@"用户有吗%@",photoURLStr);
-        //获取parse数据库中某个文件的网络路径
-        NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-        ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-        [cell.toux sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
-        cell.yonghuLb.text=obj[@"name"];
-    }];
+    PFObject *ob=_objectsForShow1[indexPath.row];
+    
+    
+    ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+    [cell.toux sd_setImageWithURL:[NSURL URLWithString:ob[@"image"]] placeholderImage:[UIImage imageNamed:@"wei"]];
+    //cell.toux.image=ob[@"image"];
+    cell.yonghuLb.text=ob[@"name"];
+    
     cell.mentLB.text=ob[@"contenttext"];
     NSString *cai=[NSString stringWithFormat:@"踩：%@",ob[@"stepon"]];
     cell.caiLb.text=cai;
-     NSString *czai=[NSString stringWithFormat:@"赞：%@",ob[@"praise"]];
+    NSString *czai=[NSString stringWithFormat:@"赞：%@",ob[@"praise"]];
     cell.zaiLb.text=czai;
     
     PFObject *activity = [PFObject objectWithClassName:@"Dynamic"];
-    activity.objectId =ob.objectId;
+    activity.objectId =ob[@"id"];
     NSPredicate *predicat=[NSPredicate predicateWithFormat:@"dynamic=%@",activity];
     PFQuery *quer=[PFQuery queryWithClassName:@"Comments" predicate:predicat];
     [quer findObjectsInBackgroundWithBlock:^(NSArray * _Nullable object, NSError * _Nullable error) {
-         NSInteger  i=object.count;
+        NSInteger  i=object.count;
         if (i<0) {
             cell.renshuLb.text=@"发表数：0";
         }else {
             cell.renshuLb.text=[NSString stringWithFormat:@"发表数：%ld",(long)i];
-        
+            
         }
     }];
     return cell;
