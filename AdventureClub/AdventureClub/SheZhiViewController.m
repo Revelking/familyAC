@@ -108,8 +108,8 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zoomTap:)];
         [_zoomIV addGestureRecognizer:tap];
     }else{
-        NSLog(@"游泳吗");
-        [self performSegueWithIdentifier:@"xian" sender:self];
+//        NSLog(@"游泳吗");
+//        [self performSegueWithIdentifier:@"xian" sender:self];
        // SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"deng"];
         //[self.navigationController presentViewController:vc animated:YES completion:nil];
     }

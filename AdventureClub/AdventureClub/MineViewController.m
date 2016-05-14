@@ -372,7 +372,7 @@
             //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
             [_yongimage sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
         }];
-        
+        [self reques];
     }else {
         [_anniu setTitle:@"登录" forState:UIControlStateNormal];
         UIImage *myImage = [UIImage imageNamed:@"wei"];
@@ -381,7 +381,6 @@
         
         
     }
-    [self reques];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"EnableGesture" object:nil];
 }
