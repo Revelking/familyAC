@@ -110,8 +110,13 @@
         }];
         
     }else {
-        [Utilities popUpAlertViewWithMsg:@"尚未登入，烦请登入" andTitle:nil onView:self];
-        [self.navigationController popViewControllerAnimated:YES];
+        
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"提示" message:@"尚未登入，烦请登入" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [alertView addAction:cancelAction];
+        [self presentViewController:alertView animated:YES completion:nil];
     }
     
     
@@ -274,10 +279,10 @@
     
 }
 
-- (IBAction)returnAction:(UIButton *)sender forEvent:(UIEvent *)event {
-    NSLog(@"sdsfafdasdasd");
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+
+
+- (IBAction)fanhui:(UIBarButtonItem *)sender {
+     [self dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)picKImage:(UIImagePickerControllerSourceType)sourceType{
     NSLog(@"有相片");
