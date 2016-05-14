@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条"] forBarMetrics:UIBarMetricsDefault];
     [self app];
     _objectsForShow=[NSMutableArray new];
     _acg=[NSMutableArray new];
@@ -52,7 +53,7 @@
 //    [self.sortingControl setTitleTextAttributes:dic forState:UIControlStateNormal];
     
     
-    self.sortingControl.momentary = YES;
+//    self.sortingControl.momentary = YES;
     
     [self.sortingControl setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     [self.sortingControl setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
@@ -89,6 +90,7 @@
 }
 -(void)segmentAction{
     if (self.sortingControl.selectedSegmentIndex==3){
+        
         //跳转到视频页面
         UIStoryboard *storybord=[UIStoryboard storyboardWithName:@"Main" bundle:nil];
         //更具名称找到名为detailView的页面
@@ -101,17 +103,8 @@
     {
         [self reorder];
      
-    }else if (self.sortingControl.selectedSegmentIndex==2){
-    
-        [self latesttime];
-        //设置在点击后是否恢复原样
-        
     }
-
-
-
 }
-
 //轮播
 -(void)demoContainerView{
     self.view.backgroundColor = [UIColor colorWithRed:0.98 green:0.98 blue:0.98 alpha:0.99];
@@ -270,18 +263,6 @@
             NSURL  *photoURL=[NSURL URLWithString:obj[@"image"]];
             ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
             [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
-                
-            
-    
-    
-    
-//    PFFile  *obj1=obj[@"acimage"];
-//    NSString *photoURLStr=obj1.url;
-//    
-//    //获取parse数据库中某个文件的网络路径
-//    NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-//    ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-//    [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"Image"]];
     NSString *content = obj[@"name"];
     NSLog(@"content = %@",content);
     cell.activityNameLbl.text=obj[@"name"];
@@ -302,11 +283,6 @@
     NSNumber *click=card[@"click"];
     
    card[@"click"]=@([click integerValue]+1);
-    
-//    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
-//    image.objectId =card[@"objectId"];
-//    NSInteger *click=image[@"click"];
-//    image[@"click"]=@([click integerValue]+1);
   [card saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
       if (succeeded) {
           NSLog(@"增加点击量");

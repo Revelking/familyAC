@@ -92,7 +92,9 @@
     _phoneTF.text=_card[@"phone"];
     NSString *sigun=[NSString stringWithFormat:@"已报名：%@",_card[@"sigunpPe"]];
     _yibaoming.text=sigun;
-
+    _imageTF.userInteractionEnabled=YES;
+    UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoTapAtIndexPath)];
+    [_imageTF addGestureRecognizer:photoTap];
 
 }
 - (void)didReceiveMemoryWarning {
@@ -256,5 +258,34 @@
     }
 
 
+}
+- (void)photoTapAtIndexPath{
+    //UIScreen mainScreen是获取屏幕的实例（全屏显示）
+    _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //激活用户交互功能
+    _zoomIV.userInteractionEnabled = YES;
+    _zoomIV.backgroundColor = [UIColor blackColor];
+    
+    
+    _zoomIV.image=_imageTF.image;
+    
+    
+    
+    
+    //短边撑满，等比缩放
+    _zoomIV.contentMode = UIViewContentModeScaleAspectFit;
+    //[UIApplication sharedApplication]获得当前App的实例，keyWindow方法可以拿到App实例的主窗口
+    [[UIApplication sharedApplication].keyWindow addSubview:_zoomIV];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zoomTap:)];
+    [_zoomIV addGestureRecognizer:tap];
+}
+- (void)zoomTap:(UITapGestureRecognizer *)sender{
+    NSLog(@"要缩小");
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        [_zoomIV removeFromSuperview];
+        [_zoomIV removeGestureRecognizer:sender];
+        _zoomIV = nil;
+    }
+    
 }
 @end

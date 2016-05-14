@@ -19,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条"] forBarMetrics:UIBarMetricsDefault];
+    [self.segmeng setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    [self.segmeng setBackgroundImage:[UIImage imageNamed:@"tt"] forState:UIControlStateHighlighted barMetrics:UIBarMetricsDefault];
     _objectsForShow=[NSMutableArray new];
     _objectsForShow1=[NSMutableArray new];
     [self.segmeng addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];

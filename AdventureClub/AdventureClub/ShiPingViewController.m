@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条"] forBarMetrics:UIBarMetricsDefault];
     imTitle = @[@"这个前段...我输的五体投地",@"我真的没有，不然天打五雷轰顶"];
     imDetail=@[@"sha",@"bi"];
     uytd=@[@"1.mov",@"2.mov"];

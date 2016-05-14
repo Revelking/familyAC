@@ -39,5 +39,5 @@
 //此方法实现可打电话
 - (IBAction)phoneAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)baoMingAction:(UIBarButtonItem *)sender;
-
+@property (strong,nonatomic)UIImageView *zoomIV;
 @end

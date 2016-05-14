@@ -21,11 +21,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *pinLunLbl;
 @property (weak, nonatomic) IBOutlet UILabel *huoDongNeiRongTV;
 //输入kuang
+@property (weak, nonatomic) IBOutlet UILabel *mei;
 @property (weak, nonatomic) IBOutlet UITextField *faBiaoPinLunTF;
 @property(strong,nonatomic)PFObject *dimess;
 - (IBAction)guanzAction:(id)sender forEvent:(UIEvent *)event;
 - (IBAction)faBiaoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @property (weak, nonatomic) IBOutlet UIButton *nanniu;
-
+@property (strong,nonatomic)UIImageView *zoomIV;
 @end

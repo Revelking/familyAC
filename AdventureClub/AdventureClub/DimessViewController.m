@@ -12,6 +12,7 @@
 @interface DimessViewController ()
 @property(strong,nonatomic)NSMutableArray *objectsForShow;
 @property (strong, nonatomic) UITapGestureRecognizer *tapTrick;
+
 @end
 
 @implementation DimessViewController
@@ -20,6 +21,7 @@
     [super viewDidLoad];
     [self uddate];
     [self reque];
+    _huoDongImageIV.userInteractionEnabled=YES;
     _tapTrick = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(bgTap:)];
     _tapTrick.enabled=NO;
     [self.view addGestureRecognizer:_tapTrick];
@@ -33,6 +35,8 @@
     rc.tintColor=[UIColor darkGrayColor];
     [rc addTarget:self action:@selector(uddate) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:rc];
+    UITapGestureRecognizer *photoTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(photoTapAtIndexPath)];
+    [_huoDongImageIV addGestureRecognizer:photoTap];
     // Do any additional setup after loading the view.
 }
 -(void)uddate{
@@ -183,6 +187,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _objectsForShow.count;
 }
+
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForHeaderInSection:(NSInteger)section {
+//    CGSize maxSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width - 20, 10000);
+//    CGSize contentSize = [_huoDongNeiRongTV.text boundingRectWithSize:maxSize options:NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading attributes:nil context:nil].size;
+//    return _imageIV.frame.size.height +_biaotiLbl.frame.size.height+_huoDongImageIV.frame.size.height+contentSize.height+_zanLbl.frame.size.height+_mei.frame.size.height+35;
+//}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DimessTableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     PFObject *ob=_objectsForShow[indexPath.row];
@@ -340,6 +350,32 @@
 
 
 
+- (void)photoTapAtIndexPath{
+    //UIScreen mainScreen是获取屏幕的实例（全屏显示）
+    _zoomIV = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    //激活用户交互功能
+    _zoomIV.userInteractionEnabled = YES;
+    _zoomIV.backgroundColor = [UIColor blackColor];
+    
+
+    _zoomIV.image=_huoDongImageIV.image;
+    
+    //短边撑满，等比缩放
+    _zoomIV.contentMode = UIViewContentModeScaleAspectFit;
+    //[UIApplication sharedApplication]获得当前App的实例，keyWindow方法可以拿到App实例的主窗口
+    [[UIApplication sharedApplication].keyWindow addSubview:_zoomIV];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(zoomTap:)];
+    [_zoomIV addGestureRecognizer:tap];
+}
+- (void)zoomTap:(UITapGestureRecognizer *)sender{
+    NSLog(@"要缩小");
+    if (sender.state == UIGestureRecognizerStateRecognized) {
+        [_zoomIV removeFromSuperview];
+        [_zoomIV removeGestureRecognizer:sender];
+        _zoomIV = nil;
+    }
+    
+}
 
 
 
