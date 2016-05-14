@@ -149,21 +149,28 @@
     [query whereKey:@"starttime" greaterThanOrEqualTo:date];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
-        _acg=[NSMutableArray arrayWithArray:objects];
-        UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
-        [rc endRefreshing];
+        
         if (!error) {
+            _acg=[NSMutableArray arrayWithArray:objects];
             for(PFObject *bji in objects) {
-                NSLog(@"jjj");
-                NSString *objectId=bji.objectId;
-                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
-                [_objectsForShow addObject:dict];
-                [self.tableView reloadData];
-            
+                
+                NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",bji];
+                PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
+                NSArray *object = [query findObjects];
+                NSLog(@"这个方法执行了吗%@",object);
+                    if (!error) {
+                        PFObject *obj=object[0];
+                        PFFile  *jb=obj[@"image"];
+                        NSString *photoURLStr=jb.url;
+                        NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"image":photoURLStr};
+                        [_objectsForShow addObject:dict];
+                        [self.tableView reloadData];
+                    }
+                
             }
         }else{
-        [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
-        
+            [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
+            
         }
     }];
 }
@@ -179,14 +186,23 @@
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
-        _acg=[NSMutableArray arrayWithArray:objects];
+        
         if (!error) {
+            _acg=[NSMutableArray arrayWithArray:objects];
             for(PFObject *bji in objects) {
-                NSLog(@"jjj");
-                NSString *objectId=bji.objectId;
-                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
-                [_objectsForShow addObject:dict];
-                [self.tableView reloadData];
+                
+                NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",bji];
+                PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
+                NSArray *object = [query findObjects];
+                NSLog(@"这个方法执行了吗%@",object);
+                if (!error) {
+                    PFObject *obj=object[0];
+                    PFFile  *jb=obj[@"image"];
+                    NSString *photoURLStr=jb.url;
+                    NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"image":photoURLStr};
+                    [_objectsForShow addObject:dict];
+                    [self.tableView reloadData];
+                }
                 
             }
         }else{
@@ -208,15 +224,23 @@
     UIActivityIndicatorView *aiv=[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [aiv stopAnimating];
-       
+        
         if (!error) {
+            _acg=[NSMutableArray arrayWithArray:objects];
             for(PFObject *bji in objects) {
-                 _acg=[NSMutableArray arrayWithArray:objects];
-                NSLog(@"jjj");
-                NSString *objectId=bji.objectId;
-                NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"objectId":objectId};
-                [_objectsForShow addObject:dict];
-                [self.tableView reloadData];
+                
+                NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",bji];
+                PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
+                NSArray *object = [query findObjects];
+                NSLog(@"这个方法执行了吗%@",object);
+                if (!error) {
+                    PFObject *obj=object[0];
+                    PFFile  *jb=obj[@"image"];
+                    NSString *photoURLStr=jb.url;
+                    NSDictionary *dict=@{@"name":bji[@"maintitle"],@"contenttext":bji[@"contenttext"],@"time":bji[@"starttime"],@"image":photoURLStr};
+                    [_objectsForShow addObject:dict];
+                    [self.tableView reloadData];
+                }
                 
             }
         }else{
@@ -241,29 +265,14 @@
     
     cell.indexPath=indexPath;
     PFObject *obj=_objectsForShow[indexPath.row];
-    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
-    image.objectId =obj[@"objectId"] ;
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",image];
-    PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        NSLog(@"%@",objects);
-        if (!error) {
-            PFObject *obj=objects[0];
-                PFFile  *jb=obj[@"image"];
-                NSString *photoURLStr=jb.url;
-                NSLog(@"%@",photoURLStr);
+    
                 //获取parse数据库中某个文件的网络路径
-                NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
-                ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
-                [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
+            NSURL  *photoURL=[NSURL URLWithString:obj[@"image"]];
+            ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+            [cell.imageIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
                 
             
-        }else {
-        
-            NSLog(@"asdasdsa");
-        
-        }
-    }];
+    
     
     
 //    PFFile  *obj1=obj[@"acimage"];
@@ -354,29 +363,16 @@
     
     PFObject *obj=_objectsForShow[indexPath.row];
     
-    PFObject *image = [PFObject objectWithClassName:@"Acticitie"];
-    image.objectId =obj[@"objectId"] ;
-    NSPredicate *predicate=[NSPredicate predicateWithFormat:@"acticitie =%@",image];
-    PFQuery *query=[PFQuery queryWithClassName:@"Image" predicate:predicate];
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        NSLog(@"%@",objects);
-        if (!error) {
-            PFObject *obj=objects[0];
-                NSLog(@"dasdasdsadasasdas");
-                PFFile  *jb=obj[@"image"];
-                NSString *photoURLStr=jb.url;
-                NSLog(@"%@",photoURLStr);
-                //获取parse数据库中某个文件的网络路径
+    
+    
+    
+                NSString *photoURLStr=obj[@"image"];;
+               
+    
                 NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
                 ////结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
                 [_zoomIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"jnf"]];
-            
-        }else {
-            
-            NSLog(@"asdasdsa");
-            
-        }
-    }];
+    
     
     
     

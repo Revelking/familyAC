@@ -25,22 +25,33 @@
     _sty=@"0";
     _objectForShow=[NSMutableArray new];
     _objectForShow1=[NSMutableArray new];
-    
+    [self reques];
     [self.segmengCt addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     // Do any additional setup after loading the view.
 }
 -(void)segmentAction{
+     PFUser *use=[PFUser currentUser];
     if (self.segmengCt.selectedSegmentIndex==2){
         _sty=@"1";
-        [self qingd];
+       
+        if (use) {
+            [self qingd];
+        }
+        
         
     }else if(self.segmengCt.selectedSegmentIndex==0){
     
     _sty=@"0";
-        [self reques];
+        if (use) {
+            [self reques];
+        }
+       
     }else if (self.segmengCt.selectedSegmentIndex==1){
     _sty=@"2";
-        [self ggg];
+        if (use) {
+            [self ggg];
+        }
+      
     }
 
 }
@@ -372,7 +383,7 @@
             //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
             [_yongimage sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
         }];
-        [self reques];
+        
     }else {
         [_anniu setTitle:@"登录" forState:UIControlStateNormal];
         UIImage *myImage = [UIImage imageNamed:@"wei"];

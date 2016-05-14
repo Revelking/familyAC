@@ -20,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _objectsForShow=[NSMutableArray new];
+    _objectsForShow1=[NSMutableArray new];
     [self.segmeng addTarget:self action:@selector(segmentAction) forControlEvents:UIControlEventValueChanged];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(reques) name:@"namehome" object:nil];
     [self reques];
@@ -44,13 +45,39 @@
     PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
     [query includeKey:@"user"];
     [query orderByAscending:@"click"];
+        UIActivityIndicatorView *aiv =[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         if (!error) {
-            NSLog(@"活动的详情页%@",objects);
-            _objectsForShow=[NSMutableArray arrayWithArray:objects];
-            [_tableView reloadData];
-        }else{
             
+            _objectsForShow=[NSMutableArray arrayWithArray:objects];
+            for (PFObject *obj in objects ){
+                ;
+                
+                PFUser *user=obj[@"user"];
+                NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",user];
+                PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+                NSArray *object = [query findObjects];
+                NSLog(@"这个方法执行了吗%@",object);
+                PFObject *use=object[0];
+                
+                NSString *imageURLStr = @"";
+                PFFile *image=use[@"image"];
+                if (![image.url isKindOfClass:[NSNull class]] && image.url != nil) {
+                    imageURLStr = image.url;
+                }
+                NSLog(@"imageURLStr = %@", imageURLStr);
+                NSDictionary *dic=@{@"name":use[@"name"],@"image":imageURLStr,@"contenttext":obj[@"contenttext"],@"stepon":obj[@"stepon"],@"praise":obj[@"praise"],@"id":obj.objectId};
+                [_objectsForShow1 addObject:dic];
+                
+            }
+            NSLog(@"_objectsForShow1 = %@", _objectsForShow1);
+            UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+            [rc endRefreshing];
+            [aiv stopAnimating];
+            [self.tableView reloadData];
+        }else{
+            UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
+            [rc endRefreshing];
             [Utilities popUpAlertViewWithMsg:@"请保持网络畅通" andTitle:nil onView:self];
         }
         
@@ -64,6 +91,7 @@
     PFQuery *query=[PFQuery queryWithClassName:@"Dynamic"];
     [query includeKey:@"user"];
     [query orderByAscending:@"updatedAt"];
+     UIActivityIndicatorView *aiv =[Utilities getCoverOnView:self.view];
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         
         if (!error) {
@@ -92,6 +120,7 @@
             NSLog(@"_objectsForShow1 = %@", _objectsForShow1);
             UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
             [rc endRefreshing];
+            [aiv stopAnimating];
             [self.tableView reloadData];
         }else{
             UIRefreshControl *rc=(UIRefreshControl *)[self.tableView viewWithTag:10001];
