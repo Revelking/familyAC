@@ -10,6 +10,7 @@
 #import "resetpasswordViewController.h"
 #import "TabBarViewController.h"
 #import "CeHuaViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 @interface SignInViewController ()
 
 @end
@@ -33,6 +34,29 @@
 //每次这个页面出现的时候都会调用这个方法，并且这个时机点事页面已然出现后
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    PFUser *use=[PFUser currentUser];
+    if (use) {
+        NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",use];
+        PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
+        UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [avi stopAnimating];
+            
+            
+            NSDictionary *dic=objects[0];
+            ;
+            
+            PFFile *photoFile=dic[@"image"];
+            //获取parse数据库中某个文件的网络路径
+            NSString *photoURLStr=photoFile.url;
+            NSURL  *photoURL=[NSURL URLWithString:photoURLStr];
+            //结合SDWebImage通过图片路径来实现异步加载和缓存（本案例中加载到一个图片视图中）
+            [_photoIV sd_setImageWithURL:photoURL placeholderImage:[UIImage imageNamed:@"wei"]];
+        }];
+    }else {
+        _photoIV.image=[UIImage imageNamed:@"wei"];
+        
+    }
     
 }
 //封装登录操作
