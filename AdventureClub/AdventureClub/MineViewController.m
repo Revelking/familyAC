@@ -356,19 +356,16 @@
 }
 
 - (IBAction)guanAction:(id)sender forEvent:(UIEvent *)event {
+    
 }
-- (IBAction)dengAction:(UIButton *)sender forEvent:(UIEvent *)event {
-     SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"deng"];
-    [self.navigationController presentViewController:vc animated:YES completion:nil];
-//    [self.navigationController presentViewController:vc animated:YES completion:nil];
-}
+
 //每次页面数显后
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     PFUser *currentUser=[PFUser currentUser];
     
     if (currentUser) {
-        [_anniu setTitle:@"切换" forState:UIControlStateNormal];
+       _anniu.title=@"切换";
         NSPredicate *predicate=[NSPredicate predicateWithFormat:@"user=%@",currentUser];
         PFQuery *query=[PFQuery queryWithClassName:@"Personal" predicate:predicate];
         UIActivityIndicatorView *avi=[Utilities getCoverOnView:self.view];
@@ -388,7 +385,7 @@
         }];
         
     }else {
-        [_anniu setTitle:@"登录" forState:UIControlStateNormal];
+        _anniu.title=@"登录";
         UIImage *myImage = [UIImage imageNamed:@"wei"];
         _yongimage.image=myImage;
         _nameLb.text=@"尚未登录";
@@ -403,5 +400,10 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DisableGesture" object:nil];
+}
+- (IBAction)dengAction:(UIBarButtonItem *)sender {
+    SignInViewController *vc=[Utilities getStoryboardInstanceInstance:@"Main" byIdentity:@"deng"];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+
 }
 @end

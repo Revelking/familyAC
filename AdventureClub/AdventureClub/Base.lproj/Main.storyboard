@@ -278,7 +278,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="568"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8y-iu-lGh">
-                                        <rect key="frame" x="20" y="198" width="200" height="30"/>
+                                        <rect key="frame" x="20" y="186" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="资料完善">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -288,7 +288,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KpN-Dr-3MK">
-                                        <rect key="frame" x="20" y="378" width="200" height="30"/>
+                                        <rect key="frame" x="20" y="366" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="帮助">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -305,7 +305,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mw-x3-6TN">
-                                        <rect key="frame" x="20" y="258" width="200" height="30"/>
+                                        <rect key="frame" x="20" y="246" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="关于我们">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -339,13 +339,17 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="个性签名个性签名个性签名个性签名个性签名个性签名个性签名个性签名" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-7y-E1R">
-                                        <rect key="frame" x="20" y="146" width="200" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ubu-7y-E1R">
+                                        <rect key="frame" x="20" y="146" width="200" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="fXJ-k1-OFW"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" red="1" green="0.89032073619999996" blue="0.4387183872" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtR-rx-SVs">
-                                        <rect key="frame" x="20" y="318" width="200" height="30"/>
+                                        <rect key="frame" x="20" y="306" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="消息">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1466,21 +1470,15 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="aAl-XM-ryn">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="orj-Zk-uv0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="arL-3b-bgv">
-                                <rect key="frame" x="329" y="7" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="登录"/>
-                                <connections>
-                                    <action selector="dengAction:forEvent:" destination="1E3-fj-0GU" eventType="touchUpInside" id="t1E-Ew-2mH"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="登录" id="Nqe-VU-o8V">
+                            <connections>
+                                <action selector="dengAction:" destination="1E3-fj-0GU" id="81t-0P-4et"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="anniu" destination="arL-3b-bgv" id="Hc9-NV-YDh"/>
+                        <outlet property="anniu" destination="Nqe-VU-o8V" id="pdN-Qp-ueG"/>
                         <outlet property="nameLb" destination="QxY-wO-Ekc" id="yaK-DY-faE"/>
                         <outlet property="segmengCt" destination="4S0-ez-oem" id="sb6-5q-ZqY"/>
                         <outlet property="tableView" destination="7iJ-DF-zDC" id="xih-OW-Fb5"/>
@@ -1755,11 +1753,11 @@
             </objects>
             <point key="canvasLocation" x="2782.5" y="1188.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--消息-->
         <scene sceneID="R5R-e6-13k">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UVK-Z7-xYY" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="haha" id="3Sg-0k-y47"/>
+                    <tabBarItem key="tabBarItem" title="消息" image="haha" id="3Sg-0k-y47"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bGI-dE-oux">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1774,11 +1772,11 @@
             </objects>
             <point key="canvasLocation" x="-1164.5" y="-3.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--首页-->
         <scene sceneID="CMy-xI-ogr">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="caX-CT-JG3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="7" id="cdE-Un-vPR"/>
+                    <tabBarItem key="tabBarItem" title="首页" image="7" id="cdE-Un-vPR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1m0-T0-NN0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2315,11 +2313,11 @@
             </objects>
             <point key="canvasLocation" x="-2218.5" y="-1105.5"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--我的-->
         <scene sceneID="rwH-Bu-5lf">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CM8-qo-NrI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" image="wang" id="stE-D7-Liz"/>
+                    <tabBarItem key="tabBarItem" title="我的" image="wang" id="stE-D7-Liz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vIc-zg-uvA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -2497,10 +2495,10 @@
     </scenes>
     <resources>
         <image name="6" width="35" height="35"/>
-        <image name="7" width="44" height="38"/>
+        <image name="7" width="22" height="22"/>
         <image name="Image" width="44" height="47"/>
-        <image name="haha" width="35" height="30"/>
-        <image name="wang" width="29" height="33"/>
+        <image name="haha" width="22" height="22"/>
+        <image name="wang" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="XNP-ii-87R"/>
