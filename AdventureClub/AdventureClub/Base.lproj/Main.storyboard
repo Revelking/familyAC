@@ -140,7 +140,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="动态" id="xMF-4t-kZO">
-                        <barButtonItem key="rightBarButtonItem" title="发布互动" id="9LL-pt-2iI">
+                        <barButtonItem key="rightBarButtonItem" title="发帖" id="9LL-pt-2iI">
                             <connections>
                                 <segue destination="etC-y2-68T" kind="show" id="NTd-II-pOZ"/>
                             </connections>
@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="-394.5" y="-19.5"/>
         </scene>
-        <!--发布互动-->
+        <!--发帖-->
         <scene sceneID="led-xp-lbj">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="etC-y2-68T" customClass="InteractiveViewController" sceneMemberID="viewController">
@@ -246,7 +246,7 @@
                             <constraint firstItem="4yN-C2-qHM" firstAttribute="top" secondItem="daP-dq-Iop" secondAttribute="bottom" constant="50" id="xyh-v1-hF2"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="发布互动" id="qR0-up-TLa"/>
+                    <navigationItem key="navigationItem" title="发帖" id="qR0-up-TLa"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -720,7 +720,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HYt-4Y-m1m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="521.5" y="-985.5"/>
+            <point key="canvasLocation" x="433.5" y="-1403.5"/>
         </scene>
         <!--首页-->
         <scene sceneID="nFS-L6-IgF">
@@ -838,8 +838,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="发布" id="Cxl-ih-PgU">
                             <connections>
-                                <action selector="releaseAction:" destination="2sc-Hh-m6T" id="WUW-eQ-2zq"/>
-                                <segue destination="ry5-dZ-Z5R" kind="show" id="98s-ZY-ghv"/>
+                                <segue destination="ry5-dZ-Z5R" kind="show" id="ibJ-4c-hMi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1120,7 +1119,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="发布" id="88k-zB-Eus">
-                        <barButtonItem key="rightBarButtonItem" title="发帖" id="ydV-Db-BRv">
+                        <barButtonItem key="rightBarButtonItem" title="确定" id="ydV-Db-BRv">
                             <connections>
                                 <action selector="faBuAction:" destination="ry5-dZ-Z5R" id="sbY-l2-Rit"/>
                             </connections>
@@ -1145,7 +1144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mv0-1b-Obk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1105.5" y="-1057.5"/>
+            <point key="canvasLocation" x="886.5" y="-901.5"/>
         </scene>
         <!--选择日期-->
         <scene sceneID="YZm-Cl-g9o">
@@ -1168,7 +1167,7 @@
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eg-Vu-Me9">
                                 <rect key="frame" x="100" y="290" width="175" height="38"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="确认">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1178,7 +1177,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2eg-Vu-Me9" firstAttribute="top" secondItem="OaL-Ux-VAZ" secondAttribute="bottom" constant="10" id="46G-9K-AUC"/>
                             <constraint firstAttribute="trailing" secondItem="OaL-Ux-VAZ" secondAttribute="trailing" id="9Fb-6g-2rH"/>
@@ -1373,7 +1372,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxY-wO-Ekc">
                                         <rect key="frame" x="0.0" y="95" width="375" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -1552,7 +1551,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gid-v0-MB1">
                                 <rect key="frame" x="20" y="380" width="335" height="40"/>
-                                <color key="backgroundColor" red="0.015500531897106762" green="0.566904053927622" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="kuN-bA-DDd"/>
                                 </constraints>
@@ -1565,7 +1564,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="68m-fa-hdP" firstAttribute="top" secondItem="FSK-fd-J8F" secondAttribute="bottom" constant="30" id="2ji-Y5-w23"/>
                             <constraint firstItem="gid-v0-MB1" firstAttribute="top" secondItem="MDA-yL-Ygd" secondAttribute="bottom" constant="40" id="3rm-Mh-79Q"/>
@@ -1694,7 +1693,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDX-Au-PYE">
                                 <rect key="frame" x="20" y="304" width="335" height="40"/>
-                                <color key="backgroundColor" red="0.00027800982261161344" green="0.53276804886038143" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.40039623099999999" green="0.74111003919999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DQg-ih-RWq"/>
                                 </constraints>
@@ -1707,7 +1706,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="IWc-7w-vQU" secondAttribute="trailing" constant="20" id="4kv-42-a31"/>
                             <constraint firstItem="YM3-JM-8s3" firstAttribute="centerY" secondItem="cTv-p2-LdL" secondAttribute="centerY" id="5Ar-uz-75y"/>

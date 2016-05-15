@@ -23,7 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条"] forBarMetrics:UIBarMetricsDefault];
+   // [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"导航条"] forBarMetrics:UIBarMetricsDefault];
     [self app];
     _objectsForShow=[NSMutableArray new];
     _acg=[NSMutableArray new];
@@ -318,9 +318,7 @@
     
 }
 
-//发布活动按钮
-- (IBAction)releaseAction:(UIBarButtonItem *)sender {
-}
+
 #pragma mark - SDCycleScrollViewDelegate
 
 - (void)cycleScrollView:(SDCycleScrollView *)cycleScrollView didSelectItemAtIndex:(NSInteger)index
